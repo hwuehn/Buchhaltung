@@ -12,10 +12,15 @@ public class Konto {
 	private double endbestand;
 	private List<BuchungsSatz> buchungen = new ArrayList<BuchungsSatz>();
 
-	public void buchen(double wert, Beleg beleg, String position) {
-			BuchungsSatz bs= new BuchungsSatz(wert,beleg,position);
+	public void buchen(double wert, Beleg beleg, String position, Konto gegenKontoId) {
+			BuchungsSatz bs= new BuchungsSatz(wert, beleg, position, gegenKontoId);
 			buchungen.add(bs);
 	}
+
+	public void gegenKontoBuchung() {
+
+	}
+
 
 	public int getKontoId() {
 		return kontoId;
@@ -46,7 +51,11 @@ public class Konto {
 	@Override
 	public String toString() {
 		String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
-		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}] \nVorgaenge:\n{3}]", kontoId, kontoBezeichnung, anfangsbestand, buchus);
+		return MessageFormat.format("Soll       {0} {1}        Haben \n" +
+				                            "----------------------------------------- \n" +
+				                            "AB                {2} |                   \n" +
+				                            "            {3} |                         \n",
+				                    kontoId, kontoBezeichnung, anfangsbestand, buchus);
 	}
 		
 	public static  String BuchungsEintrag(BuchungsSatz bs){

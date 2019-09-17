@@ -8,8 +8,6 @@ import java.util.Calendar;
 
 public class Beleg {
 
-	public static int counter = 1;
-	
 	private String artikelBezeichnung;
 	private int artikelMenge;
 	private double artikelPreis;

@@ -1,6 +1,5 @@
 ﻿things to add...
 
-Feature: Datum in Beleg integrieren (Attribut Datetime, Methode zum formatieren in das String-Format "dd.mm.yyyy") // check
 Feature: Datumsausgabe formatieren
 
 Feature: Ausgabe formatieren
