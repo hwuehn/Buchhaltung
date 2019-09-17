@@ -2,6 +2,7 @@ package buchhaltung.klassen;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Calendar;
 
@@ -12,22 +13,19 @@ public class Beleg {
 	private String artikelBezeichnung;
 	private int artikelMenge;
 	private double artikelPreis;
-	private Calendar datum;
+	private LocalDate datum;
 	private double gesamtpreisNetto;
 	private double vorsteuer;
 	private double endpreisBrutto;
 	
 	
-	public String getArtikelBezeichnung() {
-		return artikelBezeichnung;
-	}
 	public int getArtikelMenge() {
 		return artikelMenge;
 	}
 	public double getArtikelPreis() {
 		return artikelPreis;
 	}
-	public Calendar getDatum() {
+	public LocalDate getDatum() {
 		return datum;
 	}
 	public double getGesamtpreisNetto() {
@@ -38,19 +36,6 @@ public class Beleg {
 	}
 	public double getEndpreisBrutto() {
 		return endpreisBrutto;
-	}
-	public void setArtikelBezeichnung(String artikelBezeichnung) {
-		this.artikelBezeichnung = artikelBezeichnung;
-	}
-	public void setArtikelMenge(int artikelMenge) {
-		this.artikelMenge = artikelMenge;
-	}
-	public void setArtikelPreis(double artikelPreis) {
-		this.artikelPreis = artikelPreis;
-		
-	}
-	public void setDatum(Calendar datum) {
-		this.datum = datum;
 	}
 	public void setGesamtpreisNetto() {
 		gesamtpreisNetto = getArtikelPreis() * getArtikelMenge();
@@ -64,20 +49,19 @@ public class Beleg {
 		endpreisBrutto = getGesamtpreisNetto() + getVorsteuer();
 	}
 
-	public Beleg(String artikelBezeichnung, int artikelMenge, double artikelPreis) {
-		this.artikelBezeichnung = artikelBezeichnung;
+	public Beleg(LocalDate datum, String artikelBezeichnung, int artikelMenge, double artikelPreis) {
+		this.datum = datum;
+	    this.artikelBezeichnung = artikelBezeichnung;
 		this.artikelMenge = artikelMenge;
 		this.artikelPreis = artikelPreis;
 		setGesamtpreisNetto();
 		setVorsteuer();
 		setEndpreisBrutto();
-		System.out.print("Rechnung ");
 		System.out.println(toString());
-		counter++;
 	}
 	@Override
 	public String toString() {
-		return counter + ":" + " [Artikel = " + artikelBezeichnung + ", Menge = " + artikelMenge 
+		return "Rechnung: " + " [Rechnugsdatum = " + datum + ", Artikel = " + artikelBezeichnung + ", Menge = " + artikelMenge
 				+ ", Preis = " + artikelPreis + ", Gesamtpreis=" + formatZweiStellenNachkomma(gesamtpreisNetto) + ", Vorsteuer=" + formatZweiStellenNachkomma(vorsteuer)
 				+ ", Endpreis=" + formatZweiStellenNachkomma(endpreisBrutto)  + "]";
 	}

@@ -12,28 +12,13 @@ public class Konto {
 	private double endbestand;
 	private List<BuchungsSatz> buchungen = new ArrayList<BuchungsSatz>();
 
-
-
-
 	public void buchen(double wert, Beleg beleg, String position) {
 			BuchungsSatz bs= new BuchungsSatz(wert,beleg,position);
 			buchungen.add(bs);
 	}
 
-	public String getKontoBezeichnung() {
-		return kontoBezeichnung;
-	}
 	public int getKontoId() {
 		return kontoId;
-	}
-	public double getAnfangsbestand() {
-		return anfangsbestand;
-	}
-	public double getEndbestand() {
-		return endbestand;
-	}
-	public void setKontoBezeichnung(String kontoBezeichnung) {
-		this.kontoBezeichnung = kontoBezeichnung;
 	}
 	public void setAnfangsbestand() {
 		anfangsbestand = 0.00;
