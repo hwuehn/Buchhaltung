@@ -1,0 +1,40 @@
+package buchhaltung;
+
+
+import buchhaltung.klassen.BelegStapel;
+import buchhaltung.klassen.Konto;
+import buchhaltung.klassen.*;
+
+public class ProgrammDemo {
+
+	public static void main(String[] args) {
+				
+		KontoVerwaltung kv= new KontoVerwaltung();
+		Konto _14000= kv.createKonto("VSt", 1400);
+		KontoVerwaltung kontoverw = new KontoVerwaltung();
+
+
+		Konto _1400 = new Konto("VSt", 1400);
+		Konto _1800 = new Konto("Bank", 1800);
+		Konto _6330 = new Konto("Reinigung", 6330);
+		Konto _6815 = new Konto("Buerobedarf", 6815);
+			
+		System.out.println();
+		
+		BelegStapel belege = new BelegStapel();
+		
+		System.out.println();
+		Beleg b1= belege.belege.get(0);
+		_6330.buchen(b1.getGesamtpreisNetto(), b1,"GesamtPreisNetto");
+		_1400.buchen(b1.getVorsteuer(), b1,"Vorsteuer");
+		_1800.buchen(- b1.getEndpreisBrutto(), b1,"EndPreisBrutto");
+		
+		Beleg b2=belege.belege.get(1);
+		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
+		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
+		_1400.buchen(b2.getVorsteuer(), b2,"Vorsteuer");
+		_1800.buchen(- b2.getEndpreisBrutto(), b2,"EndPreisBrutto");
+		System.out.println(_6815.toString());
+	}
+
+}
