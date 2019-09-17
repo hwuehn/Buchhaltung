@@ -35,10 +35,14 @@ public class Konto {
 		this.kontoId = kontoId;
 		setAnfangsbestand();
 		System.out.print("Kontoerstellung:");
-		System.out.println(toString());
+		System.out.println(ausgabe());
 		
 	}
-	
+
+	public String ausgabe() {
+		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", kontoId, kontoBezeichnung, anfangsbestand);
+	}
+
 	@Override
 	public String toString() {
 		String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
