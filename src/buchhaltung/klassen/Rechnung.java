@@ -8,11 +8,7 @@ import java.util.Calendar;
 
 public class Rechnung {
 
-	private int rechnungsNr;
 
-	public String getArtikelBezeichnung() {
-		return artikelBezeichnung;
-	}
 
 	private String artikelBezeichnung;
 	private int artikelMenge;
@@ -21,8 +17,14 @@ public class Rechnung {
 	private double gesamtpreisNetto;
 	private double vorsteuer;
 	private double endpreisBrutto;
-	
-	
+	private int rechnungsNr;
+
+	public int getRechnungsNr() {
+		return rechnungsNr;
+	}
+	public String getArtikelBezeichnung() {
+		return artikelBezeichnung;
+	}
 	public int getArtikelMenge() {
 		return artikelMenge;
 	}

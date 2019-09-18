@@ -6,12 +6,16 @@ import java.util.*;
 
 public class Konto {
 
-	private String kontoBezeichnung;
-	private int kontoId;
+	private static String kontoBezeichnung;
+	private static int kontoId;
 	private double anfangsbestand;
 	private double endbestand;
 
-	public int getKontoId() {
+    public static String getKontoBezeichnung() {
+        return kontoBezeichnung;
+    }
+
+    public static int getKontoId() {
 		return kontoId;
 	}
 	public void setAnfangsbestand() {
@@ -38,14 +42,15 @@ public class Konto {
 	}
 
 	@Override
-	public String toString() {
-		String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
-		return MessageFormat.format("Soll       {0} {1}        Haben \n" +
-				                            "----------------------------------------- \n" +
-				                            "AB                {2} |                   \n" +
-				                            "            {3} |                         \n",
-				                    kontoId, kontoBezeichnung, anfangsbestand, buchus);
-	}
+    public String toString() {
+        String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
+        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
+                        "----------------------------------------- \n" +
+                        "AB                {2} |                   \n" +
+                        "            {3} |                         \n",
+                kontoId, kontoBezeichnung, anfangsbestand, buchus);
+    }
+
 		
 	public static  String BuchungsEintrag(BuchungsSatz bs){
 		return MessageFormat.format("{0} {1}", bs.getPosition(), formattedDoubleString(bs.getWert()));

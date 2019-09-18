@@ -9,3 +9,5 @@
 
 //Buchungssatz in 2 kleine Teile aufspalten
 //und mit .add in buchungen integrieren
+
+//Ausgabe von buchungen
