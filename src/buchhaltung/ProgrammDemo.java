@@ -14,14 +14,10 @@ public class ProgrammDemo {
 	public static void main(String[] args) {
 				
 		KontoVerwaltung kv= new KontoVerwaltung();
-		Konto _14000= kv.createKonto("VSt", 1400);
-		KontoVerwaltung kontoverw = new KontoVerwaltung();
-
-
-		Konto _1400 = new Konto("VSt", 1400);
-		Konto _1800 = new Konto("Bank", 1800);
-		Konto _6330 = new Konto("Reinigung", 6330);
-		Konto _6815 = new Konto("Buerobedarf", 6815);
+		Konto _1400 = kv.createKonto("VSt", 1400);
+		Konto _1800 = kv.createKonto("Bank", 1800);
+		Konto _6330 = kv.createKonto("Reinigung", 6330);
+		Konto _6815 = kv.createKonto("Buerobedarf", 6815);
 			
 		System.out.println();
 		
@@ -32,6 +28,7 @@ public class ProgrammDemo {
 		Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
         Buchungsverwaltung bv = new Buchungsverwaltung();
 		bv.buchen(_6330, _1800, Arrays.asList(p1));
+		bv.buchen(_1400, _1800, Arrays.asList(p1));
 		System.out.println(bv.toString());
 
 

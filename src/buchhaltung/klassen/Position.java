@@ -11,6 +11,7 @@ public class Position  {
     public double getGesamtpreisNetto() {
         return gesamtpreisNetto;
     }
+    public LocalDate getDatum() { return datum; }
 
     private final double gesamtpreisNetto;
     private final String artikelBezeichnung;
