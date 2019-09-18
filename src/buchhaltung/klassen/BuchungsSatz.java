@@ -1,5 +1,7 @@
 package buchhaltung.klassen;
 
+import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.util.List;
 
 public class BuchungsSatz {
@@ -23,4 +25,15 @@ public class BuchungsSatz {
         return positions.stream().map(p -> p.getGesamtpreisNetto()).reduce(0d ,(acc,e) -> acc + e);
     }
 
+    public String toString() {
+        return MessageFormat.format("Buchung: {0} {1} {2} {3}", konto.getKontoId(), konto.getKontoBezeichnung(), formattedDoubleString(gesamtWert()),seite);
+    }
+
+
+
+    public static String formattedDoubleString(double wert) {
+        DecimalFormat newFormat = new DecimalFormat("#.00");
+
+        return newFormat.format(wert);
+    }
 }

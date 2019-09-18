@@ -6,24 +6,27 @@ import java.util.*;
 
 public class Konto {
 
-	private static String kontoBezeichnung;
-	private static int kontoId;
+	public int getKontoId() {
+		return kontoId;
+	}
+
+	private final int kontoId;
+
+	public String getKontoBezeichnung() {
+		return kontoBezeichnung;
+	}
+
+	private final String kontoBezeichnung;
 	private double anfangsbestand;
 	private double endbestand;
 
-    public static String getKontoBezeichnung() {
-        return kontoBezeichnung;
-    }
 
-    public static int getKontoId() {
-		return kontoId;
-	}
 	public void setAnfangsbestand() {
 		anfangsbestand = 0.00;
 	}
 
 	public String getKontoArt() {
-		return ((getKontoId() > 4999) && (getKontoId() < 8000)) ? "Aufwandskonto" : "Erfolgskonto";
+		return ((kontoId > 4999) && (kontoId < 8000)) ? "Aufwandskonto" : "Erfolgskonto";
 	}
 	
 
