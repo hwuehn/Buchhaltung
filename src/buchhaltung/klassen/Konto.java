@@ -44,28 +44,21 @@ public class Konto {
 		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", kontoId, kontoBezeichnung, anfangsbestand);
 	}
 
-//	@Override
-//    public String toString() {
-//        String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
-//        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
-//                        "----------------------------------------- \n" +
-//                        "AB                {2} |                   \n" +
-//                        "            {3} |                         \n",
-//                kontoId, kontoBezeichnung, anfangsbestand, buchus);
-//    }
+	@Override
+    public String toString() {
+        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
+                        "----------------------------------------- \n" +
+                        "AB             {2} |                      \n" +
+                        "                    |                     \n" +
+				        "                    |                     \n" +
+						"                    |                     \n" ,
+                kontoId, kontoBezeichnung, formattedDoubleString(anfangsbestand));
+    }
 
-		
-	public static  String BuchungsEintrag(BuchungsSatz bs){
-		return "";//MessageFormat.format("{0} {1}", bs.getPosition(), formattedDoubleString(bs.getWert()));
-	}
-
-	public static String formattedDoubleString(double wert) {
-		DecimalFormat newFormat = new DecimalFormat("#.00");
-
+    public static String formattedDoubleString(double wert) {
+		DecimalFormat newFormat = new DecimalFormat("0.00");
 		return newFormat.format(wert);
 	}
-
-
 }
 
 

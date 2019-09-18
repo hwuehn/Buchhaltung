@@ -67,26 +67,10 @@ public class ProgrammDemo {
         bv.buchen(_1400, _1800, Arrays.asList(p10));
         System.out.println(bv.toString());
 
-
-
-
-
-		//_1400.buchenMitGegenKonto(Arrays.asList(p1), _1800);
-		/*_6330.buchen(b1.getGesamtpreisNetto(), b1,"GesamtPreisNetto");
-		_1400.buchen(b1.getVorsteuer(), b1,"Vorsteuer");
-		_1800.buchen(- b1.getEndpreisBrutto(), b1,"EndPreisBrutto");
-		*/
-
-		//_6330.buchen(b1.getGesamtpreisNetto(), b1, "GesamtPreisNetto", _1800);
-
-
-
-		/*Rechnung b2=belege.belege.get(1);
-		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
-		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
-		_1400.buchen(b2.getVorsteuer(), b2,"Vorsteuer");
-		_1800.buchen(- b2.getEndpreisBrutto(), b2,"EndPreisBrutto");
-		System.out.println(_6815.toString());*/
+        System.out.println(_1400.toString());
+        System.out.println(_1800.toString());
+        System.out.println(_6330.toString());
+        System.out.println(_6815.toString());
 	}
 
 }

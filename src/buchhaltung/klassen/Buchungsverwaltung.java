@@ -8,12 +8,11 @@ import java.util.List;
 
 public class Buchungsverwaltung {
 
+    private List<BuchungsSatz> buchungen=new ArrayList<>();
 
     public List<BuchungsSatz> getBuchungen() {
         return buchungen;
     }
-
-    private List<BuchungsSatz> buchungen=new ArrayList<>();
 
     public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
         BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL);
@@ -28,11 +27,8 @@ public class Buchungsverwaltung {
         return MessageFormat.format("Buchungen:\n{0}", buchus);
     }
 
-
-
     public static String formattedDoubleString(double wert) {
         DecimalFormat newFormat = new DecimalFormat("#.00");
-
         return newFormat.format(wert);
     }
 
