@@ -1,3 +1,11 @@
 
 //Position id wertnetto bezeichnung anz ep steuer
 //buchungssatz src trg list<Position>
+
+//Klasse Buchungsverwaltung erstellen
+//          Liste buchungen hinzufügen
+//Position um rechnungsNr und Datum erweitern
+//in Klasse Konto Liste buchungen löschen
+
+//Buchungssatz in 2 kleine Teile aufspalten
+//und mit .add in buchungen integrieren
