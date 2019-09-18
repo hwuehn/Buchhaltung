@@ -1,0 +1,3 @@
+
+//Position id wertnetto bezeichnung anz ep steuer
+//buchungssatz src trg list<Position>
