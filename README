@@ -1,29 +1,65 @@
 ﻿things to add...
 
-Feature: Datumsausgabe formatieren
+Feature: Datumsausgabe formatieren:
+         Das Datum auf dem Beleg wird derzeit im Format "yyyy-mm-dd" angezeigt.
+         Der Programmierer erstellt eine Methode localDateFormat() und erstellt ein Patern nach
+         folgendem Schema: "dd.mm.yyyy"
 
-Feature: Ausgabe formatieren
-         Bspw.: 
-			 Konto xxxx
-	Soll                  |                  Haben
-	----------------------------------------------
-        AB                0,00|
-        <Gegenkonto>     50,50|
-        <Gegenkonto>    100,00|
-        <Gegenkonto>      5.50|
+Feature: Ausgabe formatieren:
+         Die Kontenausgabe soll vom Programmierer nach folgendem Schema umgesetzt werden:
+         Bspw.:
+			              Konto xxxx
+	     Soll                  |                  Haben
+	     ----------------------------------------------
+         AB                0,00|
+         <Gegenkonto>     50,50|
+         <Gegenkonto>    100,00|
+         <Gegenkonto>      5.50|
 
-Feature: Konten abschließen und Ausgabe anpassen
-	Bspw.: 
-			 Konto xxxx
-	Soll                  |                  Haben
-	----------------------------------------------
-        AB                0,00| SB              156,00
-        <Gegenkonto>     50,50|         /-------------
-        <Gegenkonto>    100,00|        /
-        <Gegenkonto>      5.50|-------/
-        ----------------------------------------------
-                        156,00|                 156,00
+         Die Kontenstruktur ist statisch bereits durch die toString() Methode der Klasse Konto vorhanden.
+         Integriert werden muss eine dynamische Einbindung der Buchungsvorgänge (Gegenkonto und GesamtbetragNetto).
+
+Feature: Der Programmierer erstellt eine Methode bestandskontenAbschließen().
+         In die Bestandskonten wird ein Schlussbestand sowie jeweils ein Saldo für die Soll- u. Haben-Seite integriert.
+Feature: Der Programmierer erstellt die Methode kontenPruefen(), welche die beiden Salden auf Gleichheit prüft.
+         Die Methode gibt eine Feedback.
+Feature: Der Programmierer erstellt eine Methode erfolgskontenAbschließen().
+         In die Erfolgskonten wird ein Schlussbestand (Gegenkonto GuV) sowie jeweils ein Saldo für die Soll- u.
+         Haben-Seite integriert.
+Feature: Konten visuell abschließen:
+         Der Programmierer schließt die Konten visuell ab indem ein Buchhalternasen-String den whitespace ausfüllt.
+	     Bspw.:
+		       	         Konto xxxx
+	     Soll                  |                  Haben
+	     ----------------------------------------------
+         AB                0,00| SB              156,00
+         <Gegenkonto>     50,50|         /-------------
+         <Gegenkonto>    100,00|        /
+         <Gegenkonto>      5.50|-------/
+         ----------------------------------------------
+                         156,00|                 156,00
+
+Feature: Monatsabschluss:
+         Der Programmierer erstellt eine Methode monatsabschluss(), welche die kontenabschließenden Methoden aufruft.
                          
 Feature: Jahresabschluss
-Feature: Monatsabschluss
+
 Feature: USt berechnen
+
+Feature: Bibliothek SKR04 (Standardkontenrahmen 04) integrieren.
+         Der Programmierer muss eine Bibliothek für Standardkonten in die Projektstruktur integrieren.
+Feature: In der Kontoverwaltung kann der Benutzer der Software individuell
+         seine zu nutzenden Konten aus der Kontenbibliothek auswählen.
+         Die individuelle Liste wird dann erstellt.
+Feature: Der Benutzer kann nachträglich weitere Konten aus der Kontenbibliothek in seine zu
+         nutzende Kontenliste integrieren.
+
+Feature: Buchen mit Umsatzsteuer.
+         Bei der Kontenwahl gibt es bei den Aufwands- u. Ertragskonten kombinierte Konten.
+         Umsetzung: Präfix + KontoId ODER angepasste KontoId
+         Durch diese Automatik fällt die extra Buchung der Vorsteuer u. Umsatzsteuer weg.
+         Gebucht wird nur noch auf das Aufwands- od. Ertragskonto und die überladene Methode buchen(int Präfix)
+         bucht selbständig die Steuer auf die entsprechenden Konten.
+
+Feature: Digitale Eingangsrechnung im Pdf-Format.
+         Der Programmierer integriert bspw. die IText Bibliotheken zum Parsen von Pdf-Dateien.
