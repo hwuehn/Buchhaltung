@@ -10,17 +10,6 @@ public class Konto {
 	private int kontoId;
 	private double anfangsbestand;
 	private double endbestand;
-	private List<BuchungsSatz> buchungen = new ArrayList<>();
-
-
-
-	public void buchenMitGegenKonto(List<Position> positions,Konto gegenKonto) {
-		BuchungsSatz bs1 = new BuchungsSatz(this,  positions, gegenKonto,Seite.SOLL);
-		BuchungsSatz bs2 = new BuchungsSatz(gegenKonto,  positions, this,Seite.HABEN);
-
-
-		}
-
 
 	public int getKontoId() {
 		return kontoId;
@@ -50,7 +39,7 @@ public class Konto {
 
 	@Override
 	public String toString() {
-		String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
+		String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
 		return MessageFormat.format("Soll       {0} {1}        Haben \n" +
 				                            "----------------------------------------- \n" +
 				                            "AB                {2} |                   \n" +

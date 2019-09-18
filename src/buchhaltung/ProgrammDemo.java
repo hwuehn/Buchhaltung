@@ -28,8 +28,7 @@ public class ProgrammDemo {
 		
 		System.out.println();
 		Rechnung b1= belege.belege.get(0);
-
-		Position p1= new Position( b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
+		Position p1= new Position(b1.getDatum(), b1. b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
 
 		_1400.buchenMitGegenKonto(Arrays.asList(p1), _1800);
 		/*_6330.buchen(b1.getGesamtpreisNetto(), b1,"GesamtPreisNetto");
