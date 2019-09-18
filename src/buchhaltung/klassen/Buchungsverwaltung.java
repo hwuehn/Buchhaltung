@@ -1,5 +1,6 @@
 package buchhaltung.klassen;
 
+import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -7,11 +8,12 @@ import java.util.List;
 
 public class Buchungsverwaltung {
 
-    private static List<BuchungsSatz> buchungen = new ArrayList<>();
 
-    public static List<BuchungsSatz> getBuchungen() {
+    public List<BuchungsSatz> getBuchungen() {
         return buchungen;
     }
+
+    private List<BuchungsSatz> buchungen=new ArrayList<>();
 
     public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
         BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL);
@@ -22,7 +24,7 @@ public class Buchungsverwaltung {
 
     @Override
     public String toString() {
-        String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+        String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
         return MessageFormat.format("Buchungen:\n{0}", buchus);
     }
 

@@ -44,15 +44,15 @@ public class Konto {
 		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", kontoId, kontoBezeichnung, anfangsbestand);
 	}
 
-	@Override
-    public String toString() {
-        String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
-        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
-                        "----------------------------------------- \n" +
-                        "AB                {2} |                   \n" +
-                        "            {3} |                         \n",
-                kontoId, kontoBezeichnung, anfangsbestand, buchus);
-    }
+//	@Override
+//    public String toString() {
+//        String buchus=  Buchungsverwaltung.getBuchungen().stream().reduce("", (acc,bs) -> acc + BuchungsEintrag(bs)+"\n", String::concat );
+//        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
+//                        "----------------------------------------- \n" +
+//                        "AB                {2} |                   \n" +
+//                        "            {3} |                         \n",
+//                kontoId, kontoBezeichnung, anfangsbestand, buchus);
+//    }
 
 		
 	public static  String BuchungsEintrag(BuchungsSatz bs){
