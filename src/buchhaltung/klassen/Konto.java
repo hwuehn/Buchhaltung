@@ -53,7 +53,7 @@ public class Konto {
 
 		
 	public static  String BuchungsEintrag(BuchungsSatz bs){
-		return MessageFormat.format("{0} {1}", bs.getPosition(), formattedDoubleString(bs.getWert()));
+		return "";//MessageFormat.format("{0} {1}", bs.getPosition(), formattedDoubleString(bs.getWert()));
 	}
 
 	public static String formattedDoubleString(double wert) {

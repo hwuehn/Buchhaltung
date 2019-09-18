@@ -1,26 +1,26 @@
 package buchhaltung.klassen;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class BuchungsSatz {
 
-    private Buchungsverwaltung konto;
-    private final ArrayList<Position> positions;
+    private Konto konto;
+
+    public List<Position> getPositions() {
+        return positions;
+    }
+
+    private final List<Position> positions;
     private final Seite seite;
 
-    public BuchungsSatz(Buchungsverwaltung konto, ArrayList<Position> positions, Seite seite) {
+    public BuchungsSatz(Konto konto, List<Position> positions, Seite seite) {
         this.konto = konto;
         this.positions = positions;
         this.seite = seite;
     }
 
-    public double getWert() {
-        positions.
-
-        return wert;
+    public Double gesamtWert(){
+        return positions.stream().map(p -> p.getGesamtpreisNetto()).reduce(0d ,(acc,e) -> acc + e);
     }
 
-    public String getPosition() {
-        return position;
-    }
 }

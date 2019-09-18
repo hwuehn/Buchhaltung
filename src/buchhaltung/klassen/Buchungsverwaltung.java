@@ -13,11 +13,11 @@ public class Buchungsverwaltung {
         return buchungen;
     }
 
-    public void buchen(Konto kontoId, Position positions, Seite seite) {
-        BuchungsSatz bs1 = new BuchungsSatz(this, positions, Seite.SOLL);
-        //BuchungsSatz bs2 = new BuchungsSatz(this, positions, Seite.HABEN);
+    public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions, Seite seite) {
+        BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL);
+        BuchungsSatz bs2 = new BuchungsSatz(gegenKonto, positions, Seite.HABEN);
         buchungen.add(bs1);
-        //buchungen.add(bs2);
+        buchungen.add(bs2);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Buchungsverwaltung {
     }
 
     public static  String BuchungsEintrag(BuchungsSatz bs){
-        return MessageFormat.format("{0} {1}", bs.getPosition(), formattedDoubleString(bs.getWert()));
+        return MessageFormat.format("{0}",  formattedDoubleString(bs.gesamtWert()));
     }
 
     public static String formattedDoubleString(double wert) {

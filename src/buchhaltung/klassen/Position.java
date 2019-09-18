@@ -7,6 +7,11 @@ public class Position  {
 
     private final LocalDate datum;
     private final int rechnungsNr;
+
+    public double getGesamtpreisNetto() {
+        return gesamtpreisNetto;
+    }
+
     private final double gesamtpreisNetto;
     private final String artikelBezeichnung;
 
