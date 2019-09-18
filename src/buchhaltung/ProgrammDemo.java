@@ -24,7 +24,7 @@ public class ProgrammDemo {
 		BelegStapel belege = new BelegStapel();
 		
 		System.out.println();
-		Beleg b1= belege.belege.get(0);
+		Rechnung b1= belege.belege.get(0);
 		/*_6330.buchen(b1.getGesamtpreisNetto(), b1,"GesamtPreisNetto");
 		_1400.buchen(b1.getVorsteuer(), b1,"Vorsteuer");
 		_1800.buchen(- b1.getEndpreisBrutto(), b1,"EndPreisBrutto");
@@ -34,12 +34,12 @@ public class ProgrammDemo {
 
 
 
-		Beleg b2=belege.belege.get(1);
+		/*Rechnung b2=belege.belege.get(1);
 		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
 		_6815.buchen(b2.getGesamtpreisNetto(), b2,"GesamtPreisNetto");
 		_1400.buchen(b2.getVorsteuer(), b2,"Vorsteuer");
 		_1800.buchen(- b2.getEndpreisBrutto(), b2,"EndPreisBrutto");
-		System.out.println(_6815.toString());
+		System.out.println(_6815.toString());*/
 	}
 
 }

@@ -6,8 +6,9 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class Beleg {
+public class Rechnung {
 
+	private int rechnungsNr;
 	private String artikelBezeichnung;
 	private int artikelMenge;
 	private double artikelPreis;
@@ -47,7 +48,7 @@ public class Beleg {
 		endpreisBrutto = getGesamtpreisNetto() + getVorsteuer();
 	}
 
-	public Beleg(LocalDate datum, String artikelBezeichnung, int artikelMenge, double artikelPreis) {
+	public Rechnung(LocalDate datum, int rechnungsNr, String artikelBezeichnung, int artikelMenge, double artikelPreis) {
 		this.datum = datum;
 	    this.artikelBezeichnung = artikelBezeichnung;
 		this.artikelMenge = artikelMenge;
@@ -55,6 +56,7 @@ public class Beleg {
 		setGesamtpreisNetto();
 		setVorsteuer();
 		setEndpreisBrutto();
+		this.rechnungsNr = rechnungsNr;
 		System.out.println(toString());
 	}
 	@Override

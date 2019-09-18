@@ -12,8 +12,8 @@ public class Konto {
 	private double endbestand;
 	private List<BuchungsSatz> buchungen = new ArrayList<BuchungsSatz>();
 
-	public void buchen(double wert, Beleg beleg, String position, Konto gegenKontoId) {
-			BuchungsSatz bs= new BuchungsSatz(wert, beleg, position, gegenKontoId);
+	public void buchen(double wert, Rechnung rechnung, String position, Konto gegenKontoId) {
+			BuchungsSatz bs= new BuchungsSatz(wert, rechnung, position, gegenKontoId);
 			buchungen.add(bs);
 	}
 
