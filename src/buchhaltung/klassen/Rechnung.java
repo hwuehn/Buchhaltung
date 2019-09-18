@@ -9,6 +9,11 @@ import java.util.Calendar;
 public class Rechnung {
 
 	private int rechnungsNr;
+
+	public String getArtikelBezeichnung() {
+		return artikelBezeichnung;
+	}
+
 	private String artikelBezeichnung;
 	private int artikelMenge;
 	private double artikelPreis;

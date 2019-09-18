@@ -1,4 +1,6 @@
-package buchhaltung.klassen;
+package buchhaltung.testdata;
+
+import buchhaltung.klassen.Rechnung;
 
 import java.time.LocalDate;
 import java.util.*;

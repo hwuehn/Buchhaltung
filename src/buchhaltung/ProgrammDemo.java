@@ -1,9 +1,12 @@
 package buchhaltung;
 
 
-import buchhaltung.klassen.BelegStapel;
+import buchhaltung.testdata.BelegStapel;
 import buchhaltung.klassen.Konto;
 import buchhaltung.klassen.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ProgrammDemo {
 
@@ -25,12 +28,16 @@ public class ProgrammDemo {
 		
 		System.out.println();
 		Rechnung b1= belege.belege.get(0);
+
+		Position p1= new Position( b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
+
+		_1400.buchenMitGegenKonto(Arrays.asList(p1), _1800);
 		/*_6330.buchen(b1.getGesamtpreisNetto(), b1,"GesamtPreisNetto");
 		_1400.buchen(b1.getVorsteuer(), b1,"Vorsteuer");
 		_1800.buchen(- b1.getEndpreisBrutto(), b1,"EndPreisBrutto");
 		*/
 
-		_6330.buchen(b1.getGesamtpreisNetto(), b1, "GesamtPreisNetto", _1800);
+		//_6330.buchen(b1.getGesamtpreisNetto(), b1, "GesamtPreisNetto", _1800);
 
 
 

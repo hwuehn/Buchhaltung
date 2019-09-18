@@ -10,16 +10,16 @@ public class Konto {
 	private int kontoId;
 	private double anfangsbestand;
 	private double endbestand;
-	private List<BuchungsSatz> buchungen = new ArrayList<BuchungsSatz>();
+	private List<BuchungsSatz> buchungen = new ArrayList<>();
 
-	public void buchen(double wert, Rechnung rechnung, String position, Konto gegenKontoId) {
-			BuchungsSatz bs= new BuchungsSatz(wert, rechnung, position, gegenKontoId);
-			buchungen.add(bs);
-	}
 
-	public void gegenKontoBuchung() {
 
-	}
+	public void buchenMitGegenKonto(List<Position> positions,Konto gegenKonto) {
+		BuchungsSatz bs1 = new BuchungsSatz(this,  positions, gegenKonto,Seite.SOLL);
+		BuchungsSatz bs2 = new BuchungsSatz(gegenKonto,  positions, this,Seite.HABEN);
+
+
+		}
 
 
 	public int getKontoId() {

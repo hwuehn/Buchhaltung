@@ -16,15 +16,11 @@ public class BuchungsSatz {
         this.gegenKontoID = gegenKontoID;
     }*/
 
-    public BuchungsSatz(Konto kontoID, Rechnung rechnungsNr, double betrag, Konto gegenKontoID) {
+    public BuchungsSatz(Konto konto, List<Position> positions, Konto gegenKonto) {
 
     }
 
-    public void buchenMitGegenKonto(List<Rechnung> belege) {
-        Rechnung b1 = belege.get(0);
-        BuchungsSatz bs = new BuchungsSatz(Konto kontoID, Rechnung rechnungsNr, double betrag, Konto gegenKontoID) {
 
-        }
         //public void buchen(double wert, Rechnung rechnung, String position, Konto gegenKontoId) {
         //    BuchungsSatz bs= new BuchungsSatz(wert, rechnung, position, gegenKontoId);
         //    buchungen.add(bs);
@@ -36,7 +32,7 @@ public class BuchungsSatz {
 		_1800.buchen(- b1.getEndpreisBrutto(), b1,"EndPreisBrutto");
 		*/
 
-    }
+
 
     public double getWert() {
         return wert;
