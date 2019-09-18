@@ -16,7 +16,7 @@ public class BuchungsSatz {
         this.gegenKontoID = gegenKontoID;
     }*/
 
-    public BuchungsSatz(Konto konto, List<Position> positions, Konto gegenKonto) {
+    public BuchungsSatz(Buchungsverwaltung konto, List<Position> positions, Seite seite) {
 
     }
 
