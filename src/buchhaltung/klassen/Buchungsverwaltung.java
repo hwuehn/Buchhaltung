@@ -4,7 +4,9 @@ import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class Buchungsverwaltung {
 
@@ -15,8 +17,10 @@ public class Buchungsverwaltung {
     }
 
     public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
-        BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL);
-        BuchungsSatz bs2 = new BuchungsSatz(gegenKonto, positions, Seite.HABEN);
+        int max = buchungen.stream().map(b -> b.getBuchungsid()).mapToInt(i -> i).max().orElse(0);
+        System.out.println(max);
+        BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL,max +1);
+        BuchungsSatz bs2 = new BuchungsSatz(gegenKonto, positions, Seite.HABEN,max +1);
         buchungen.add(bs1);
         buchungen.add(bs2);
     }

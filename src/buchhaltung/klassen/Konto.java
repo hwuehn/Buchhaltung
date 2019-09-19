@@ -2,6 +2,10 @@ package buchhaltung.klassen;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.stream.Stream;
 
 public class Konto {
 
@@ -43,8 +47,33 @@ public class Konto {
 		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", kontoId, kontoBezeichnung, anfangsbestand);
 	}
 
-	public String ausgabeKontoBuchungen(Buchungsverwaltung buchungen, Konto kontoId) {
-		buchungen.getBuchungen(Konto kontoId);
+	public static String ausgabeKontoBuchungen(List<BuchungsSatz> buchungen, Konto konto) {
+		Stream<BuchungsSatz> buchungsSaetze = buchungen.stream().filter(b -> isSameKonto(b.getKonto(),konto) );
+		String diesesKonto = "K: " + konto.getKontoId() + "    " + konto.anfangsbestand;
+		String gegenKonten = buchungsSaetze.reduce("", gegenKontoEintrag(buchungen), String::concat);
+		return diesesKonto+ "\n" + gegenKonten;
+	}
+
+	private static BiFunction<String, BuchungsSatz, String> gegenKontoEintrag(List<BuchungsSatz> buchungen) {
+		return (acc, b1) -> {
+			BuchungsSatz b2 = getBuchungsZwilling(buchungen, b1).get();
+			return acc + b2.getKonto().getKontoId() + "   " + b1.gesamtWert() + "\n";
+		};
+	}
+
+	private static Optional<BuchungsSatz> getBuchungsZwilling(List<BuchungsSatz> buchungen, BuchungsSatz b) {
+		return buchungen.stream().filter(bb -> isSameBuchungsId(b, bb) && isNotSameKonto(b, bb)).findFirst();
+	}
+
+	private static boolean isSameBuchungsId(BuchungsSatz b, BuchungsSatz bb) {
+		return bb.getBuchungsid() == b.getBuchungsid();
+	}
+
+	private static boolean isNotSameKonto(BuchungsSatz b, BuchungsSatz bb) {
+		return b.getKonto().getKontoId() != bb.getKonto().getKontoId();
+	}
+	private static boolean isSameKonto(Konto k, Konto k2) {
+		return k.getKontoId() == k2.getKontoId();
 	}
 
 	@Override

@@ -68,6 +68,9 @@ public class ProgrammDemo {
         System.out.println(bv.toString());
 
         System.out.println(_1400.toString());
+        System.out.println(Konto.ausgabeKontoBuchungen(bv.getBuchungen(),_1800));
+        System.out.println(Konto.ausgabeKontoBuchungen(bv.getBuchungen(),_6815));
+
         System.out.println(_1800.toString());
         System.out.println(_6330.toString());
         System.out.println(_6815.toString());

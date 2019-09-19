@@ -10,15 +10,24 @@ public class BuchungsSatz {
     private final Konto konto;
     private final List<Position> positions;
     private final Seite seite;
+    private final int buchungsid;
 
+    public Konto getKonto() {
+        return konto;
+    }
     public List<Position> getPositions() {
         return positions;
     }
 
-    public BuchungsSatz(Konto konto, List<Position> positions, Seite seite) {
+    public int getBuchungsid() {
+        return buchungsid;
+    }
+
+    public BuchungsSatz(Konto konto, List<Position> positions, Seite seite, int buchungsid) {
         this.konto = konto;
         this.positions = positions;
         this.seite = seite;
+        this.buchungsid = buchungsid;
     }
 
     public Double gesamtWert(){
