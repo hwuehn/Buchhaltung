@@ -1,8 +1,6 @@
 package buchhaltung.klassen;
 
-import buchhaltung.testdata.BelegStapel;
 import org.junit.Test;
-
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -17,6 +15,7 @@ public class BuchungsverwaltungTest {
 
         Rechnung b1= new Rechnung(LocalDate.of(2019,01,01),1,"Reinigungsmittel", 2, 1.50);
         Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
+
         Buchungsverwaltung bv = new Buchungsverwaltung();
         bv.buchen(_6330, _1800, Arrays.asList(p1));
 

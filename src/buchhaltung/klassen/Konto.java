@@ -2,7 +2,6 @@ package buchhaltung.klassen;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.util.*;
 
 public class Konto {
 
@@ -37,11 +36,15 @@ public class Konto {
 		setAnfangsbestand();
 		System.out.print("Kontoerstellung:");
 		System.out.println(ausgabe());
-		
+
 	}
 
 	public String ausgabe() {
 		return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", kontoId, kontoBezeichnung, anfangsbestand);
+	}
+
+	public String ausgabeKontoBuchungen(Buchungsverwaltung buchungen, Konto kontoId) {
+		buchungen.getBuchungen(Konto kontoId);
 	}
 
 	@Override
@@ -60,8 +63,6 @@ public class Konto {
 		return newFormat.format(wert);
 	}
 }
-
-
 
 
 
