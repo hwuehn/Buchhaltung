@@ -5,19 +5,7 @@ Feature: Datumsausgabe formatieren:
          Der Programmierer erstellt eine Methode localDateFormat() und erstellt ein Patern nach
          folgendem Schema: "dd.mm.yyyy"
 
-Feature: Ausgabe formatieren:
-         Die Kontenausgabe soll vom Programmierer nach folgendem Schema umgesetzt werden:
-         Bspw.:
-			              Konto xxxx
-	     Soll                  |                  Haben
-	     ----------------------------------------------
-         AB                0,00|
-         <Gegenkonto>     50,50|
-         <Gegenkonto>    100,00|
-         <Gegenkonto>      5.50|
-
-         Die Kontenstruktur ist statisch bereits durch die toString() Methode der Klasse Konto vorhanden.
-         Integriert werden muss eine dynamische Einbindung der Buchungsvorgänge (Gegenkonto und GesamtbetragNetto).
+Feature: Ausgabe formatieren
 
 Feature: Der Programmierer erstellt eine Methode bestandskontenAbschließen().
          In die Bestandskonten wird ein Schlussbestand sowie jeweils ein Saldo für die Soll- u. Haben-Seite integriert.
@@ -26,18 +14,6 @@ Feature: Der Programmierer erstellt die Methode kontenPruefen(), welche die beid
 Feature: Der Programmierer erstellt eine Methode erfolgskontenAbschließen().
          In die Erfolgskonten wird ein Schlussbestand (Gegenkonto GuV) sowie jeweils ein Saldo für die Soll- u.
          Haben-Seite integriert.
-Feature: Konten visuell abschließen:
-         Der Programmierer schließt die Konten visuell ab indem ein Buchhalternasen-String den whitespace ausfüllt.
-	     Bspw.:
-		       	         Konto xxxx
-	     Soll                  |                  Haben
-	     ----------------------------------------------
-         AB                0,00| SB              156,00
-         <Gegenkonto>     50,50|         /-------------
-         <Gegenkonto>    100,00|        /
-         <Gegenkonto>      5.50|-------/
-         ----------------------------------------------
-                         156,00|                 156,00
 
 Feature: Monatsabschluss:
          Der Programmierer erstellt eine Methode monatsabschluss(), welche die kontenabschließenden Methoden aufruft.
