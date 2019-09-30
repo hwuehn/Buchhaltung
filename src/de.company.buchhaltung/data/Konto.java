@@ -1,4 +1,4 @@
-package buchhaltung.klassen;
+package data;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;

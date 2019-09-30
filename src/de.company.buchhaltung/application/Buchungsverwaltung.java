@@ -1,12 +1,14 @@
-package buchhaltung.klassen;
+package application;
 
-import java.awt.*;
+import data.BuchungsSatz;
+import data.Konto;
+import data.Position;
+import data.Seite;
+
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 
 public class Buchungsverwaltung {
 

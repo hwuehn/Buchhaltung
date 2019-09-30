@@ -1,4 +1,4 @@
-package buchhaltung.klassen;
+package data;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,13 +1,13 @@
-package buchhaltung;
+package application;
 
 
-import buchhaltung.testdata.BelegStapel;
-import buchhaltung.klassen.Konto;
-import buchhaltung.klassen.*;
+import data.Konto;
+import data.Position;
+import data.Rechnung;
+import testdata.BelegStapel;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
 
 public class ProgrammDemo {
 

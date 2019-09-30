@@ -1,4 +1,4 @@
-package buchhaltung.klassen;
+package data;
 
 public enum Seite {
 

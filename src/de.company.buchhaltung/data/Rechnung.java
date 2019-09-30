@@ -1,4 +1,4 @@
-package buchhaltung.klassen;
+package data;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
