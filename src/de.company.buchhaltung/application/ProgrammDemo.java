@@ -4,15 +4,23 @@ package application;
 import data.Konto;
 import data.Position;
 import data.Rechnung;
+import presentation.InputForm;
 import testdata.BelegStapel;
 
 
+import javax.swing.*;
 import java.util.Arrays;
 
 public class ProgrammDemo {
 
 	public static void main(String[] args) {
-				
+        InputForm form = new InputForm();
+        JFrame frame = new JFrame("InputFrame");
+        frame.setContentPane(new InputForm().getPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
 		KontoVerwaltung kv= new KontoVerwaltung();
 		Konto _1400 = kv.createKonto("VSt", 1400);
 		Konto _1800 = kv.createKonto("Bank", 1800);
