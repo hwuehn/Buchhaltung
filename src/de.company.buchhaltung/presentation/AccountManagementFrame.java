@@ -5,8 +5,11 @@ import application.KontoVerwaltung;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class AccountManagementFrame {
     private JPanel accountManagementFrame;
@@ -17,10 +20,9 @@ public class AccountManagementFrame {
 
     private JComboBox accListComboBox;
     private JButton kontoErstellenIndividuellButton;
-    private JButton kontenplanHinzufügenButton;
-    private JComboBox accPlanComboBox;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
+    private JButton kontenLadenButton;
 
     public AccountManagementFrame() {
         kontoErstellenIndividuellButton.addActionListener(new ActionListener() {
@@ -44,6 +46,28 @@ public class AccountManagementFrame {
 
             }
         });
+        kontenLadenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                fillAccListComboBox();
+            }
+        });
+    }
+
+    public void fillAccListComboBox() {
+        Scanner s = null;
+        try {
+            File file = new File("saveData.txt");
+            s = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        while (s.hasNext()) {
+            String string = s.nextLine();
+            if (string != null) {
+                accListComboBox.addItem(string.concat(" "));
+            }
+        }
     }
 
     public JPanel getAccountManagementFrame() {

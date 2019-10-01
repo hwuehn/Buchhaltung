@@ -35,7 +35,7 @@ public class KontoVerwaltung{
         }
 
         for (Map.Entry<Integer, Konto> entry : getKonten().entrySet()) {
-            out.println(entry.getKey() + "\t" + entry.getValue());
+            out.println(entry.getKey() + " " + entry.getValue());
         }
         out.close();
     }
