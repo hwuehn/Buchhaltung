@@ -27,7 +27,7 @@ public class InputForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Kontoverwaltung");
-                frame.setContentPane(new AccountManagementFrame().getAccountManagementFrame());
+                frame.setContentPane(new presentation.AccountManagementFrame().getAccountManagementFrame());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

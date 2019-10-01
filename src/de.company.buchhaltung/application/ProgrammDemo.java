@@ -7,7 +7,6 @@ import data.Rechnung;
 import presentation.InputForm;
 import testdata.BelegStapel;
 
-
 import javax.swing.*;
 import java.util.Arrays;
 
@@ -21,7 +20,7 @@ public class ProgrammDemo {
         frame.pack();
         frame.setVisible(true);
 
-		KontoVerwaltung kv= new KontoVerwaltung();
+		application.KontoVerwaltung kv= new application.KontoVerwaltung();
 		Konto _1400 = kv.createKonto("VSt", 1400);
 		Konto _1800 = kv.createKonto("Bank", 1800);
 		Konto _6330 = kv.createKonto("Reinigung", 6330);
