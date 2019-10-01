@@ -7,12 +7,15 @@ import java.util.Hashtable;
 
 public class KontoVerwaltung{
 
-	private Dictionary<Integer, Konto> konten = new Hashtable<Integer,Konto>();
+    private Dictionary<Integer, Konto> konten = new Hashtable<Integer,Konto>();
+
+    public Dictionary<Integer, Konto> getKonten() {
+        return konten;
+    }
 
     public Konto createKonto(String bezeichnung, int id) {
         Konto k = new Konto(bezeichnung, id);
         konten.put(id, k);
         return k;
-	}
-
+    }
 }
