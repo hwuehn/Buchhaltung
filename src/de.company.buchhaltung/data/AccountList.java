@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class AccountList {
 
-    public void readAccList() {
-        Scanner s = null;
-        Map<String,String> accList = new HashMap<>();
+    private Map<String,String> accList = new HashMap<>();
+    private Scanner s = null;
 
+    public void readAccListAndPutPairsInHashMap() {
         try {
             File file = new File("saveData.txt");
             s = new Scanner(file);
@@ -24,10 +24,10 @@ public class AccountList {
             String value = s.next();
             if (key != null) {
                 accList.put(key, value);
-                System.out.println(accList);
-                //accListComboBox.addItem(string.concat(" "));
             }
         }
     }
+
+
 
 }

@@ -20,7 +20,7 @@ public class ProgrammDemo {
 		application.KontoVerwaltung kv= new application.KontoVerwaltung();
 
         AccountList accList = new AccountList();
-        accList.readAccList();
+        accList.readAccListAndPutPairsInHashMap();
 
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );
