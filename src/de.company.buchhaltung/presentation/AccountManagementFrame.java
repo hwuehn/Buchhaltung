@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class AccountManagementFrame {
     private JPanel accountManagementFrame;
@@ -33,7 +34,11 @@ public class AccountManagementFrame {
                 }
                 String bezeichnung = accDescriptionTextField.getText();
                 int id = Integer.parseInt(accNumberTextField.getText());
-                kv.createKonto(id, bezeichnung);
+                try {
+                    kv.createKonto(id, bezeichnung);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
                 String idString = String.valueOf(id) + " " + bezeichnung;
                 accListComboBox.addItem(idString);
 

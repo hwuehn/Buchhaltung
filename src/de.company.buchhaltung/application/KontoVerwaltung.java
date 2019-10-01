@@ -2,10 +2,7 @@ package application;
 
 import data.Konto;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Map;
@@ -13,8 +10,8 @@ import java.util.Map;
 public class KontoVerwaltung{
 
     private Dictionary<Integer, Konto> konten = new Hashtable<Integer, Konto>();
-
-    PrintWriter out = new PrintWriter(new FileOutputStream(new File ("saveData.txt"),true));
+    private File file;
+    PrintWriter out = new PrintWriter(new FileOutputStream(file = new File ("saveData.txt"),true));
 
     public KontoVerwaltung() throws FileNotFoundException {
     }
@@ -23,7 +20,7 @@ public class KontoVerwaltung{
         return (Map<Integer, Konto>) konten;
     }
 
-    public Konto createKonto(int id, String bezeichnung) {
+    public Konto createKonto(int id, String bezeichnung) throws IOException {
         Konto k = new Konto(id, bezeichnung);
         konten.put(id, k);
 
@@ -32,7 +29,11 @@ public class KontoVerwaltung{
         return k;
     }
 
-    private void save() {
+    private void save() throws IOException {
+        if(!file.exists()){
+            file.createNewFile();
+        }
+
         for (Map.Entry<Integer, Konto> entry : getKonten().entrySet()) {
             out.println(entry.getKey() + "\t" + entry.getValue());
         }
