@@ -1,6 +1,7 @@
 package application;
 
 
+import data.AccountList;
 import presentation.InputForm;
 
 import javax.swing.*;
@@ -17,6 +18,10 @@ public class ProgrammDemo {
         frame.setVisible(true);
 
 		application.KontoVerwaltung kv= new application.KontoVerwaltung();
+
+        AccountList accList = new AccountList();
+        accList.readAccList();
+
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );
 //		Konto _6330 = kv.createKonto(6330, "Reinigung" );
