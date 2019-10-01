@@ -1,9 +1,26 @@
-﻿things to add...
+﻿Buchhaltung
+-
+Eine einfache Software zum Buchen von Geschäftsvorfällen in einer ansprechenden und nicht überladenen Oberfläche.
+***
 
-Feature: Datumsausgabe formatieren:
-         Das Datum auf dem Beleg wird derzeit im Format "yyyy-mm-dd" angezeigt.
-         Der Programmierer erstellt eine Methode localDateFormat() und erstellt ein Patern nach
-         folgendem Schema: "dd.mm.yyyy"
+Feature: bereits erstellte Konten aus Datei einlesen und in comboBox der Kontenverwaltung abbilden 
+
+Feature: in comboBox ausgewähltes Konto in entsprechendes Textfeld der Buchungsschablone einfügen
+
+Feature: in comboBox ausgewähltes Gegenkonto in entsprechendes Textfeld der Buchungsschablone einfügen
+
+Feature: Information "Soll" dem Attribut Gegenkonto hinzufügen
+
+Feature: Information "Haben" dem Attribut Konto hinzufügen
+
+Feature: Datumseingabe in Buchungsschablone formatieren (von "yyyy-mm-dd" nach "dd.mm.yyyy")
+
+Feature: Oberflächenbreite anpassen, dass der der "Buchen"-Button im Sichtfeld ist
+
+Feature: durch benutzen des "Buchen"-Buttons die Buchungszeile in Buchungsliste übernehmen 
+
+*********
+weitere Bearbeitung folgt...
 
 Feature: Ausgabe formatieren
 

@@ -20,7 +20,7 @@ public class InputForm {
     private JTextField textField3;
     private JTextField textField4;
     private JTextField textField5;
-    private JTextField textField6;
+    private JTextField rowAccTextField;
 
     public InputForm() {
         kontoButton2.addActionListener(new ActionListener() {
