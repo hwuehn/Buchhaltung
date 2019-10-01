@@ -12,18 +12,22 @@ public class AccountList {
     private Scanner s = null;
 
     public void readAccListFromFileAndPutPairsInHashMap() {
-        try {
-            File file = new File("saveData.txt");
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        scanFile();
         while (s.hasNext()) {
             int key = Integer.parseInt(s.next());
             String value = s.next();
             if (key != 0) {
                 accList.put(key, value);
             }
+        }
+    }
+
+    private void scanFile() {
+        try {
+            File file = new File("saveData.txt");
+            s = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -36,4 +40,23 @@ public class AccountList {
         return sortedByKey;
     }
 
+    public void overwriteAccListWithSortedHashMap() {
+
+    }
+
+//    public void fillAccListInComboBoxWithSortedHashMap() {
+//
+//        try {
+//            File file = new File("saveData.txt");
+//            s = new Scanner(file);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        while (s.hasNext()) {
+//            String string = s.nextLine();
+//            if (string != null) {
+//                accListComboBox.addItem(string.concat(" "));
+//            }
+//        }
+//    }
 }

@@ -49,26 +49,26 @@ public class AccountManagementFrame {
         kontenLadenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                fillAccListComboBox();
+                //fillAccListComboBox();
             }
         });
     }
 
-    public void fillAccListComboBox() {
-        Scanner s = null;
-        try {
-            File file = new File("saveData.txt");
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        while (s.hasNext()) {
-            String string = s.nextLine();
-            if (string != null) {
-                accListComboBox.addItem(string.concat(" "));
-            }
-        }
-    }
+//    public void fillAccListComboBox() {
+//        Scanner s = null;
+//        try {
+//            File file = new File("saveData.txt");
+//            s = new Scanner(file);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        while (s.hasNext()) {
+//            String string = s.nextLine();
+//            if (string != null) {
+//                accListComboBox.addItem(string.concat(" "));
+//            }
+//        }
+//    }
 
     public JPanel getAccountManagementFrame() {
         return accountManagementFrame;
