@@ -4,12 +4,17 @@ import javax.swing.*;
 
 public class AccountManagementFrame {
     private JPanel accountManagementFrame;
-    private JComboBox comboBox1;
+    private JComboBox AccListComboBox;
     private JButton kontoErstellenIndividuellButton;
-    private JButton kontoHinzufügenButton;
-    private JComboBox comboBox2;
+    private JButton kontenplanHinzufügenButton;
+    private JComboBox accPlanComboBox;
+    private JTextField accNumberTextField;
+    private JTextField accDescriptionTextField;
 
     public JPanel getAccountManagementFrame() {
         return accountManagementFrame;
     }
-}
+
+
+    }
+
