@@ -2,3 +2,4 @@
 out/
 Buchhaltung.iml
 test/
+src/de.company.buchhaltung/data/saveData.txt

@@ -25,24 +25,16 @@ public class Konto {
 	private double anfangsbestand;
 	private double endbestand;
 
-
 	public void setAnfangsbestand() {
 		anfangsbestand = 0.00;
 	}
-
-	public String getKontoArt() {
-		return ((kontoId > 4999) && (kontoId < 8000)) ? "Aufwandskonto" : "Erfolgskonto";
-	}
 	
-
-	
-	public Konto(String kontoBezeichnung, int kontoId) {
+	public Konto(int kontoId, String kontoBezeichnung ) {
 		this.kontoBezeichnung = kontoBezeichnung;
 		this.kontoId = kontoId;
 		setAnfangsbestand();
 		System.out.print("Kontoerstellung:");
 		System.out.println(ausgabe());
-
 	}
 
 	public String ausgabe() {
@@ -80,13 +72,14 @@ public class Konto {
 
 	@Override
     public String toString() {
-        return MessageFormat.format("Soll       {0} {1}        Haben \n" +
-                        "----------------------------------------- \n" +
-                        "AB             {2} |                      \n" +
-                        "                    |                     \n" +
-				        "                    |                     \n" +
-						"                    |                     \n" ,
-                kontoId, kontoBezeichnung, formattedDoubleString(anfangsbestand));
+        return kontoBezeichnung;
+//		return MessageFormat.format("Soll       {0} {1}        Haben \n" +
+//                        "----------------------------------------- \n" +
+//                        "AB             {2} |                      \n" +
+//                        "                    |                     \n" +
+//				        "                    |                     \n" +
+//						"                    |                     \n" ,
+//                kontoId, kontoBezeichnung, formattedDoubleString(anfangsbestand));
     }
 
     public static String formattedDoubleString(double wert) {

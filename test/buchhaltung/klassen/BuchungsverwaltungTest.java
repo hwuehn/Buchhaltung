@@ -11,8 +11,8 @@ public class BuchungsverwaltungTest {
 
     @Test
     public void buchen() {
-        data.Konto _1800 = new data.Konto("Bank", 1800);
-        data.Konto _6330 = new data.Konto("Reinigung", 6330);
+        data.Konto _1800 = new data.Konto(1800,"Bank");
+        data.Konto _6330 = new data.Konto(6330, "Reinigung");
 
         data.Rechnung b1= new data.Rechnung(LocalDate.of(2019,01,01),1,"Reinigungsmittel", 2, 1.50);
         data.Position p1= new data.Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
