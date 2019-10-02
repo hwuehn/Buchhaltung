@@ -1,7 +1,6 @@
 package data;
 
 import application.KontoVerwaltung;
-import presentation.AccountManagementFrame;
 
 import java.io.*;
 import java.util.HashMap;
@@ -14,11 +13,27 @@ import static java.util.stream.Collectors.toMap;
 public class AccountList {
 
     private Map<Integer, String> accList = new HashMap<Integer, String>();
-    private Scanner s = null;
-    private File file;
-    PrintWriter out = new PrintWriter(new FileOutputStream(file = new File ("saveData.txt"),true));
+    private Map<Object, Object> sortedByKey;
+    private static Scanner s = null;
+    private static File file;
+    static PrintWriter out;
+    static {
+        try {
+            out = new PrintWriter(new FileOutputStream(file = new File ("saveData.txt"),true));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-    public AccountList() throws FileNotFoundException {
+    public AccountList() throws IOException {
+        createFile();
+        readFile();
+        fillAccList();
+        sortAccList();
+    }
+
+    public static Scanner getS() {
+        return s;
     }
 
     public void createFile() throws IOException {
@@ -32,30 +47,22 @@ public class AccountList {
     public void fillAccList() {
         storeAcc(s, accList);
     }
-    public void sortAccList() {
-        Map<Object, Object> sortedByKey = accList.entrySet()
+    public Map<Object, Object> sortAccList() {
+        sortedByKey = accList.entrySet()
                 .stream()
                 .sorted(Map.Entry.<Integer, String>comparingByKey())
                 .collect(toMap(Map.Entry::getKey,
                         Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+        return sortedByKey;
     }
-    public void writeFile() throws IOException {
+    public static void writeFile() throws IOException {
         for (Map.Entry<Integer, Konto> entry : KontoVerwaltung.getKonten().entrySet()) {
             out.println(entry.getKey() + " " + entry.getValue());
         }
         out.close();
     }
-    public void fillAccListComboBox() {
-        scanFile();
-        while (s.hasNext()) {
-            String string = s.nextLine();
-            if (string != null) {
-                AccountManagementFrame.getAccListComboBox().addItem(string.concat(" "));
-            }
-        }
-    }
 
-    private void scanFile() {
+    public static void scanFile() {
         try {
             File file = new File("saveData.txt");
             s = new Scanner(file);
@@ -72,12 +79,4 @@ public class AccountList {
             }
         }
     }
-
-
-
-
-
-
-
-
 }

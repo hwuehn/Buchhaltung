@@ -1,8 +1,10 @@
 package application;
 
+import data.AccountList;
 import data.Konto;
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Map;
@@ -22,9 +24,7 @@ public class KontoVerwaltung{
     public Konto createKonto(int id, String bezeichnung) throws IOException {
         Konto k = new Konto(id, bezeichnung);
         konten.put(id, k);
-
-        // saves the Hashtable in File
-        save();
+        AccountList.writeFile();
         return k;
     }
 
