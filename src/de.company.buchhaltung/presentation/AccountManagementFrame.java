@@ -5,20 +5,18 @@ import application.KontoVerwaltung;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class AccountManagementFrame {
+
     private JPanel accountManagementFrame;
 
-    public JComboBox getAccListComboBox() {
+    public static JComboBox getAccListComboBox() {
         return accListComboBox;
     }
 
-    private JComboBox accListComboBox;
+    private static JComboBox accListComboBox;
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;

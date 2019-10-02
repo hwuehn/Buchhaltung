@@ -1,9 +1,13 @@
 package data;
 
 import application.KontoVerwaltung;
+import presentation.AccountManagementFrame;
 
 import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -41,6 +45,15 @@ public class AccountList {
         }
         out.close();
     }
+    public void fillAccListComboBox() {
+        scanFile();
+        while (s.hasNext()) {
+            String string = s.nextLine();
+            if (string != null) {
+                AccountManagementFrame.getAccListComboBox().addItem(string.concat(" "));
+            }
+        }
+    }
 
     private void scanFile() {
         try {
@@ -60,25 +73,11 @@ public class AccountList {
         }
     }
 
-   
 
 
 
 
 
-//    public void fillAccListInComboBoxWithSortedHashMap() {
-//
-//        try {
-//            File file = new File("saveData.txt");
-//            s = new Scanner(file);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        while (s.hasNext()) {
-//            String string = s.nextLine();
-//            if (string != null) {
-//                accListComboBox.addItem(string.concat(" "));
-//            }
-//        }
-//    }
+
+
 }
