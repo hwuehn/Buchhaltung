@@ -8,12 +8,11 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Map;
 
-import static data.AccountList.writeFile;
+
 
 public class KontoVerwaltung{
 
     private static Dictionary<Integer, Konto> konten = new Hashtable<Integer, Konto>();
-
 
     public KontoVerwaltung() throws FileNotFoundException {
     }
@@ -25,7 +24,6 @@ public class KontoVerwaltung{
     public Konto createKonto(int id, String bezeichnung) throws IOException {
         Konto k = new Konto(id, bezeichnung);
         konten.put(id, k);
-        writeFile();
         return k;
     }
 

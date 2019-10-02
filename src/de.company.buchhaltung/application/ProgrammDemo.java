@@ -1,7 +1,6 @@
 package application;
 
 
-import data.AccountList;
 import presentation.InputForm;
 
 import javax.swing.*;
@@ -10,16 +9,20 @@ import java.io.IOException;
 public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException {
-        InputForm form = new InputForm();
+
+
+	    InputForm form = new InputForm();
         JFrame frame = new JFrame("InputFrame");
         frame.setContentPane(new InputForm().getPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
 
-		application.KontoVerwaltung kv= new application.KontoVerwaltung();
 
-        AccountList accList = new AccountList();
+
+
+
+
 
 
 

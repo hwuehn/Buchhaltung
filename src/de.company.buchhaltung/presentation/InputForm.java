@@ -3,6 +3,7 @@ package presentation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class InputForm {
 
@@ -27,7 +28,11 @@ public class InputForm {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new JFrame("Kontoverwaltung");
-                frame.setContentPane(new presentation.AccountManagementFrame().getAccountManagementFrame());
+                try {
+                    frame.setContentPane(new AccountManagementFrame().getAccountManagementFrame());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
