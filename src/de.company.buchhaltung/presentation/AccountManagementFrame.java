@@ -43,7 +43,7 @@ public class AccountManagementFrame {
         kontenLadenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                fillAccListComboBox();
+                loadAccListComboBox();
             }
         });
     }
@@ -52,8 +52,7 @@ public class AccountManagementFrame {
         return accountManagementFrame;
     }
 
-    public void fillAccListComboBox() {
-        AccountList.scanFile();
+    public void loadAccListComboBox() {
         while (AccountList.getS().hasNext()) {
             String string = AccountList.getS().nextLine();
             if (string != null) {
