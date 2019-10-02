@@ -6,17 +6,14 @@ import data.AccountList;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AccountManagementFrame {
 
     private JPanel accountManagementFrame;
-
-    public void setAccListComboBox(JComboBox accListComboBox) {
-        this.accListComboBox = accListComboBox;
-    }
-
     public JComboBox accListComboBox;
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
@@ -40,18 +37,20 @@ public class AccountManagementFrame {
 
                 al.getAccList().put(id, bezeichnung);
                 System.out.println(al.getAccList());
+                al.sortAccList();
+                System.out.println(al.sortAccList());
 
                 try {
-                    al.writeFile();
+                    al.writeSortedFile();
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
 
                 String idString = String.valueOf(id) + " " + bezeichnung;
                 accListComboBox.addItem(idString);
-
             }
         });
+
         kontenLadenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -85,7 +84,5 @@ public class AccountManagementFrame {
     public JPanel getAccountManagementFrame() {
         return accountManagementFrame;
     }
-
-
 }
 

@@ -33,13 +33,9 @@ public class InputForm {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setLocation(600,200);
-
-
-
             }
         });
     }

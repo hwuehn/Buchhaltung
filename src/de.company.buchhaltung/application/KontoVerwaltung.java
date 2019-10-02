@@ -9,7 +9,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 
-
+// out of order
 public class KontoVerwaltung{
 
     private static Dictionary<Integer, Konto> konten = new Hashtable<Integer, Konto>();
@@ -26,6 +26,4 @@ public class KontoVerwaltung{
         konten.put(id, k);
         return k;
     }
-
-
 }

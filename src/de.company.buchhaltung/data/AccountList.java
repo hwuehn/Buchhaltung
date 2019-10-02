@@ -10,8 +10,6 @@ import static java.util.stream.Collectors.toMap;
 
 public class AccountList {
 
-
-
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Map<Object, Object> sortedByKey;
 
@@ -20,7 +18,6 @@ public class AccountList {
 
     public void readFile() throws IOException {
         File file= new File("saveData.txt");
-
         Scanner s = new Scanner(file);
 
         if(!file.exists()){
@@ -42,6 +39,16 @@ public class AccountList {
         //PrintWriter outAppend = new PrintWriter(new FileOutputStream(file,true));
         PrintWriter outOverwrite = new PrintWriter(file);
         for (Map.Entry<Integer, String> entry : accList.entrySet()) {
+            outOverwrite.println(entry.getKey() + " " + entry.getValue());
+        }
+        outOverwrite.close();
+    }
+
+    public void writeSortedFile() throws FileNotFoundException {
+        File file= new File("saveData.txt");
+        //PrintWriter outAppend = new PrintWriter(new FileOutputStream(file,true));
+        PrintWriter outOverwrite = new PrintWriter(file);
+        for (Map.Entry<Object, Object> entry : sortAccList().entrySet()) {
             outOverwrite.println(entry.getKey() + " " + entry.getValue());
         }
         outOverwrite.close();

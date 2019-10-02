@@ -9,22 +9,12 @@ import java.io.IOException;
 public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException {
-
-
 	    InputForm form = new InputForm();
         JFrame frame = new JFrame("InputFrame");
         frame.setContentPane(new InputForm().getPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
-
-
-
-
-
-
-
 
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );
