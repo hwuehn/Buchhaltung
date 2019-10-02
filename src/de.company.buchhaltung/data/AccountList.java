@@ -19,9 +19,8 @@ public class AccountList {
     }
 
     public void readFile() throws IOException {
-        File file;
-        file = new File("saveData.txt");
-        PrintWriter outAppend = new PrintWriter(new FileOutputStream(file,true));
+        File file= new File("saveData.txt");
+
         Scanner s = new Scanner(file);
 
         if(!file.exists()){
@@ -36,13 +35,16 @@ public class AccountList {
                 accList.put(key, value);
             }
         }
+    }
 
+    public void writeFile() throws FileNotFoundException {
+        File file= new File("saveData.txt");
+        //PrintWriter outAppend = new PrintWriter(new FileOutputStream(file,true));
+        PrintWriter outOverwrite = new PrintWriter(file);
         for (Map.Entry<Integer, String> entry : accList.entrySet()) {
-            outAppend.println(entry.getKey() + " " + entry.getValue());
+            outOverwrite.println(entry.getKey() + " " + entry.getValue());
         }
-        outAppend.close();
-
-
+        outOverwrite.close();
     }
 
     public Map<Object, Object> sortAccList() {

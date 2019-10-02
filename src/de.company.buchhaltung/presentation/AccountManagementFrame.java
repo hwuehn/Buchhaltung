@@ -41,6 +41,12 @@ public class AccountManagementFrame {
                 al.getAccList().put(id, bezeichnung);
                 System.out.println(al.getAccList());
 
+                try {
+                    al.writeFile();
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+
                 String idString = String.valueOf(id) + " " + bezeichnung;
                 accListComboBox.addItem(idString);
 
