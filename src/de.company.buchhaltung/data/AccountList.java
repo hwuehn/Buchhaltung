@@ -15,7 +15,14 @@ public class AccountList {
         scanFile();
         storePairs(s, accList);
     }
-
+    private void scanFile() {
+        try {
+            File file = new File("saveData.txt");
+            s = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     private static void storePairs(Scanner s, Map<Integer, String> accList) {
         while (s.hasNext()) {
             int key = Integer.parseInt(s.next());
@@ -25,16 +32,9 @@ public class AccountList {
             }
         }
     }
-    private void scanFile() {
-        try {
-            File file = new File("saveData.txt");
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public Map<Object, Object> sortAccPairsInHashMap() {
+
+    public Map<Object, Object> sortAccPairsInHashMapAndStoreInLinkedHashMap() {
         Map<Object, Object> sortedByKey = accList.entrySet()
                 .stream()
                 .sorted(Map.Entry.<Integer, String>comparingByKey())
