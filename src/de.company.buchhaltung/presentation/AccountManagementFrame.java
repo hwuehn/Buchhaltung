@@ -53,6 +53,7 @@ public class AccountManagementFrame {
     }
 
     public void loadAccListComboBox() {
+        AccountList.readFile();
         while (AccountList.getS().hasNext()) {
             String string = AccountList.getS().nextLine();
             if (string != null) {

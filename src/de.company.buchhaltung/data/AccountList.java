@@ -14,7 +14,7 @@ public class AccountList {
 
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Map<Object, Object> sortedByKey;
-    private static Scanner s = null;
+    private static Scanner s;
     private static File file;
     static PrintWriter out;
     static {
@@ -41,7 +41,7 @@ public class AccountList {
             file.createNewFile();
         }
     }
-    public void readFile() {
+    public static void readFile() {
         scanFile();
     }
     public void fillAccList() {
