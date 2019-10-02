@@ -9,14 +9,13 @@ import java.util.Map;
 
 public class KontoVerwaltung{
 
-    private Dictionary<Integer, Konto> konten = new Hashtable<Integer, Konto>();
-    private File file;
-    PrintWriter out = new PrintWriter(new FileOutputStream(file = new File ("saveData.txt"),true));
+    private static Dictionary<Integer, Konto> konten = new Hashtable<Integer, Konto>();
+
 
     public KontoVerwaltung() throws FileNotFoundException {
     }
 
-    public Map<Integer, Konto> getKonten() {
+    public static Map<Integer, Konto> getKonten() {
         return (Map<Integer, Konto>) konten;
     }
 
@@ -29,14 +28,5 @@ public class KontoVerwaltung{
         return k;
     }
 
-    private void save() throws IOException {
-        if(!file.exists()){
-            file.createNewFile();
-        }
 
-        for (Map.Entry<Integer, Konto> entry : getKonten().entrySet()) {
-            out.println(entry.getKey() + " " + entry.getValue());
-        }
-        out.close();
-    }
 }

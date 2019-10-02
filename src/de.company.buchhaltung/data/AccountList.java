@@ -1,7 +1,8 @@
 package data;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import application.KontoVerwaltung;
+
+import java.io.*;
 import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
@@ -10,11 +11,37 @@ public class AccountList {
 
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Scanner s = null;
+    private File file;
+    PrintWriter out = new PrintWriter(new FileOutputStream(file = new File ("saveData.txt"),true));
 
-    public void readAccListFromFileAndPutPairsInHashMap() {
-        scanFile();
-        storePairs(s, accList);
+    public AccountList() throws FileNotFoundException {
     }
+
+    public void createFile() throws IOException {
+        if(!file.exists()){
+            file.createNewFile();
+        }
+    }
+    public void readFile() {
+        scanFile();
+    }
+    public void fillAccList() {
+        storeAcc(s, accList);
+    }
+    public void sortAccList() {
+        Map<Object, Object> sortedByKey = accList.entrySet()
+                .stream()
+                .sorted(Map.Entry.<Integer, String>comparingByKey())
+                .collect(toMap(Map.Entry::getKey,
+                        Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+    }
+    public void writeFile() throws IOException {
+        for (Map.Entry<Integer, Konto> entry : KontoVerwaltung.getKonten().entrySet()) {
+            out.println(entry.getKey() + " " + entry.getValue());
+        }
+        out.close();
+    }
+
     private void scanFile() {
         try {
             File file = new File("saveData.txt");
@@ -23,7 +50,7 @@ public class AccountList {
             e.printStackTrace();
         }
     }
-    private static void storePairs(Scanner s, Map<Integer, String> accList) {
+    private static void storeAcc(Scanner s, Map<Integer, String> accList) {
         while (s.hasNext()) {
             int key = Integer.parseInt(s.next());
             String value = s.next();
@@ -33,19 +60,11 @@ public class AccountList {
         }
     }
 
+   
 
-    public Map<Object, Object> sortAccPairsInHashMapAndStoreInLinkedHashMap() {
-        Map<Object, Object> sortedByKey = accList.entrySet()
-                .stream()
-                .sorted(Map.Entry.<Integer, String>comparingByKey())
-                .collect(toMap(Map.Entry::getKey,
-                        Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-        return sortedByKey;
-    }
 
-    public void overwriteAccListWithSortedHashMap() {
 
-    }
+
 
 //    public void fillAccListInComboBoxWithSortedHashMap() {
 //
