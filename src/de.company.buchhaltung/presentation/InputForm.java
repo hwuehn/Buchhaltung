@@ -35,7 +35,7 @@ public class InputForm {
                 }
                 frame.pack();
                 frame.setVisible(true);
-                frame.setLocation(600,200);
+                frame.setLocation(750,400);
             }
         });
     }
