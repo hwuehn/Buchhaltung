@@ -62,12 +62,6 @@ public class AccountManagementFrame {
                 file = new File("saveData.txt");
                 Scanner s = null;
 
-                try {
-                    s = new Scanner(file);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-
                 if(!file.exists()){
                     try {
                         file.createNewFile();
@@ -75,6 +69,14 @@ public class AccountManagementFrame {
                         e.printStackTrace();
                     }
                 }
+
+                try {
+                    s = new Scanner(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
                 // counter == 0 means no listloading twice
                 if (counter == 0) {
                     while (s.hasNext()) {
@@ -94,18 +96,18 @@ public class AccountManagementFrame {
         file = new File("saveData.txt");
         Scanner s = null;
 
-        try {
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         if(!file.exists()){
             try {
                 file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        try {
+            s = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
         while (s.hasNext()) {
