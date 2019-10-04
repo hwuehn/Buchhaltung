@@ -3,8 +3,6 @@
 Eine einfache Software zum Buchen von Geschäftsvorfällen in einer ansprechenden und nicht überladenen Oberfläche.
 ***
 
-Feature: Kontenverwaltung: erstelltes Konto sortiert in comboBox einfügen
-
 Feature: in comboBox ausgewähltes Konto in entsprechendes Textfeld der Buchungsschablone einfügen
 
 Feature: in comboBox ausgewähltes Gegenkonto in entsprechendes Textfeld der Buchungsschablone einfügen
