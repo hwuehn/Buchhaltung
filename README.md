@@ -7,10 +7,6 @@ Feature: in comboBox ausgewähltes Konto in entsprechendes Textfeld der Buchungs
 
 Feature: in comboBox ausgewähltes Gegenkonto in entsprechendes Textfeld der Buchungsschablone einfügen
 
-Feature: Information "Soll" dem Attribut Gegenkonto hinzufügen
-
-Feature: Information "Haben" dem Attribut Konto hinzufügen
-
 Feature: Datumseingabe in Buchungsschablone formatieren (von "yyyy-mm-dd" nach "dd.mm.yyyy")
 
 Feature: Oberflächenbreite anpassen, dass der der "Buchen"-Button im Sichtfeld ist
