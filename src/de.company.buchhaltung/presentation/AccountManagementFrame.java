@@ -19,7 +19,6 @@ public class AccountManagementFrame {
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
     private JButton kontenLadenButton;
-    private KontoVerwaltung kv = new KontoVerwaltung();
     private AccountList al = new AccountList();
     int counter = 0;
 
@@ -29,12 +28,15 @@ public class AccountManagementFrame {
             public void actionPerformed(ActionEvent e) {
                 String bezeichnung = accDescriptionTextField.getText();
                 int id = Integer.parseInt(accNumberTextField.getText());
+                String idString = String.valueOf(id) + " " + bezeichnung;
+                accListComboBox.addItem(idString);
 
                 try {
                     al.readFile();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
+
 
                 al.getAccList().put(id, bezeichnung);
                 System.out.println(al.getAccList());
@@ -47,8 +49,9 @@ public class AccountManagementFrame {
                     ex.printStackTrace();
                 }
 
-                String idString = String.valueOf(id) + " " + bezeichnung;
-                accListComboBox.addItem(idString);
+                accListComboBox.removeAllItems();
+                accListLoading();
+
             }
         });
 
@@ -72,7 +75,7 @@ public class AccountManagementFrame {
                         e.printStackTrace();
                     }
                 }
-                // counter == 0 means no list loading twice
+                // counter == 0 means no listloading twice
                 if (counter == 0) {
                     while (s.hasNext()) {
                         String string = s.nextLine();
@@ -84,6 +87,34 @@ public class AccountManagementFrame {
                 }
             }
         });
+    }
+
+    public void accListLoading() {
+        File file;
+        file = new File("saveData.txt");
+        Scanner s = null;
+
+        try {
+            s = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if(!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        while (s.hasNext()) {
+            String string = s.nextLine();
+            if (string != null) {
+                accListComboBox.addItem(string.concat(" "));
+            }
+        }
+
     }
 
     public JPanel getAccountManagementFrame() {
