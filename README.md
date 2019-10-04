@@ -9,8 +9,6 @@ Feature: in comboBox ausgewähltes Gegenkonto in entsprechendes Textfeld der Buc
 
 Feature: Datumseingabe in Buchungsschablone formatieren (von "yyyy-mm-dd" nach "dd.mm.yyyy")
 
-Feature: Oberflächenbreite anpassen, dass der der "Buchen"-Button im Sichtfeld ist
-
 Feature: durch benutzen des "Buchen"-Buttons die Buchungszeile in Buchungsliste übernehmen 
 
 *********
