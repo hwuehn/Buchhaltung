@@ -35,7 +35,21 @@ public class InputForm {
                 }
                 frame.pack();
                 frame.setVisible(true);
-                frame.setLocation(750,400);
+                frame.setLocation(600,370);
+            }
+        });
+        gegenkontoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFrame frame = new JFrame("Kontoverwaltung");
+                try {
+                    frame.setContentPane(new AccountManagementFrame().getAccountManagementFrame());
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                frame.pack();
+                frame.setVisible(true);
+                frame.setLocation(600,370);
             }
         });
     }

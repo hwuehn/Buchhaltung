@@ -15,7 +15,7 @@ public class ProgrammDemo {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setLocation(450, 300);
+        frame.setLocation(300, 250);
 
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );
