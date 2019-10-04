@@ -21,6 +21,7 @@ public class AccountManagementFrame {
     private JButton kontenLadenButton;
     private KontoVerwaltung kv = new KontoVerwaltung();
     private AccountList al = new AccountList();
+    int counter = 0;
 
     public AccountManagementFrame() throws IOException {
         kontoErstellenIndividuellButton.addActionListener(new ActionListener() {
@@ -56,8 +57,8 @@ public class AccountManagementFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 File file;
                 file = new File("saveData.txt");
-
                 Scanner s = null;
+
                 try {
                     s = new Scanner(file);
                 } catch (FileNotFoundException e) {
@@ -71,10 +72,14 @@ public class AccountManagementFrame {
                         e.printStackTrace();
                     }
                 }
-                while (s.hasNext()) {
-                    String string = s.nextLine();
-                    if (string != null) {
-                        accListComboBox.addItem(string.concat(" "));
+                // counter == 0 means no list loading twice
+                if (counter == 0) {
+                    while (s.hasNext()) {
+                        String string = s.nextLine();
+                        if (string != null) {
+                            accListComboBox.addItem(string.concat(" "));
+                            counter++;
+                        }
                     }
                 }
             }
