@@ -1,6 +1,8 @@
 package presentation;
 
 import data.AccountList;
+import data.AutocompleteJComboBox;
+import data.StringSearchable;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -126,5 +128,11 @@ public class InputForm {
                 accListComboBoxHaben.addItem(string.concat(" "));
             }
         }
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        //StringSearchable searchable = new StringSearchable(myWords);
+        //AutocompleteJComboBox combo = new AutocompleteJComboBox(searchable);
     }
 }

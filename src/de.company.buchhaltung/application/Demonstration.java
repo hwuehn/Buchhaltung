@@ -14,13 +14,13 @@ public class Demonstration{
             @Override
             public void run() {
                 List<String> myWords = new ArrayList<String>();
-                myWords.add("bike");
-                myWords.add("car");
-                myWords.add("cap");
-                myWords.add("cape");
-                myWords.add("canadian");
-                myWords.add("caprecious");
-                myWords.add("catepult");
+                myWords.add("700");
+                myWords.add("1400");
+                myWords.add("1600");
+                myWords.add("1800");
+                myWords.add("4000");
+                myWords.add("5000");
+                myWords.add("6330");
 
                 StringSearchable searchable = new StringSearchable(myWords);
                 AutocompleteJComboBox combo = new AutocompleteJComboBox(searchable);
