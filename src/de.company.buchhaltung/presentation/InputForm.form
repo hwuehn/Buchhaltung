@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="presentation.InputForm">
-  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="3" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="5" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="59" y="55" width="1163" height="426"/>
+      <xy x="59" y="55" width="1200" height="426"/>
     </constraints>
     <properties>
       <autoscrolls value="true"/>
@@ -11,10 +11,10 @@
       <enabled value="true"/>
       <font name="Cascadia Code" size="14" style="0"/>
       <inheritsPopupMenu value="false"/>
-      <maximumSize width="950" height="350"/>
-      <minimumSize width="950" height="350"/>
+      <maximumSize width="1200" height="350"/>
+      <minimumSize width="1200" height="350"/>
       <opaque value="false"/>
-      <preferredSize width="950" height="350"/>
+      <preferredSize width="1200" height="350"/>
       <requestFocusEnabled value="false"/>
     </properties>
     <border type="none"/>
@@ -66,26 +66,6 @@
           <text value="Buchen"/>
         </properties>
       </component>
-      <component id="9621" class="javax.swing.JButton" binding="kontoButton2">
-        <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="100" height="-1"/>
-            <preferred-size width="100" height="-1"/>
-            <maximum-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Konto"/>
-        </properties>
-      </component>
-      <component id="2004c" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Bearbeitungs Nr."/>
-        </properties>
-      </component>
       <component id="5fdca" class="javax.swing.JTextField" binding="textField5" default-binding="true">
         <constraints>
           <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -93,16 +73,6 @@
           </grid>
         </constraints>
         <properties/>
-      </component>
-      <component id="b1274" class="javax.swing.JTextField" binding="textField1" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <editable value="false"/>
-        </properties>
       </component>
       <component id="baeda" class="javax.swing.JTextField" binding="textField2" default-binding="true">
         <constraints>
@@ -112,35 +82,9 @@
         </constraints>
         <properties/>
       </component>
-      <component id="ec21" class="javax.swing.JTextField" binding="textField3" default-binding="true">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="113dc" class="javax.swing.JButton" binding="gegenkontoButton" default-binding="true">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Gegenkonto"/>
-        </properties>
-      </component>
       <component id="ae688" class="javax.swing.JTextField" binding="textField4" default-binding="true">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="d39b0" class="javax.swing.JTextField" binding="rowAccTextField">
-        <constraints>
-          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="100" height="-1"/>
           </grid>
         </constraints>
@@ -178,6 +122,89 @@
         <border type="none"/>
         <children/>
       </scrollpane>
+      <component id="d1376" class="javax.swing.JComboBox" binding="accListComboBoxHaben">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-6688097"/>
+          <editable value="true"/>
+          <model/>
+        </properties>
+      </component>
+      <component id="31a72" class="javax.swing.JComboBox" binding="accListComboBoxSoll">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-6688097"/>
+          <editable value="true"/>
+          <model/>
+        </properties>
+      </component>
+      <component id="fec07" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Soll"/>
+        </properties>
+      </component>
+      <component id="2004c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bearbeitungs Nr."/>
+        </properties>
+      </component>
+      <component id="9007" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Haben"/>
+        </properties>
+      </component>
+      <component id="7d57" class="javax.swing.JButton" binding="kontoErstellenIndividuellButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="14" style="0"/>
+          <text value="Konto erstellen"/>
+        </properties>
+      </component>
+      <component id="d6fdf" class="javax.swing.JTextField" binding="accNumberTextField">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font size="14" style="2"/>
+          <text value="Bspw. 1400"/>
+        </properties>
+      </component>
+      <component id="f9832" class="javax.swing.JTextField" binding="accDescriptionTextField">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font size="14" style="2"/>
+          <text value="Vorsteuer"/>
+        </properties>
+      </component>
+      <component id="a1c8a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Kontoverwaltung:"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

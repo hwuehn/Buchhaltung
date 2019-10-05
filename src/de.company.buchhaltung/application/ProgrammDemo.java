@@ -10,12 +10,15 @@ public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException {
 	    InputForm form = new InputForm();
-        JFrame frame = new JFrame("InputFrame");
-        frame.setContentPane(new InputForm().getPanel());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocation(300, 250);
+        JFrame inputFrame = new JFrame("InputFrame");
+        inputFrame.setContentPane(form.getPanel());
+        inputFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        inputFrame.pack();
+        inputFrame.setVisible(true);
+        inputFrame.setLocation(300, 250);
+
+        form.accListLoadingAll();
+
 
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );
