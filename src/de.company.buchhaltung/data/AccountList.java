@@ -1,14 +1,11 @@
 package data;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
 
-public class AccountList {
+public class AccountList  {
 
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Map<Object, Object> sortedByKey;

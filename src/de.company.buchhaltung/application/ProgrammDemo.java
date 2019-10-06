@@ -5,10 +5,11 @@ import presentation.InputForm;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class ProgrammDemo {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException {
 	    InputForm form = new InputForm();
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(form.getPanel());
@@ -18,7 +19,6 @@ public class ProgrammDemo {
         inputFrame.setLocation(300, 250);
 
         form.accListLoadingAll();
-
 
 //		Konto _1400 = kv.createKonto(1400,"VSt" );
 //		Konto _1800 = kv.createKonto(1800,"Bank" );

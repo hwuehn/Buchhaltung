@@ -122,23 +122,22 @@
         <border type="none"/>
         <children/>
       </scrollpane>
-      <component id="d1376" class="javax.swing.JComboBox" binding="accListComboBoxHaben">
+      <component id="8a39b" class="javax.swing.JComboBox" binding="accListComboBoxHaben">
         <constraints>
           <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6688097"/>
-          <editable value="true"/>
-          <model/>
+          <background color="-1"/>
         </properties>
       </component>
-      <component id="31a72" class="javax.swing.JComboBox" binding="accListComboBoxSoll" custom-create="true">
+      <component id="cd8cc" class="javax.swing.JComboBox" binding="accListComboBoxSoll">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-6688097"/>
-          <editable value="true"/>
+          <background color="-1"/>
+          <editable value="false"/>
+          <maximumRowCount value="50"/>
           <model/>
         </properties>
       </component>
