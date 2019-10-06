@@ -8,8 +8,6 @@ import java.util.Calendar;
 
 public class Rechnung {
 
-
-
 	private String artikelBezeichnung;
 	private int artikelMenge;
 	private double artikelPreis;

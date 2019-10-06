@@ -1,7 +1,5 @@
 package data;
 
-import de.company.buchhaltung.data.BuchungsSatz;
-
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.List;

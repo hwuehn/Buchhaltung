@@ -1,7 +1,10 @@
 package application;
 
 
+import data.Position;
+import data.Rechnung;
 import presentation.InputForm;
+import testdata.BelegStapel;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -20,18 +23,11 @@ public class ProgrammDemo {
 
         form.accListLoadingAll();
 
-//		Konto _1400 = kv.createKonto(1400,"VSt" );
-//		Konto _1800 = kv.createKonto(1800,"Bank" );
-//		Konto _6330 = kv.createKonto(6330, "Reinigung" );
-//		Konto _6815 = kv.createKonto(6815, "Buerobedarf" );
-//
-//		System.out.println();
-//
-//		BelegStapel belege = new BelegStapel();
-//
-//		System.out.println();
-//		Rechnung b1= belege.belege.get(0);
-//		Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
+    	BelegStapel belege = new BelegStapel();
+        System.out.println();
+
+		Rechnung b1= belege.belege.get(0);
+		Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
 //        Buchungsverwaltung bv = new Buchungsverwaltung();
 //		bv.buchen(_6330, _1800, Arrays.asList(p1));
 //		bv.buchen(_1400, _1800, Arrays.asList(p1));

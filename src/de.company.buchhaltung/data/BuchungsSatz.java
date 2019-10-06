@@ -1,4 +1,4 @@
-package de.company.buchhaltung.data;
+package data;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
