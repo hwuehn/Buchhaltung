@@ -12,16 +12,15 @@ public class InputForm {
 
     private JPanel panel;
     private JLabel amount;
-    private JButton gegenkontoButton;
     private JLabel documentNumber;
     private JLabel date;
-    private JTextField descriptionTextField;
+    private JTextField colDescriptionTextField;
     private JLabel description;
     private JButton buchenButton;
-    private JTextField textField2;
+    private JTextField colAmountTextField;
     private JTextField toAccTextField;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField colDocumentNumberTextField;
+    private JTextField colDateTextField;
 
     private AccountList al = new AccountList();
     private JComboBox accListComboBoxSoll;

@@ -14,10 +14,6 @@ public class Buchungsverwaltung {
 
     private List<BuchungsSatz> buchungen=new ArrayList<>();
 
-    public List<BuchungsSatz> getBuchungen() {
-        return buchungen;
-    }
-
     public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
         int max = buchungen.stream().map(b -> b.getBuchungsid()).mapToInt(i -> i).max().orElse(0);
         System.out.println(max);
@@ -37,5 +33,4 @@ public class Buchungsverwaltung {
         DecimalFormat newFormat = new DecimalFormat("#.00");
         return newFormat.format(wert);
     }
-
 }
