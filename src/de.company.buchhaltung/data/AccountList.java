@@ -7,6 +7,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class AccountList  {
 
+    //maps to store normal and sorted ACCOUNTING LISTS for comboBoxes
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Map<Object, Object> sortedByKey;
 

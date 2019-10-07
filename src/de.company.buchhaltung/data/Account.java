@@ -1,13 +1,6 @@
 package data;
 
-import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.BiFunction;
-import java.util.stream.Stream;
 
 public class Account {
 
@@ -19,7 +12,7 @@ public class Account {
         initialBalance = 0.00;
     }
 
-    public Account(int accountID, String accountName ) {
+    public Account(int accountID, String accountName) {
         this.accountName = accountName;
         this.accountID = accountID;
         setInitialBalance();
@@ -30,6 +23,7 @@ public class Account {
     public String output() {
         return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", accountID, accountName, initialBalance);
     }
+}
 //
 //    public static String ausgabeKontoBuchungen(List<BuchungsSatz> buchungen, Konto konto) {
 //        Stream<BuchungsSatz> buchungsSaetze = buchungen.stream().filter(b -> isSameKonto(b.getKonto(),konto) );

@@ -1,5 +1,7 @@
 package presentation;
 
+import data.Account;
+import data.AccountAdministration;
 import data.AccountList;
 
 import javax.swing.*;
@@ -28,14 +30,18 @@ public class InputForm {
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
-    
+
     public InputForm() throws IOException {
         kontoErstellenIndividuellButton.addActionListener(e -> {
-            String bezeichnung = accDescriptionTextField.getText();
-            int id = Integer.parseInt(accNumberTextField.getText());
-            String idString = String.valueOf(id) + " " + bezeichnung;
+            String description = accDescriptionTextField.getText();
+            int iD = Integer.parseInt(accNumberTextField.getText());
+            String idString = String.valueOf(iD) + " " + description;
             accListComboBoxSoll.addItem(idString);
             accListComboBoxHaben.addItem(idString);
+
+            //creating account
+            Account accountIdentifier = new Account(iD, description);
+            AccountAdministration.setAccounts(accountIdentifier);
 
             try {
                 al.readFile();
@@ -43,8 +49,8 @@ public class InputForm {
                 ex.printStackTrace();
             }
 
-            al.getAccList().put(id, bezeichnung);
-            System.out.println(al.getAccList());
+            //show only sorted account list
+            al.getAccList().put(iD, description);
             al.sortAccList();
             System.out.println(al.sortAccList());
 
