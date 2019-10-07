@@ -28,11 +28,7 @@ public class InputForm {
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
-
-
-
-
-
+    
     public InputForm() throws IOException {
         kontoErstellenIndividuellButton.addActionListener(e -> {
             String bezeichnung = accDescriptionTextField.getText();
