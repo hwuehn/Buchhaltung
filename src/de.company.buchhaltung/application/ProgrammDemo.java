@@ -1,4 +1,4 @@
-package application;
+package de.company.buchhaltung.application;
 
 
 import data.Position;
