@@ -1,15 +1,10 @@
 package de.company.accounting.presentation;
 
 import de.company.accounting.data.AccountAdministration;
-import de.company.accounting.data.AccountList;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.List;
 
 public class InputForm {
 
@@ -25,117 +20,42 @@ public class InputForm {
     private JTextField colDocumentNumberTextField;
     private JTextField colDateTextField;
 
-    private AccountList al = new AccountList();
+    private AccountAdministration al ;
     private JComboBox accListComboBoxSoll;
     private JComboBox accListComboBoxHaben;
+
+
+
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
 
-    public InputForm() {
+    public InputForm(AccountAdministration accountAdministration) {
+        al= accountAdministration;
+        kontoErstellenIndividuellButton.addActionListener(this::createAccount);
 
-        kontoErstellenIndividuellButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    fillCombos();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
     }
 
-    private void fillCombos() throws IOException {
+    private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = Integer.parseInt(accNumberTextField.getText());
-        String idString = String.valueOf(iD) + " " + description;
-        accListComboBoxSoll.addItem(idString);
-        accListComboBoxHaben.addItem(idString);
+        al.load();
+        al.append(iD, description);
+        fillCombos(al.getSortedList());
+    }
 
-        //creating account
-        AccountAdministration.createAccount(iD, description);
-
-        try {
-            al.readFile();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        //show only sorted account list
-        al.getAccList().put(iD, description); //normal list
-        al.sortAccList(); //new sorted list
-        System.out.println(al.sortAccList());
-
-        try {
-            al.writeSortedFile();
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
-
+    public void fillCombos(List<String> list)  {
         accListComboBoxSoll.removeAllItems();
         accListComboBoxHaben.removeAllItems();
-        accListLoading();
-    }
-
-    public void accListLoading() {
-        File file;
-        file = new File("saveData.txt");
-        Scanner s = null;
-
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        while (s.hasNext()) {
-            String string = s.nextLine();
-            if (string != null) {
-                accListComboBoxSoll.addItem(string.concat(" "));
-                accListComboBoxHaben.addItem(string.concat(" "));
-            }
+        for (String accName : list) {
+            accListComboBoxSoll.addItem(accName);
+            accListComboBoxHaben.addItem(accName);
         }
     }
-
 
     public JPanel getPanel() {
         return panel;
     }
 
-    public void accListLoadingAll() {
-        File file;
-        file = new File("saveData.txt");
-        Scanner s = null;
 
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            s = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        while (s.hasNext()) {
-            String string = s.nextLine();
-            if (string != null) {
-                accListComboBoxSoll.addItem(string.concat(" "));
-                accListComboBoxHaben.addItem(string.concat(" "));
-            }
-        }
-    }
 }

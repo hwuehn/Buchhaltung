@@ -1,6 +1,7 @@
 package de.company.accounting.application;
 
 
+import de.company.accounting.data.AccountAdministration;
 import de.company.accounting.data.Position;
 import de.company.accounting.data.Rechnung;
 import de.company.accounting.presentation.InputForm;
@@ -13,7 +14,8 @@ import java.lang.reflect.InvocationTargetException;
 public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException {
-	    InputForm form = new InputForm();
+        AccountAdministration accountAdministration = new AccountAdministration();
+        InputForm form = new InputForm(accountAdministration);
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(form.getPanel());
         inputFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,7 +23,8 @@ public class ProgrammDemo {
         inputFrame.setVisible(true);
         inputFrame.setLocation(300, 250);
 
-        form.accListLoadingAll();
+        accountAdministration.load();
+        form.fillCombos(accountAdministration.getSortedList());
      
     	BelegStapel belege = new BelegStapel();
         System.out.println();
