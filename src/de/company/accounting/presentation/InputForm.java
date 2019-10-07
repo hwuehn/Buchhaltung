@@ -1,7 +1,6 @@
 package de.company.accounting.presentation;
 
 import de.company.accounting.data.AccountAdministration;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
@@ -24,8 +23,6 @@ public class InputForm {
     private JComboBox accListComboBoxSoll;
     private JComboBox accListComboBoxHaben;
 
-
-
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
@@ -33,7 +30,6 @@ public class InputForm {
     public InputForm(AccountAdministration accountAdministration) {
         al= accountAdministration;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
-
     }
 
     private void createAccount(ActionEvent actionEvent)  {
@@ -56,6 +52,4 @@ public class InputForm {
     public JPanel getPanel() {
         return panel;
     }
-
-
 }

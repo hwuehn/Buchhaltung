@@ -2,7 +2,6 @@ package de.company.accounting.data;
 
 import java.io.*;
 import java.util.*;
-
 import static java.util.stream.Collectors.toMap;
 
 public class AccountAdministration {
@@ -41,8 +40,6 @@ public class AccountAdministration {
         outOverwrite.close();
     }
 
-
-
     public Map<Integer, String> sortAccList() {
         LinkedHashMap<Integer, String> sorted =
                 accList.entrySet()
@@ -71,7 +68,6 @@ public class AccountAdministration {
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-
     }
 
     public List<String> getSortedList() {

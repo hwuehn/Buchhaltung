@@ -1,8 +1,6 @@
 package de.company.accounting.testData;
 
-
 import de.company.accounting.data.Rechnung;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
