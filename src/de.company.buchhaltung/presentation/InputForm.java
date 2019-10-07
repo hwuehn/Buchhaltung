@@ -1,7 +1,6 @@
 package presentation;
 
 import data.Account;
-import data.AccountAdministration;
 import data.AccountList;
 
 import javax.swing.*;
@@ -40,8 +39,9 @@ public class InputForm {
             accListComboBoxHaben.addItem(idString);
 
             //creating account
-            Account accountIdentifier = new Account(iD, description);
-            AccountAdministration.setAccounts(accountIdentifier);
+
+            Account _iD = new Account(iD, description);
+            //AccountAdministration.setAccounts(accountIdentifier);
 
             try {
                 al.readFile();
