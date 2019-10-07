@@ -1,7 +1,7 @@
-package de.company.buchhaltung.testdata;
+package de.company.accounting.testData;
 
 
-import de.company.buchhaltung.data.Rechnung;
+import de.company.accounting.data.Rechnung;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

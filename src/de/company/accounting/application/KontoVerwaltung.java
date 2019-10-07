@@ -1,7 +1,7 @@
-package de.company.buchhaltung.application;
+package de.company.accounting.application;
 
 
-import de.company.buchhaltung.data.Konto;
+import de.company.accounting.data.Konto;
 
 import java.io.IOException;
 import java.util.Dictionary;

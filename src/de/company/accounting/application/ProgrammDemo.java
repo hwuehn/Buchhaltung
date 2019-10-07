@@ -1,10 +1,10 @@
-package de.company.buchhaltung.application;
+package de.company.accounting.application;
 
 
-import de.company.buchhaltung.data.Position;
-import de.company.buchhaltung.data.Rechnung;
-import de.company.buchhaltung.presentation.InputForm;
-import de.company.buchhaltung.testdata.BelegStapel;
+import de.company.accounting.data.Position;
+import de.company.accounting.data.Rechnung;
+import de.company.accounting.presentation.InputForm;
+import de.company.accounting.testData.BelegStapel;
 
 import javax.swing.*;
 import java.io.IOException;

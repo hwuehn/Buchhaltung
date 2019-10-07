@@ -1,9 +1,9 @@
-package de.company.buchhaltung.application;
+package de.company.accounting.application;
 
-import de.company.buchhaltung.data.BuchungsSatz;
-import de.company.buchhaltung.data.Konto;
-import de.company.buchhaltung.data.Position;
-import de.company.buchhaltung.data.Seite;
+import de.company.accounting.data.BuchungsSatz;
+import de.company.accounting.data.Konto;
+import de.company.accounting.data.Position;
+import de.company.accounting.data.Seite;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;

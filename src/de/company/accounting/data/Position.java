@@ -1,4 +1,4 @@
-package de.company.buchhaltung.data;
+package de.company.accounting.data;
 
 import java.time.LocalDate;
 import java.util.List;
