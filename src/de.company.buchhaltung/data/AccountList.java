@@ -1,4 +1,4 @@
-package data;
+package de.company.buchhaltung.data;
 
 import java.io.*;
 import java.util.*;
@@ -11,7 +11,7 @@ public class AccountList  {
     private Map<Integer, String> accList = new HashMap<Integer, String>();
     private Map<Object, Object> sortedByKey;
 
-    public AccountList() throws IOException {
+    public AccountList()  {
     }
 
     public void readFile() throws IOException {

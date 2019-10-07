@@ -1,4 +1,4 @@
-package data;
+package de.company.buchhaltung.data;
 
 public enum Seite {
 

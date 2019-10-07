@@ -1,4 +1,4 @@
-package data;
+package de.company.buchhaltung.data;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
@@ -7,15 +7,15 @@ import java.util.List;
 
 public class BuchungsSatz {
 
-    private final data.Konto konto;
-    private final List<data.Position> positions;
-    private final data.Seite seite;
+    private final Konto konto;
+    private final List<Position> positions;
+    private final Seite seite;
     private final int buchungsid;
 
-    public data.Konto getKonto() {
+    public Konto getKonto() {
         return konto;
     }
-    public List<data.Position> getPositions() {
+    public List<Position> getPositions() {
         return positions;
     }
 
@@ -23,7 +23,7 @@ public class BuchungsSatz {
         return buchungsid;
     }
 
-    public BuchungsSatz(data.Konto konto, List<data.Position> positions, data.Seite seite, int buchungsid) {
+    public BuchungsSatz(Konto konto, List<Position> positions, Seite seite, int buchungsid) {
         this.konto = konto;
         this.positions = positions;
         this.seite = seite;

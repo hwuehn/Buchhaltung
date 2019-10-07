@@ -1,12 +1,11 @@
-package application;
+package de.company.buchhaltung.application;
 
-import data.Konto;
 
-import java.io.FileNotFoundException;
+import de.company.buchhaltung.data.Konto;
+
 import java.io.IOException;
 import java.util.Dictionary;
 import java.util.Hashtable;
-import java.util.Map;
 
 
 // out of order

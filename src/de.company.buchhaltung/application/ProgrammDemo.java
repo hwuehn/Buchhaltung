@@ -1,10 +1,10 @@
 package de.company.buchhaltung.application;
 
 
-import data.Position;
-import data.Rechnung;
-import presentation.InputForm;
-import testdata.BelegStapel;
+import de.company.buchhaltung.data.Position;
+import de.company.buchhaltung.data.Rechnung;
+import de.company.buchhaltung.presentation.InputForm;
+import de.company.buchhaltung.testdata.BelegStapel;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -22,11 +22,11 @@ public class ProgrammDemo {
         inputFrame.setLocation(300, 250);
 
         form.accListLoadingAll();
-
+     
     	BelegStapel belege = new BelegStapel();
         System.out.println();
 
-		Rechnung b1= belege.belege.get(0);
+        Rechnung b1 = belege.belege.get(0);
 		Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
         Buchungsverwaltung bv = new Buchungsverwaltung();
 //		bv.buchen(_6330, _1800, Arrays.asList(p1));

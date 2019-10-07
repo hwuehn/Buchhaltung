@@ -1,9 +1,11 @@
-package testdata;
+package de.company.buchhaltung.testdata;
 
-import data.Rechnung;
+
+import de.company.buchhaltung.data.Rechnung;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BelegStapel {
 
