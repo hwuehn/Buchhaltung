@@ -1,5 +1,9 @@
 package de.company.accounting.data;
 
+import de.company.accounting.application.AccountAdministration;
+import de.company.accounting.presentation.InputForm;
+
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.List;
@@ -11,7 +15,29 @@ public class AccountingRecord {
     private Site site;
     private int bookingID;
 
-    public AccountingRecord(Account account, List<Position> positions, Site site, int bookingID) {
+    public boolean textEqualsAccount(JTextField textField) {
+        if (AccountAdministration.getAccList().containsKey(textField.getText()));
+        return true;
+    }
+
+    public void readFromTextField(JTextField textField) {
+        String text = textField.getText();
+        // accID
+        text = text.substring(0,4);
+
+        // vergleich mit accList
+        if (AccountAdministration.getAccList().containsKey(text)){
+            // texteingabe = account
+
+
+        };
+
+
+
+    }
+
+    public AccountingRecord(JTextField account, List<Position> positions, Site site, int bookingID) {
+        if (textEqualsAccount(account))
         this.account = account;
         this.positions = positions;
         this.site = site;
@@ -20,6 +46,10 @@ public class AccountingRecord {
 
     public Account getAccount() {
         return account;
+    }
+
+    public int getBookingID() {
+        return bookingID;
     }
 
     public Double gesamtWert(){

@@ -6,7 +6,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class AccountAdministration {
 
-    private Map<Integer, String> accList = new HashMap<Integer, String>();
+    private static Map<Integer, String> accList = new HashMap<Integer, String>();
 
     public AccountAdministration() {
     }
@@ -48,7 +48,7 @@ public class AccountAdministration {
         return sorted;
     }
 
-    public Map<Integer, String> getAccList() {
+    public static Map<Integer, String> getAccList() {
         return accList;
     }
 
