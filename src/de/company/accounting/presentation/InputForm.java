@@ -26,6 +26,9 @@ public class InputForm {
     private JButton kontoErstellenIndividuellButton;
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
+    public JTextField textField1;
+    public JButton filterButton;
+    public JTextField textField2;
 
     public InputForm(AccountAdministration accountAdministration) {
         al= accountAdministration;

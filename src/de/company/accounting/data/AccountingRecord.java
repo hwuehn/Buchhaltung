@@ -1,7 +1,6 @@
 package de.company.accounting.data;
 
 import de.company.accounting.application.AccountAdministration;
-import de.company.accounting.presentation.InputForm;
 
 import javax.swing.*;
 import java.text.DecimalFormat;
@@ -38,7 +37,7 @@ public class AccountingRecord {
 
     public AccountingRecord(JTextField account, List<Position> positions, Site site, int bookingID) {
         if (textEqualsAccount(account))
-        this.account = account;
+        //this.account = account;
         this.positions = positions;
         this.site = site;
         this.bookingID = bookingID;
