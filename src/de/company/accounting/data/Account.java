@@ -11,6 +11,14 @@ public class Account {
     private String accountName;
     private double initialBalance;
 
+    public Integer getAccountID() {
+        return accountID;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
     public void setInitialBalance() {
         initialBalance = 0.00;
     }
