@@ -8,11 +8,11 @@ import java.util.List;
 public class InputForm {
 
     private JPanel panel;
-    private JLabel amount;
-    private JLabel documentNumber;
-    private JLabel date;
+    private JTextField amount;
+    private JTextField documentNumber;
+    private JTextField date;
     private JTextField colDescriptionTextField;
-    private JLabel description;
+    private JTextField description;
     private JButton buchenButton;
     private JTextField colAmountTextField;
     private JTextField toAccTextField;
