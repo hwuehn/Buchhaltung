@@ -1,6 +1,6 @@
 package de.company.accounting.data;
 
-public enum Seite {
+public enum Site {
 
     SOLL, HABEN
 }

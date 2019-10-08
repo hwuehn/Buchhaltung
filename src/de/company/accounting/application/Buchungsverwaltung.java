@@ -1,10 +1,9 @@
 package de.company.accounting.application;
 
-import de.company.accounting.data.BuchungsSatz;
-import de.company.accounting.data.Konto;
-import de.company.accounting.data.Position;
-import de.company.accounting.data.Seite;
+import data.AccountingRecord;
+import de.company.accounting.data.*;
 
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -12,21 +11,43 @@ import java.util.List;
 
 public class Buchungsverwaltung {
 
-    private List<BuchungsSatz> buchungen=new ArrayList<>();
+    //old
+//    private List<BuchungsSatz> buchungen=new ArrayList<>();
+    //new
+    private List<data.AccountingRecord> bookings = new ArrayList<>();
 
-    public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
-        int max = buchungen.stream().map(b -> b.getBuchungsid()).mapToInt(i -> i).max().orElse(0);
+    //new
+    public void bookings(JTextField toAccTextField, JTextField accTextField, List<Position> positions) {
+        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
         System.out.println(max);
-        BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL,max +1);
-        BuchungsSatz bs2 = new BuchungsSatz(gegenKonto, positions, Seite.HABEN,max +1);
-        buchungen.add(bs1);
-        buchungen.add(bs2);
+        data.AccountingRecord ar1 = new AccountingRecord(toAccTextField, positions, Site.SOLL, max + 1);
+        data.AccountingRecord ar2 = new AccountingRecord(accTextField, positions, Site.HABEN, max + 1);
+        bookings.add(ar1);
+        bookings.add(ar2);
     }
 
+    //old
+//    public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {
+//        int max = buchungen.stream().map(b -> b.getBuchungsid()).mapToInt(i -> i).max().orElse(0);
+//        System.out.println(max);
+//        BuchungsSatz bs1 = new BuchungsSatz(kontoSoll, positions, Seite.SOLL,max +1);
+//        BuchungsSatz bs2 = new BuchungsSatz(gegenKonto, positions, Seite.HABEN,max +1);
+//        buchungen.add(bs1);
+//        buchungen.add(bs2);
+//    }
+
+    //old
+//    @Override
+//    public String toString() {
+//        String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+//        return MessageFormat.format("Buchungen:\n{0}", buchus);
+//    }
+
+    //new
     @Override
     public String toString() {
-        String buchus=  buchungen.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
-        return MessageFormat.format("Buchungen:\n{0}", buchus);
+        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+        return MessageFormat.format("Buchungen:\n{0}", book);
     }
 
     public static String formattedDoubleString(double wert) {

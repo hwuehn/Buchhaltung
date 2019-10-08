@@ -1,4 +1,4 @@
-package de.company.accounting.data;
+package de.company.accounting.application;
 
 import java.io.*;
 import java.util.*;

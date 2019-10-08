@@ -9,7 +9,7 @@ public class BuchungsSatz {
 
     private final Konto konto;
     private final List<Position> positions;
-    private final Seite seite;
+    private final Site site;
     private final int buchungsid;
 
     public Konto getKonto() {
@@ -23,10 +23,10 @@ public class BuchungsSatz {
         return buchungsid;
     }
 
-    public BuchungsSatz(Konto konto, List<Position> positions, Seite seite, int buchungsid) {
+    public BuchungsSatz(Konto konto, List<Position> positions, Site site, int buchungsid) {
         this.konto = konto;
         this.positions = positions;
-        this.seite = seite;
+        this.site = site;
         this.buchungsid = buchungsid;
     }
 
@@ -35,7 +35,7 @@ public class BuchungsSatz {
     }
 
     public String toString() {
-        return MessageFormat.format("Buchung: {0} {1} {2} {3} ", konto.getKontoId(), konto.getKontoBezeichnung(), formattedDoubleString(gesamtWert()),seite);
+        return MessageFormat.format("Buchung: {0} {1} {2} {3} ", konto.getKontoId(), konto.getKontoBezeichnung(), formattedDoubleString(gesamtWert()),site);
     }
 
     public static String formattedDoubleString(double wert) {

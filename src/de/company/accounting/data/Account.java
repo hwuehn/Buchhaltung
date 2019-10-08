@@ -1,20 +1,25 @@
 package de.company.accounting.data;
 
+import de.company.accounting.application.AccountAdministration;
+
 import java.text.MessageFormat;
+
 
 public class Account {
 
-    private final int accountID;
-    private final String accountName;
+    private Integer accountID;
+    private String accountName;
     private double initialBalance;
 
     public void setInitialBalance() {
         initialBalance = 0.00;
     }
 
-    public Account(int accountID, String accountName) {
-        this.accountName = accountName;
-        this.accountID = accountID;
+    public Account(AccountAdministration accountAdministration, Integer iD, String description) {
+        if (accountAdministration.getAccList().containsKey(iD))
+            accountID = iD;
+        if (accountAdministration.getAccList().containsValue(description))
+            accountName = description;
         setInitialBalance();
         System.out.print("Kontoerstellung:");
         System.out.println(output());

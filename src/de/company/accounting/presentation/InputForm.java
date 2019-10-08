@@ -1,6 +1,6 @@
 package de.company.accounting.presentation;
 
-import de.company.accounting.data.AccountAdministration;
+import de.company.accounting.application.AccountAdministration;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;

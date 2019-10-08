@@ -1,7 +1,6 @@
 package de.company.accounting.application;
 
 
-import de.company.accounting.data.AccountAdministration;
 import de.company.accounting.data.Position;
 import de.company.accounting.data.Rechnung;
 import de.company.accounting.presentation.InputForm;
