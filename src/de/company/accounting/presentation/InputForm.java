@@ -27,7 +27,6 @@ public class InputForm {
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
     public JTextField textField1;
-    public JButton filterButton;
     public JTextField textField2;
 
     public InputForm(AccountAdministration accountAdministration) {
