@@ -20,7 +20,6 @@ public class ProgrammDemo {
         inputFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inputFrame.pack();
         inputFrame.setVisible(true);
-        inputFrame.setLocation(300, 250);
 
         accountAdministration.load();
         form.fillCombos(accountAdministration.getSortedList());
