@@ -18,13 +18,13 @@
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:50dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="fill:50dlu:noGrow"/>
+    <colspec value="fill:65dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:50dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:50dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="fill:50dlu:noGrow"/>
+    <colspec value="fill:65dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:100dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
@@ -40,7 +40,7 @@
       <inheritsPopupMenu value="false"/>
       <minimumSize width="10" height="10"/>
       <opaque value="false"/>
-      <preferredSize width="850" height="600"/>
+      <preferredSize width="950" height="600"/>
       <requestFocusEnabled value="false"/>
     </properties>
     <border type="empty">
@@ -168,7 +168,7 @@
         <properties>
           <autoscrolls value="false"/>
           <background color="-1"/>
-          <maximumRowCount value="50"/>
+          <maximumRowCount value="7"/>
         </properties>
       </component>
       <component id="cd8cc" class="javax.swing.JComboBox" binding="accListComboBoxSoll">
@@ -180,7 +180,7 @@
           <autoscrolls value="false"/>
           <background color="-1"/>
           <editable value="false"/>
-          <maximumRowCount value="50"/>
+          <maximumRowCount value="7"/>
           <model/>
         </properties>
       </component>
