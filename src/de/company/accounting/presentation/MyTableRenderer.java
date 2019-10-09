@@ -24,7 +24,7 @@ public class MyTableRenderer implements TableCellRenderer {
                 foreground = Color.black;
                 background = Color.white;
             } else {
-                foreground = Color.white;
+                foreground = Color.black;
                 background = Color.lightGray;
             }
         }
