@@ -5,7 +5,6 @@ import de.company.accounting.application.AccountAdministration;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
-import java.util.Map;
 
 public class InputForm {
 
@@ -49,15 +48,16 @@ public class InputForm {
         }
     }
 
-    public void fillCombos2(Map<Integer, String> map) {
-        accListComboBoxSoll.removeAllItems();
-        accListComboBoxHaben.removeAllItems();
-        map.forEach((k,v) -> accListComboBoxSoll.addItem(k + " " + v));
-        map.forEach((k,v) -> accListComboBoxHaben.addItem(k + " " + v));
-    }
+//    public void fillCombos2(Map<Integer, String> map) {
+//        accListComboBoxSoll.removeAllItems();
+//        accListComboBoxHaben.removeAllItems();
+//        map.forEach((k,v) -> accListComboBoxSoll.addItem(k + " " + v));
+//        map.forEach((k,v) -> accListComboBoxHaben.addItem(k + " " + v));
+//    }
 
 
     public JPanel getPanel() {
         return panel;
     }
+
 }
