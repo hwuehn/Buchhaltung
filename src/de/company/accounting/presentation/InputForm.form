@@ -4,7 +4,7 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:noGrow"/>
-    <rowspec value="center:629px:grow"/>
+    <rowspec value="center:400dlu:grow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:noGrow"/>
@@ -50,6 +50,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
+          <inheritsPopupMenu value="false"/>
           <text value="Umsatz:"/>
         </properties>
       </component>

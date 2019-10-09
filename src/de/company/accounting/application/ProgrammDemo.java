@@ -12,8 +12,9 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ProgrammDemo {
 
-	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException {
-        AccountAdministration accountAdministration = new AccountAdministration();
+	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	    AccountAdministration accountAdministration = new AccountAdministration();
         InputForm form = new InputForm(accountAdministration);
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(form.getPanel());
