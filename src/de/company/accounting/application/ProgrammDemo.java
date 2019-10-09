@@ -18,7 +18,8 @@ public class ProgrammDemo {
 	    AccountAdministration accountAdministration = new AccountAdministration();
         InputForm form = new InputForm(accountAdministration);
 
-        form.table1.setModel(new MyTableModel());
+        form.table1.setModel((new MyTableModel()));
+
 
 
 
