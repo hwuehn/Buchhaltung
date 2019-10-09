@@ -39,8 +39,6 @@ public class InputForm {
         return colAmountTextField;
     }
 
-
-
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = Integer.parseInt(accNumberTextField.getText());
@@ -64,7 +62,6 @@ public class InputForm {
 //        map.forEach((k,v) -> accListComboBoxSoll.addItem(k + " " + v));
 //        map.forEach((k,v) -> accListComboBoxHaben.addItem(k + " " + v));
 //    }
-
 
     public JPanel getPanel() {
         return panel;

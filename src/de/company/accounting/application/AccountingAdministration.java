@@ -3,8 +3,6 @@ package de.company.accounting.application;
 import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
 
-import javax.swing.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,12 +16,10 @@ public class AccountingAdministration {
     private String number, amount, accountSoll, documentNumber, date, accountHaben, description;
 
     public AccountingAdministration() {
-            }
+    }
 
     public void setAmount() {
         this.amount = inputForm.getColAmountTextField().getText();
         System.out.println(amount);
     }
-
-
 }

@@ -1,6 +1,5 @@
 package de.company.accounting.data;
 
-import de.company.accounting.application.AccountAdministration;
 import de.company.accounting.application.AccountingAdministration;
 
 import javax.swing.*;
@@ -15,27 +14,6 @@ public class AccountingRecord {
     private List<Position> positions;
     private Site site;
     private int bookingID;
-
-    public boolean textEqualsAccount(JTextField textField) {
-        if (AccountAdministration.getAccList().containsKey(textField.getText()));
-        return true;
-    }
-
-    public void readFromTextField(JTextField textField) {
-        String text = textField.getText();
-        // accID
-        text = text.substring(0,4);
-
-        // vergleich mit accList
-        if (AccountAdministration.getAccList().containsKey(text)){
-            // texteingabe = account
-
-
-        };
-
-
-
-    }
 
     public AccountingRecord(AccountingAdministration accountingAdministration, JTextField account, List<Position> positions, Site site, int bookingID) {
         this.accountingAdministration = accountingAdministration;

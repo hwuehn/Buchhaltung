@@ -17,7 +17,6 @@ public class MyTableModel extends AbstractTableModel {
     private List<Integer> row = IntStream.range(0,7).boxed().collect(Collectors.toList());
     private List<List<Integer>> rows = Arrays.asList(row, row, row, row, row, row, row, row, row, row, row, row, row, row);
 
-
     public MyTableModel(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration) {
         this.accountAdministration = accountAdministration;
         this.accountingAdministration = accountingAdministration;
@@ -37,7 +36,6 @@ public class MyTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         return rows.get(rowIndex).get(columnIndex);
-
     }
 
     @Override

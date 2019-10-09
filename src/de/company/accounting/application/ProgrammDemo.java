@@ -1,14 +1,12 @@
 package de.company.accounting.application;
 
-
 import de.company.accounting.data.Invoice;
 import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
 import de.company.accounting.presentation.EvenOddRenderer;
-import de.company.accounting.testData.BelegStapel;
+import de.company.accounting.testData.documentStack;
 
 import javax.swing.*;
-import javax.swing.table.TableCellRenderer;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -26,8 +24,7 @@ public class ProgrammDemo {
         MyTableModel myTableModel = new MyTableModel(accountAdministration, accountingAdministration);
 
         inputForm.table1.setModel((myTableModel));
-        TableCellRenderer renderer = new EvenOddRenderer();
-        inputForm.table1.setDefaultRenderer(Object.class, renderer);
+        inputForm.table1.setDefaultRenderer(Object.class, new EvenOddRenderer());
 
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(inputForm.getPanel());
@@ -38,11 +35,10 @@ public class ProgrammDemo {
         accountAdministration.load();
         inputForm.fillCombos(accountAdministration.getSortedList());
 
-
-    	BelegStapel belege = new BelegStapel();
+    	documentStack belege = new documentStack();
         System.out.println();
 
-        Invoice b1 = belege.belege.get(0);
+        Invoice b1 = belege.document.get(0);
 		//Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
         //Buchungsverwaltung bv = new Buchungsverwaltung();
 //		bv.buchen(_6330, _1800, Arrays.asList(p1));

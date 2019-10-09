@@ -44,9 +44,7 @@ public class Invoice {
 		totalNetPrice = getItemPrice() * getItemQuantity();
 	}
 	public void setInputTax() {
-		
 		inputTax = 1.19 * getTotalNetPrice() - getTotalNetPrice();
-		
 	}
 	public void setGrossFinalPrice() {
 		grossFinalPrice = getTotalNetPrice() + getInputTax();
@@ -79,10 +77,8 @@ public class Invoice {
 			newValue = df.format(d);
 		}
 		return newValue;
-		
-			    
-		} 
 	}
+}
 	
 	
 	
