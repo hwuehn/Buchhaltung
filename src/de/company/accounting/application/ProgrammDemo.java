@@ -4,6 +4,7 @@ package de.company.accounting.application;
 import de.company.accounting.data.Position;
 import de.company.accounting.data.Rechnung;
 import de.company.accounting.presentation.InputForm;
+import de.company.accounting.presentation.MyTableModel;
 import de.company.accounting.testData.BelegStapel;
 
 import javax.swing.*;
@@ -14,8 +15,14 @@ public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        AccountAdministration accountAdministration = new AccountAdministration();
+	    AccountAdministration accountAdministration = new AccountAdministration();
         InputForm form = new InputForm(accountAdministration);
+
+        form.table1.setModel((new MyTableModel()));
+
+
+
+
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(form.getPanel());
         inputFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,7 +31,8 @@ public class ProgrammDemo {
 
         accountAdministration.load();
         form.fillCombos(accountAdministration.getSortedList());
-     
+
+
     	BelegStapel belege = new BelegStapel();
         System.out.println();
 
