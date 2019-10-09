@@ -1,5 +1,8 @@
 package de.company.accounting.presentation;
 
+import de.company.accounting.application.AccountAdministration;
+import de.company.accounting.application.AccountingAdministration;
+
 import javax.swing.table.AbstractTableModel;
 import java.util.Arrays;
 import java.util.List;
@@ -8,12 +11,16 @@ import java.util.stream.IntStream;
 
 public class MyTableModel extends AbstractTableModel {
 
+    private AccountAdministration accountAdministration;
+    private AccountingAdministration accountingAdministration;
     private final List<String> cols;
     private List<Integer> row = IntStream.range(0,7).boxed().collect(Collectors.toList());
     private List<List<Integer>> rows = Arrays.asList(row, row, row, row, row, row, row, row, row, row, row, row, row, row);
 
 
-    public MyTableModel() {
+    public MyTableModel(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration) {
+        this.accountAdministration = accountAdministration;
+        this.accountingAdministration = accountingAdministration;
         cols = Arrays.asList("Nr.", "Umsatz", "Soll", "Belegnummer", "Datum", "Haben", "Buchungstext");
     }
 

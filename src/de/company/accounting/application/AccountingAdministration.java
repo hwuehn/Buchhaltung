@@ -17,10 +17,8 @@ public class AccountingAdministration {
     private MyTableModel myTableModel;
     private String number, amount, accountSoll, documentNumber, date, accountHaben, description;
 
-    public AccountingAdministration(InputForm inputForm, MyTableModel myTableModel) {
-        this.inputForm = inputForm;
-        this.myTableModel = myTableModel;
-    }
+    public AccountingAdministration() {
+            }
 
     public void setAmount() {
         this.amount = inputForm.getColAmountTextField().getText();

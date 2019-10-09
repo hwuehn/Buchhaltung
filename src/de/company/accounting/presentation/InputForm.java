@@ -1,6 +1,7 @@
 package de.company.accounting.presentation;
 
 import de.company.accounting.application.AccountAdministration;
+import de.company.accounting.application.AccountingAdministration;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,8 @@ public class InputForm {
     private JTextField colDocumentNumberTextField;
     private JTextField colDateTextField;
 
-    private AccountAdministration al;
+    private AccountAdministration accountAdministration;
+    private AccountingAdministration accountingAdministration;
     private JComboBox accListComboBoxSoll;
     private JComboBox accListComboBoxHaben;
 
@@ -27,8 +29,9 @@ public class InputForm {
     public JTextField textField1;
     public JTable table1;
 
-    public InputForm(AccountAdministration accountAdministration) {
-        al= accountAdministration;
+    public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration) {
+        this.accountAdministration = accountAdministration;
+        this.accountingAdministration = accountingAdministration;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
     }
 
@@ -41,9 +44,9 @@ public class InputForm {
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = Integer.parseInt(accNumberTextField.getText());
-        al.load();
-        al.append(iD, description);
-        fillCombos(al.getSortedList());
+        accountAdministration.load();
+        accountAdministration.append(iD, description);
+        fillCombos(accountAdministration.getSortedList());
     }
 
     public void fillCombos(List<String> list)  {

@@ -17,12 +17,14 @@ public class ProgrammDemo {
 
 	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-	    AccountAdministration accountAdministration = new AccountAdministration();
-        InputForm inputForm = new InputForm(accountAdministration);
-        MyTableModel myTableModel = new MyTableModel();
-        AccountingAdministration accountingAdministration = new AccountingAdministration(inputForm, myTableModel);
 
+        //invoke administration
+        AccountAdministration accountAdministration = new AccountAdministration();
+        AccountingAdministration accountingAdministration = new AccountingAdministration();
 
+	    //invoke objects with API
+	    InputForm inputForm = new InputForm(accountAdministration, accountingAdministration);
+        MyTableModel myTableModel = new MyTableModel(accountAdministration, accountingAdministration);
 
         inputForm.table1.setModel((myTableModel));
         TableCellRenderer renderer = new EvenOddRenderer();
