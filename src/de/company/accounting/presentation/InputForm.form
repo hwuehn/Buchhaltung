@@ -17,7 +17,6 @@
     <colspec value="fill:51dlu:noGrow"/>
     <colspec value="fill:66dlu:noGrow"/>
     <colspec value="fill:100dlu:noGrow"/>
-    <colspec value="fill:50dlu:noGrow"/>
     <constraints>
       <xy x="59" y="55" width="1200" height="800"/>
     </constraints>
@@ -96,18 +95,6 @@
           <text value="Buchungstext:"/>
         </properties>
       </component>
-      <scrollpane id="7a354">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="7" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <forms defaultalign-horz="false" defaultalign-vert="false"/>
-        </constraints>
-        <properties>
-          <background color="-1"/>
-          <enabled value="true"/>
-        </properties>
-        <border type="none"/>
-        <children/>
-      </scrollpane>
       <component id="e9ea2" class="javax.swing.JTextField">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -287,6 +274,15 @@
         <properties>
           <text value="Filter"/>
         </properties>
+      </component>
+      <component id="3933e" class="javax.swing.JTable" binding="table1" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>

@@ -28,6 +28,7 @@ public class InputForm {
     private JTextField accDescriptionTextField;
     public JTextField textField1;
     public JTextField textField2;
+    public JTable table1;
 
     public InputForm(AccountAdministration accountAdministration) {
         al= accountAdministration;
