@@ -1,5 +1,3 @@
-colums einfügen
+backgroundcolor lines
 
-table einfügen
-
-liste einer liste etc...
+row 1 = new aR
