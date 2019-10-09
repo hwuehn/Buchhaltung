@@ -5,7 +5,7 @@ import de.company.accounting.data.Position;
 import de.company.accounting.data.Rechnung;
 import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
-import de.company.accounting.presentation.MyTableRenderer;
+import de.company.accounting.presentation.EvenOddRenderer;
 import de.company.accounting.testData.BelegStapel;
 
 import javax.swing.*;
@@ -18,20 +18,24 @@ public class ProgrammDemo {
 	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 	    AccountAdministration accountAdministration = new AccountAdministration();
-        InputForm form = new InputForm(accountAdministration);
+        InputForm inputForm = new InputForm(accountAdministration);
+        MyTableModel myTableModel = new MyTableModel();
+        AccountingAdministration accountingAdministration = new AccountingAdministration(inputForm, myTableModel);
 
-        form.table1.setModel((new MyTableModel()));
-        TableCellRenderer renderer = new MyTableRenderer();
-        form.table1.setDefaultRenderer(Object.class, renderer);
+
+
+        inputForm.table1.setModel((myTableModel));
+        TableCellRenderer renderer = new EvenOddRenderer();
+        inputForm.table1.setDefaultRenderer(Object.class, renderer);
 
         JFrame inputFrame = new JFrame("InputFrame");
-        inputFrame.setContentPane(form.getPanel());
+        inputFrame.setContentPane(inputForm.getPanel());
         inputFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inputFrame.pack();
         inputFrame.setVisible(true);
 
         accountAdministration.load();
-        form.fillCombos(accountAdministration.getSortedList());
+        inputForm.fillCombos(accountAdministration.getSortedList());
 
 
     	BelegStapel belege = new BelegStapel();

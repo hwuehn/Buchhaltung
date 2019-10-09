@@ -11,12 +11,13 @@ public class InputForm {
     private JPanel panel;
     private JTextField colDescriptionTextField;
     private JButton buchenButton;
+
     private JTextField colAmountTextField;
     private JTextField toAccTextField;
     private JTextField colDocumentNumberTextField;
     private JTextField colDateTextField;
 
-    private AccountAdministration al ;
+    private AccountAdministration al;
     private JComboBox accListComboBoxSoll;
     private JComboBox accListComboBoxHaben;
 
@@ -30,6 +31,12 @@ public class InputForm {
         al= accountAdministration;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
     }
+
+    public JTextField getColAmountTextField() {
+        return colAmountTextField;
+    }
+
+
 
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
