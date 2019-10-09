@@ -38,8 +38,14 @@ public class MyTableModel extends AbstractTableModel {
         return cols.get(columns);
     }
 
+    @Override
+    public void fireTableRowsUpdated(int firstRow, int lastRow) {
+        super.fireTableRowsUpdated(firstRow, lastRow);
+    }
+
     public void setData(List<List<Integer>> rows) {
         this.rows = rows;
+        fireTableRowsUpdated(0, rows.size() );
     }
 }
 
