@@ -24,7 +24,8 @@ public class ProgrammDemo {
 
         accountAdministration.load();
         form.fillCombos(accountAdministration.getSortedList());
-     
+
+
     	BelegStapel belege = new BelegStapel();
         System.out.println();
 

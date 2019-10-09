@@ -1,18 +1,16 @@
 package de.company.accounting.presentation;
 
 import de.company.accounting.application.AccountAdministration;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
+import java.util.Map;
 
 public class InputForm {
 
     private JPanel panel;
-    private JTextField amount;
-    private JTextField documentNumber;
-    private JTextField date;
     private JTextField colDescriptionTextField;
-    private JTextField description;
     private JButton buchenButton;
     private JTextField colAmountTextField;
     private JTextField toAccTextField;
@@ -27,7 +25,6 @@ public class InputForm {
     private JTextField accNumberTextField;
     private JTextField accDescriptionTextField;
     public JTextField textField1;
-    public JTextField textField2;
     public JTable table1;
 
     public InputForm(AccountAdministration accountAdministration) {
@@ -51,6 +48,14 @@ public class InputForm {
             accListComboBoxHaben.addItem(accName);
         }
     }
+
+    public void fillCombos2(Map<Integer, String> map) {
+        accListComboBoxSoll.removeAllItems();
+        accListComboBoxHaben.removeAllItems();
+        map.forEach((k,v) -> accListComboBoxSoll.addItem(k + " " + v));
+        map.forEach((k,v) -> accListComboBoxHaben.addItem(k + " " + v));
+    }
+
 
     public JPanel getPanel() {
         return panel;
