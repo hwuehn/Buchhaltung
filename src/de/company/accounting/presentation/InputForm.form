@@ -4,7 +4,7 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:noGrow"/>
-    <rowspec value="center:400dlu:grow"/>
+    <rowspec value="center:250dlu:grow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:noGrow"/>
@@ -31,7 +31,7 @@
       <inheritsPopupMenu value="false"/>
       <minimumSize width="10" height="10"/>
       <opaque value="false"/>
-      <preferredSize width="950" height="800"/>
+      <preferredSize width="700" height="500"/>
       <requestFocusEnabled value="false"/>
     </properties>
     <border type="empty">
