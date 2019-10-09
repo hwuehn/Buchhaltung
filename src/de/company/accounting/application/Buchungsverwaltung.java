@@ -16,14 +16,14 @@ public class Buchungsverwaltung {
     private List<AccountingRecord> bookings = new ArrayList<>();
 
     //new
-    public void bookings(JTextField toAccTextField, JTextField accTextField, List<Position> positions) {
-        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
-        System.out.println(max);
-        AccountingRecord ar1 = new AccountingRecord(toAccTextField, positions, Site.SOLL, max + 1);
-        AccountingRecord ar2 = new AccountingRecord(accTextField, positions, Site.HABEN, max + 1);
-        bookings.add(ar1);
-        bookings.add(ar2);
-    }
+//    public void bookings(JTextField toAccTextField, JTextField accTextField, List<Position> positions) {
+//        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
+//        System.out.println(max);
+//        AccountingRecord ar1 = new AccountingRecord(toAccTextField, positions, Site.SOLL, max + 1);
+//        AccountingRecord ar2 = new AccountingRecord(accTextField, positions, Site.HABEN, max + 1);
+//        bookings.add(ar1);
+//        bookings.add(ar2);
+//    }
 
     //old
 //    public void buchen(Konto kontoSoll, Konto gegenKonto, List<Position> positions) {

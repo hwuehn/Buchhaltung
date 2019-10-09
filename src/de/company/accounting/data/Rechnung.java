@@ -1,5 +1,7 @@
 package de.company.accounting.data;
 
+import de.company.accounting.application.AccountingAdministration;
+
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
