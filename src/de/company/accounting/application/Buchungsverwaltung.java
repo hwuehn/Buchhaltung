@@ -1,19 +1,19 @@
-package de.company.accounting.application;
-
-import de.company.accounting.data.*;
-
-import javax.swing.*;
-import java.text.DecimalFormat;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Buchungsverwaltung {
+//package de.company.accounting.application;
+//
+//import de.company.accounting.data.*;
+//
+//import javax.swing.*;
+//import java.text.DecimalFormat;
+//import java.text.MessageFormat;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Buchungsverwaltung {
 
     //old
 //    private List<BuchungsSatz> buchungen=new ArrayList<>();
     //new
-    private List<AccountingRecord> bookings = new ArrayList<>();
+    //private List<AccountingRecord> bookings = new ArrayList<>();
 
     //new
 //    public void bookings(JTextField toAccTextField, JTextField accTextField, List<Position> positions) {
@@ -43,14 +43,14 @@ public class Buchungsverwaltung {
 //    }
 
     //new
-    @Override
-    public String toString() {
-        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
-        return MessageFormat.format("Buchungen:\n{0}", book);
-    }
-
-    public static String formattedDoubleString(double wert) {
-        DecimalFormat newFormat = new DecimalFormat("#.00");
-        return newFormat.format(wert);
-    }
-}
+//    @Override
+//    public String toString() {
+//        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+//        return MessageFormat.format("Buchungen:\n{0}", book);
+//    }
+//
+//    public static String formattedDoubleString(double wert) {
+//        DecimalFormat newFormat = new DecimalFormat("#.00");
+//        return newFormat.format(wert);
+//    }
+//}

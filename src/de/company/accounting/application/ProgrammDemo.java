@@ -45,7 +45,7 @@ public class ProgrammDemo {
 
         Rechnung b1 = belege.belege.get(0);
 		//Position p1= new Position(b1.getDatum(), b1.getRechnungsNr(), b1.getGesamtpreisNetto(), b1.getArtikelBezeichnung());
-        Buchungsverwaltung bv = new Buchungsverwaltung();
+        //Buchungsverwaltung bv = new Buchungsverwaltung();
 //		bv.buchen(_6330, _1800, Arrays.asList(p1));
 //		bv.buchen(_1400, _1800, Arrays.asList(p1));
 //		Rechnung b2= belege.belege.get(1);
