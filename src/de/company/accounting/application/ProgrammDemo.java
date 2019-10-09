@@ -5,9 +5,11 @@ import de.company.accounting.data.Position;
 import de.company.accounting.data.Rechnung;
 import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
+import de.company.accounting.presentation.MyTableRenderer;
 import de.company.accounting.testData.BelegStapel;
 
 import javax.swing.*;
+import javax.swing.table.TableCellRenderer;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,9 +21,8 @@ public class ProgrammDemo {
         InputForm form = new InputForm(accountAdministration);
 
         form.table1.setModel((new MyTableModel()));
-
-
-
+        TableCellRenderer renderer = new MyTableRenderer();
+        form.table1.setDefaultRenderer(Object.class, renderer);
 
         JFrame inputFrame = new JFrame("InputFrame");
         inputFrame.setContentPane(form.getPanel());

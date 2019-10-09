@@ -10,7 +10,7 @@ public class MyTableModel extends AbstractTableModel {
 
     private final List<String> cols;
     private List<Integer> row = IntStream.range(0,7).boxed().collect(Collectors.toList());
-    private List<List<Integer>> rows = Arrays.asList(row, row, row, row, row, row, row);
+    private List<List<Integer>> rows = Arrays.asList(row, row, row, row, row, row, row, row, row, row, row, row, row, row);
 
 
     public MyTableModel() {
