@@ -55,7 +55,7 @@ public class AccountingRecord {
     }
 
     public Double gesamtWert(){
-        return positions.stream().map(p -> p.getGesamtpreisNetto()).reduce(0d ,(acc,e) -> acc + e);
+        return positions.stream().map(p -> p.getTotalNetPrice()).reduce(0d ,(acc, e) -> acc + e);
     }
 
     public String toString() {
