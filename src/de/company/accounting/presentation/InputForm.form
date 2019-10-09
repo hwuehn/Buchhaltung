@@ -29,8 +29,8 @@
       <font/>
       <inheritsPopupMenu value="false"/>
       <minimumSize width="10" height="10"/>
-      <opaque value="false"/>
-      <preferredSize width="700" height="500"/>
+      <opaque value="true"/>
+      <preferredSize width="660" height="600"/>
       <requestFocusEnabled value="false"/>
     </properties>
     <border type="empty">
@@ -280,12 +280,16 @@
           <grid row="3" column="0" row-span="1" col-span="7" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="3933e" class="javax.swing.JTable" binding="table1" default-binding="true">
             <constraints/>
-            <properties/>
+            <properties>
+              <gridColor color="-1"/>
+            </properties>
           </component>
         </children>
       </scrollpane>
