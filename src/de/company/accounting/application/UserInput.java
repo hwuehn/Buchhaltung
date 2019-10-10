@@ -8,10 +8,15 @@ public class UserInput {
     private InputForm inputForm;
     private MyTableModel myTableModel;
 
-    private String amount;
+    private Object amount;
+    private Object accountSoll;
+    private Object documentNumber;
+    private Object date;
+    private Object accountHaben;
+    private Object description;
 
     public String getAmount() {
-        return amount;
+        return String.valueOf(amount);
     }
 
     public UserInput(InputForm inputForm, MyTableModel myTableModel) {
@@ -21,8 +26,11 @@ public class UserInput {
 
     public void fetchUserInput() {
         amount = inputForm.getColAmountTextField().getText();
-        //accountSoll = inputForm.g
-
+        accountSoll = inputForm.getAccListComboBoxSoll();
+        documentNumber = inputForm.getColDocumentNumberTextField().getText();
+        date = inputForm.getColDateTextField().getText();
+        accountHaben = inputForm.getAccListComboBoxHaben();
+        description = inputForm.getColDescriptionTextField().getText();
     }
 
 }
