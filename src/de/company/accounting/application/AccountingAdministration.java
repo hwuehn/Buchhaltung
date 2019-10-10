@@ -15,10 +15,13 @@ import static de.company.accounting.data.Site.SOLL;
 public class AccountingAdministration {
 
     private String number, amount, accountSoll, documentNumber, date, accountHaben, description;
-
     private List<AccountingRecord> bookings = new ArrayList<>();
 
     public AccountingAdministration() {
+    }
+
+    public List<AccountingRecord> getBookings() {
+        return bookings;
     }
 
     public void bookings(Account accountSoll, Account accountHaben, List<Position> positions) {

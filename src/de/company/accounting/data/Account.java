@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 
 public class Account {
 
+    private AccountAdministration accountAdministration;
     private Integer accountID;
     private String accountName;
     private double initialBalance;
