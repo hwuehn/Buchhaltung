@@ -78,8 +78,8 @@ public class InputForm {
         LocalDate date = parse(getColDateTextField().getText(), DateTimeFormatter.ofPattern("ddMMyyyy"));
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
-        accountingAdministration.createUserInputList(new AccountingRecordIDCounter(),amount,accountSoll,documentNumber,date, accountHaben,description);
-        accountingAdministration.addInputListToRow(myTableModel);
+        accountingAdministration.createUserInputList(new AccountingRecordIDCounter(),amount,accountSoll,documentNumber,date, accountHaben,description,myTableModel);
+        //accountingAdministration.addInputListToRow(myTableModel);
         clearInputFields();
     }
 
@@ -129,9 +129,9 @@ public class InputForm {
     }
 
     public void testData2(ActionEvent actionEvent) {
-        getColAmountTextField().setText("333.00");
+        getColAmountTextField().setText("33333.00");
         getColDocumentNumberTextField().setText("4321");
         getColDateTextField().setText("10052017");
-        getColDescriptionTextField().setText("Bar");
+        getColDescriptionTextField().setText("Buzzzze");
     }
 }

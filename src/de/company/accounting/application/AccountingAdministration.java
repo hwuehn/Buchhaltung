@@ -18,13 +18,14 @@ import static de.company.accounting.data.Site.SOLL;
 public class AccountingAdministration {
 
     private List<AccountingRecord> bookings = new ArrayList<>();
-    private Vector<Object> input = new Vector<>();
+    //private Vector<Object> input = new Vector<>();
 
     public AccountingAdministration() {
     }
 
     public void createUserInputList(AccountingRecordIDCounter accountingRecordIDCounter, Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
-                                      Object accountHaben, String description) {
+                                      Object accountHaben, String description, MyTableModel myTableModel) {
+        Vector<Object> input = new Vector<>();
 
         input.add(accountingRecordIDCounter.getCounter());
         input.add(amount);
@@ -34,12 +35,18 @@ public class AccountingAdministration {
         input.add(accountHaben);
         input.add(description);
 
-    }
-
-    public void addInputListToRow(MyTableModel myTableModel) {
         myTableModel.addRow(input);
         myTableModel.fireTableRowsUpdated(0, myTableModel.getRowCount());
     }
+
+//    public void addInputListToRow(MyTableModel myTableModel) {
+//        myTableModel.addRow(input);
+//        myTableModel.fireTableRowsUpdated(0, myTableModel.getRowCount());
+//    }
+//
+//    public void clearInputList() {
+//        input.removeAllElements();
+//    }
 
     public List<AccountingRecord> getBookings() {
         return bookings;
