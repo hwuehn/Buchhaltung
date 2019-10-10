@@ -1,5 +1,4 @@
-rows füllen
-row 1 = new aR
+vector in klasse row oder sowas... liste einer liste etc
 
 buchungslogik implementieren
 
