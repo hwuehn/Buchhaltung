@@ -3,6 +3,7 @@ package de.company.accounting.application;
 import de.company.accounting.data.Account;
 import de.company.accounting.data.AccountingRecord;
 import de.company.accounting.data.Position;
+import de.company.accounting.presentation.MyTableModel;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
@@ -15,7 +16,6 @@ import static de.company.accounting.data.Site.SOLL;
 
 public class AccountingAdministration {
 
-    private String number, amount, accountSoll, documentNumber, date, accountHaben, description;
     private List<AccountingRecord> bookings = new ArrayList<>();
     private List<Object> input = new ArrayList<>();
 
@@ -30,6 +30,11 @@ public class AccountingAdministration {
         input.add(date);
         input.add(accountHaben);
         input.add(description);
+    }
+
+    //TODO needed is code for adding a row and not cells
+    public void addInputListToRow(MyTableModel myTableModel) {
+        myTableModel.setValueAt(input,0,1);
     }
 
     public List<AccountingRecord> getBookings() {

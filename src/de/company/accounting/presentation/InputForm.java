@@ -40,7 +40,7 @@ public class InputForm {
         this.accountingAdministration = accountingAdministration;
         this.myTableModel = myTableModel;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
-        buchenButton.addActionListener(this::fetchUserInput);
+        buchenButton.addActionListener(this::fetchAndSetUserInput);
     }
 
     public JTextField getColAmountTextField() {
@@ -62,7 +62,7 @@ public class InputForm {
         return colDescriptionTextField;
     }
 
-    private void fetchUserInput(ActionEvent actionEvent) {
+    private void fetchAndSetUserInput(ActionEvent actionEvent) {
         Double amount = parseDouble(getColAmountTextField().getText());
         Object accountSoll = getAccListComboBoxSoll();
         Integer documentNumber = parseInt(getColDocumentNumberTextField().getText());
@@ -70,6 +70,8 @@ public class InputForm {
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(amount,accountSoll,documentNumber,date, accountHaben,description);
+        accountingAdministration.addInputListToRow(myTableModel);
+        myTableModel.fireTableRowsUpdated(0,5);
         //TODO
     }
 
