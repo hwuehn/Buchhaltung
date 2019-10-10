@@ -25,6 +25,7 @@ public class AccountingAdministration {
 
     public void createUserInputList(AccountingRecordIDCounter accountingRecordIDCounter, Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
                                       Object accountHaben, String description) {
+
         input.add(accountingRecordIDCounter.getCounter());
         input.add(amount);
         input.add(accountSoll);
@@ -34,9 +35,9 @@ public class AccountingAdministration {
         input.add(description);
     }
 
-    //TODO needed is code for adding a row and not cells
     public void addInputListToRow(MyTableModel myTableModel) {
         myTableModel.addRow(input);
+        myTableModel.fireTableRowsUpdated(0, myTableModel.getRowCount());
     }
 
     public List<AccountingRecord> getBookings() {

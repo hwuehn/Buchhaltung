@@ -51,12 +51,10 @@ public class MyTableModel extends DefaultTableModel {
         super.setValueAt(aValue, rowIndex, columnIndex);
     }
 
-    //TODO
-    public void addData(List<Object> list) {
-       // row.add(list);
+    @Override
+    public void fireTableRowsUpdated(int firstRow, int lastRow) {
+        super.fireTableRowsUpdated(firstRow, lastRow);
     }
-
-
 }
 
 
