@@ -6,6 +6,7 @@ import de.company.accounting.application.AccountingRecordIDCounter;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -36,6 +37,8 @@ public class InputForm {
     private JTextField accDescriptionTextField;
     public JTextField textField1;
     public JTable table1;
+    private JButton testButton;
+    private JButton testIButton;
 
     public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
                      MyTableModel myTableModel) {
@@ -44,6 +47,8 @@ public class InputForm {
         this.myTableModel = myTableModel;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
         buchenButton.addActionListener(this::fetchAndSetUserInput);
+        testButton.addActionListener(this::testData);
+        testIButton.addActionListener(this::testData2);
     }
 
     public JTextField getColAmountTextField() {
@@ -116,6 +121,17 @@ public class InputForm {
         return panel;
     }
 
+    public void testData(ActionEvent actionEvent) {
+        getColAmountTextField().setText("500.00");
+        getColDocumentNumberTextField().setText("98765");
+        getColDateTextField().setText("31122018");
+        getColDescriptionTextField().setText("Foo");
+    }
 
-
+    public void testData2(ActionEvent actionEvent) {
+        getColAmountTextField().setText("333.00");
+        getColDocumentNumberTextField().setText("4321");
+        getColDateTextField().setText("10052017");
+        getColDescriptionTextField().setText("Bar");
+    }
 }
