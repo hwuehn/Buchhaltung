@@ -44,6 +44,11 @@ public class MyTableModel extends AbstractTableModel {
     }
 
     @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        super.setValueAt(aValue, rowIndex, columnIndex);
+    }
+
+    @Override
     public void fireTableRowsUpdated(int firstRow, int lastRow) {
         super.fireTableRowsUpdated(firstRow, lastRow);
     }

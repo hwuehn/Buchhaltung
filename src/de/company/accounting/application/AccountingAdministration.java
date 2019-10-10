@@ -43,5 +43,4 @@ public class AccountingAdministration {
         DecimalFormat newFormat = new DecimalFormat("#.00");
         return newFormat.format(wert);
     }
-
 }

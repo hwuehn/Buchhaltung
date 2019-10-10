@@ -1,21 +1,17 @@
 package de.company.accounting.data;
 
-import de.company.accounting.application.AccountingAdministration;
-
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.List;
 
 public class AccountingRecord {
 
-    AccountingAdministration accountingAdministration = new AccountingAdministration();
     private final Account account;
     private final List<Position> positions;
     private final Site site;
     private final int bookingID;
 
     public AccountingRecord(Account account, List<Position> positions, Site site, int bookingID) {
-        this.accountingAdministration = accountingAdministration;
         this.account = account;
         this.positions = positions;
         this.site = site;

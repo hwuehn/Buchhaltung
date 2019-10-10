@@ -11,17 +11,22 @@ import java.util.Map;
 public class InputForm {
 
     private JPanel panel;
+
     private JTextField colDescriptionTextField;
     private JButton buchenButton;
 
     private JTextField colAmountTextField;
+
     private JTextField toAccTextField;
+
     private JTextField colDocumentNumberTextField;
     private JTextField colDateTextField;
 
     private AccountAdministration accountAdministration;
     private AccountingAdministration accountingAdministration;
+
     private JComboBox accListComboBoxSoll;
+
     private JComboBox accListComboBoxHaben;
 
     private JButton kontoErstellenIndividuellButton;
@@ -39,6 +44,22 @@ public class InputForm {
     public JTextField getColAmountTextField() {
         return colAmountTextField;
     }
+    public Object getAccListComboBoxSoll() {
+        return accListComboBoxSoll.getSelectedItem();
+    }
+    public JTextField getColDocumentNumberTextField() {
+        return colDocumentNumberTextField;
+    }
+    public JTextField getColDateTextField() {
+        return colDateTextField;
+    }
+    public Object getAccListComboBoxHaben() {
+        return accListComboBoxHaben.getSelectedItem();
+    }
+    public JTextField getColDescriptionTextField() {
+        return colDescriptionTextField;
+    }
+
 
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
@@ -68,5 +89,7 @@ public class InputForm {
     public JPanel getPanel() {
         return panel;
     }
+
+
 
 }
