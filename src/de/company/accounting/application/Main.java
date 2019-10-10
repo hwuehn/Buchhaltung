@@ -20,12 +20,9 @@ public class Main {
         AccountAdministration accountAdministration = new AccountAdministration();
         AccountingAdministration accountingAdministration = new AccountingAdministration();
 
-
 	    //invoke objects with API
-	    InputForm inputForm = new InputForm(accountAdministration, accountingAdministration);
         MyTableModel myTableModel = new MyTableModel(accountAdministration, accountingAdministration);
-
-        UserInput userInput = new UserInput(inputForm, myTableModel);
+        InputForm inputForm = new InputForm(accountAdministration, accountingAdministration, myTableModel);
 
         inputForm.table1.setModel((myTableModel));
         inputForm.table1.setDefaultRenderer(Object.class, new EvenOddRenderer());
@@ -40,9 +37,7 @@ public class Main {
         //inputForm.fillCombos(accountAdministration.getSortedList());
         inputForm.fillCombos2(accountAdministration.sortAccList());
 
-        userInput.fetchUserInput();
-
-    	documentStack belege = new documentStack();
+        documentStack belege = new documentStack();
         System.out.println();
 
         System.out.print(accountAdministration.sortAccList());

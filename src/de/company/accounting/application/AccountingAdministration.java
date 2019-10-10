@@ -6,6 +6,7 @@ import de.company.accounting.data.Position;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +17,19 @@ public class AccountingAdministration {
 
     private String number, amount, accountSoll, documentNumber, date, accountHaben, description;
     private List<AccountingRecord> bookings = new ArrayList<>();
+    private List<Object> input = new ArrayList<>();
 
     public AccountingAdministration() {
+    }
+
+    public void createUserInputList(Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
+                                      Object accountHaben, String description) {
+        input.add(amount);
+        input.add(accountSoll);
+        input.add(documentNumber);
+        input.add(date);
+        input.add(accountHaben);
+        input.add(description);
     }
 
     public List<AccountingRecord> getBookings() {
@@ -43,4 +55,7 @@ public class AccountingAdministration {
         DecimalFormat newFormat = new DecimalFormat("#.00");
         return newFormat.format(wert);
     }
+
+
+
 }
