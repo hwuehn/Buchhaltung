@@ -3,7 +3,6 @@ package de.company.accounting.application;
 import de.company.accounting.data.Account;
 import de.company.accounting.data.AccountingRecord;
 import de.company.accounting.data.Position;
-import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
 
 import java.text.DecimalFormat;
@@ -34,6 +33,7 @@ public class AccountingAdministration {
         input.add(date);
         input.add(accountHaben);
         input.add(description);
+
     }
 
     public void addInputListToRow(MyTableModel myTableModel) {
@@ -64,7 +64,4 @@ public class AccountingAdministration {
         DecimalFormat newFormat = new DecimalFormat("#.00");
         return newFormat.format(wert);
     }
-
-
-
 }
