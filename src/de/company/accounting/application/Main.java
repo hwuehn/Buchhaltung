@@ -19,10 +19,12 @@ public class Main {
         //invoke administration
         AccountAdministration accountAdministration = new AccountAdministration();
         AccountingAdministration accountingAdministration = new AccountingAdministration();
+        //AccountingRecordIDCounter accountingRecordIDCounter = new AccountingRecordIDCounter();
 
 	    //invoke objects with API
         MyTableModel myTableModel = new MyTableModel(accountAdministration, accountingAdministration);
         InputForm inputForm = new InputForm(accountAdministration, accountingAdministration, myTableModel);
+
 
         inputForm.table1.setModel((myTableModel));
         inputForm.table1.setDefaultRenderer(Object.class, new EvenOddRenderer());

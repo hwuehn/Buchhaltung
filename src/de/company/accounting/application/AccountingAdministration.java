@@ -23,8 +23,9 @@ public class AccountingAdministration {
     public AccountingAdministration() {
     }
 
-    public void createUserInputList(Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
+    public void createUserInputList(AccountingRecordIDCounter accountingRecordIDCounter, Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
                                       Object accountHaben, String description) {
+        input.add(accountingRecordIDCounter.getCounter());
         input.add(amount);
         input.add(accountSoll);
         input.add(documentNumber);

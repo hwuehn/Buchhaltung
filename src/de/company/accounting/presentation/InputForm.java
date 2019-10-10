@@ -2,6 +2,7 @@ package de.company.accounting.presentation;
 
 import de.company.accounting.application.AccountAdministration;
 import de.company.accounting.application.AccountingAdministration;
+import de.company.accounting.application.AccountingRecordIDCounter;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -63,16 +64,17 @@ public class InputForm {
     }
 
     private void fetchAndSetUserInput(ActionEvent actionEvent) {
+
         Double amount = parseDouble(getColAmountTextField().getText());
         Object accountSoll = getAccListComboBoxSoll();
         Integer documentNumber = parseInt(getColDocumentNumberTextField().getText());
         LocalDate date = parse(getColDateTextField().getText(), DateTimeFormatter.ofPattern("ddMMyyyy"));
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
-        accountingAdministration.createUserInputList(amount,accountSoll,documentNumber,date, accountHaben,description);
+        accountingAdministration.createUserInputList(new AccountingRecordIDCounter(),amount,accountSoll,documentNumber,date, accountHaben,description);
         accountingAdministration.addInputListToRow(myTableModel);
     }
-    
+
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = parseInt(accNumberTextField.getText());
