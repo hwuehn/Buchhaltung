@@ -27,8 +27,9 @@ public class MyTableModel extends DefaultTableModel {
         cols = asList("Nr.", "Umsatz", "Soll", "Belegnummer", "Datum", "Haben", "Buchungstext");
     }
 
+
     @Override
-    public void addRow(Vector<?> rowData) {
+    public void addRow(Object[] rowData) {
         super.addRow(rowData);
     }
 

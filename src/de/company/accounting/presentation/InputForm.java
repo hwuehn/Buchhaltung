@@ -28,6 +28,7 @@ public class InputForm {
     private AccountAdministration accountAdministration;
     private AccountingAdministration accountingAdministration;
     private MyTableModel myTableModel;
+    private InputForm inputForm;
     private JComboBox accListComboBoxSoll;
     private JComboBox accListComboBoxHaben;
     private JButton kontoErstellenIndividuellButton;
@@ -36,7 +37,8 @@ public class InputForm {
     public JTextField textField1;
     public JTable table1;
 
-    public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration, MyTableModel myTableModel) {
+    public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
+                     MyTableModel myTableModel) {
         this.accountAdministration = accountAdministration;
         this.accountingAdministration = accountingAdministration;
         this.myTableModel = myTableModel;
@@ -75,6 +77,8 @@ public class InputForm {
         accountingAdministration.addInputListToRow(myTableModel);
         clearInputFields();
     }
+
+
 
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
