@@ -25,7 +25,7 @@ public class EvenOddRenderer implements TableCellRenderer {
                 background = Color.white;
             } else {
                 foreground = Color.black;
-                background = Color.lightGray;
+                background = Color.getHSBColor(217, 209, 150);
             }
         }
         renderer.setForeground(foreground);
