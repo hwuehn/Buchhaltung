@@ -10,6 +10,7 @@ import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import static de.company.accounting.data.Site.HABEN;
 import static de.company.accounting.data.Site.SOLL;
@@ -17,7 +18,7 @@ import static de.company.accounting.data.Site.SOLL;
 public class AccountingAdministration {
 
     private List<AccountingRecord> bookings = new ArrayList<>();
-    private List<Object> input = new ArrayList<>();
+    private Vector<Object> input = new Vector<>();
 
     public AccountingAdministration() {
     }
@@ -34,7 +35,7 @@ public class AccountingAdministration {
 
     //TODO needed is code for adding a row and not cells
     public void addInputListToRow(MyTableModel myTableModel) {
-        myTableModel.setValueAt(input,0,1);
+        myTableModel.addRow(input);
     }
 
     public List<AccountingRecord> getBookings() {

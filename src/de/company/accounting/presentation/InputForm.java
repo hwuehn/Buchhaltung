@@ -71,9 +71,9 @@ public class InputForm {
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(amount,accountSoll,documentNumber,date, accountHaben,description);
         accountingAdministration.addInputListToRow(myTableModel);
-        myTableModel.fireTableRowsUpdated(0,5);
-        //TODO
     }
+
+
 
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();

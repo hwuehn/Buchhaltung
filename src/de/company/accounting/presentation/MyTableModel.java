@@ -4,19 +4,21 @@ import de.company.accounting.application.AccountAdministration;
 import de.company.accounting.application.AccountingAdministration;
 
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import java.util.Vector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.Arrays.asList;
 
-public class MyTableModel extends AbstractTableModel {
+public class MyTableModel extends DefaultTableModel {
 
     private AccountAdministration accountAdministration;
     private AccountingAdministration accountingAdministration;
     private final List<String> cols;
     private List<Integer> row = IntStream.range(0,7).boxed().collect(Collectors.toList());
-    private List<List<Integer>> rows = asList(row, row, row, row, row, row, row, row, row, row, row, row, row, row);
+
 
     public MyTableModel(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration) {
         this.accountAdministration = accountAdministration;
@@ -25,18 +27,18 @@ public class MyTableModel extends AbstractTableModel {
     }
 
     @Override
+    public void addRow(Vector<?> rowData) {
+        super.addRow(rowData);
+    }
+
+    @Override
     public int getRowCount() {
-       return rows.size();
+        return super.getRowCount();
     }
 
     @Override
     public int getColumnCount() {
        return cols.size();
-    }
-
-    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        return rows.get(rowIndex).get(columnIndex);
     }
 
     @Override

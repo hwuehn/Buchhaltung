@@ -37,6 +37,8 @@ public class Main {
         //inputForm.fillCombos(accountAdministration.getSortedList());
         inputForm.fillCombos2(accountAdministration.sortAccList());
 
+
+
         documentStack belege = new documentStack();
         System.out.println();
 
