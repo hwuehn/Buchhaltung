@@ -1,1 +1,8 @@
+comboboxes mit hashmap füllen anstelle von einem string
+
+rows füllen
 row 1 = new aR
+
+buchungslogik implementieren
+
+filter implementieren
