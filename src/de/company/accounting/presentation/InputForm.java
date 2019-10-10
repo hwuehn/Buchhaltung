@@ -73,6 +73,7 @@ public class InputForm {
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(new AccountingRecordIDCounter(),amount,accountSoll,documentNumber,date, accountHaben,description);
         accountingAdministration.addInputListToRow(myTableModel);
+        clearInputFields();
     }
 
     private void createAccount(ActionEvent actionEvent)  {
@@ -98,6 +99,13 @@ public class InputForm {
         accListComboBoxHaben.removeAllItems();
         map.forEach((k,v) -> accListComboBoxSoll.addItem(k + " " + v));
         map.forEach((k,v) -> accListComboBoxHaben.addItem(k + " " + v));
+    }
+
+    public void clearInputFields() {
+        getColAmountTextField().setText("");
+        getColDocumentNumberTextField().setText("");
+        getColDateTextField().setText("");
+        getColDescriptionTextField().setText("");
     }
 
     public JPanel getPanel() {

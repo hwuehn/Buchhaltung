@@ -5,6 +5,7 @@ import de.company.accounting.application.AccountingAdministration;
 
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import java.util.stream.Collectors;
@@ -18,7 +19,7 @@ public class MyTableModel extends DefaultTableModel {
     private AccountingAdministration accountingAdministration;
     private final List<String> cols;
     private List<Integer> row = IntStream.range(0,7).boxed().collect(Collectors.toList());
-
+    private List<List<Integer>> rows = new ArrayList<>();
 
     public MyTableModel(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration) {
         this.accountAdministration = accountAdministration;

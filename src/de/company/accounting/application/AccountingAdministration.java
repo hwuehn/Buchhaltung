@@ -3,6 +3,7 @@ package de.company.accounting.application;
 import de.company.accounting.data.Account;
 import de.company.accounting.data.AccountingRecord;
 import de.company.accounting.data.Position;
+import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
 
 import java.text.DecimalFormat;
