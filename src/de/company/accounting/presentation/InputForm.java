@@ -66,15 +66,13 @@ public class InputForm {
         Double amount = parseDouble(getColAmountTextField().getText());
         Object accountSoll = getAccListComboBoxSoll();
         Integer documentNumber = parseInt(getColDocumentNumberTextField().getText());
-        LocalDate date = parse(getColDateTextField().getText(), DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        LocalDate date = parse(getColDateTextField().getText(), DateTimeFormatter.ofPattern("ddMMyyyy"));
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(amount,accountSoll,documentNumber,date, accountHaben,description);
         accountingAdministration.addInputListToRow(myTableModel);
     }
-
-
-
+    
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = parseInt(accNumberTextField.getText());
