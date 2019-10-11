@@ -42,9 +42,7 @@ public class Main {
 
         System.out.println(accountAdministration.sortAccList());
         System.out.println();
-
-        System.out.println(accountAdministration.createAccounts());
-
+        
         Invoice b1 = belege.document.get(0);
 		Position p1= new Position(b1.getDate(), b1.getDocumentNumber(), b1.getTotalNetPrice(), b1.getArticleDescription());
 //        accountingAdministration.bookings(6330 , 1800, Arrays.asList(p1));
