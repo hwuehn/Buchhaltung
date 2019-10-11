@@ -37,6 +37,7 @@ public class InputForm {
     public JTextField textField1;
     public JTable table1;
     private JButton testButton;
+    public JButton bookListButton;
 
     public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
                      MyTableModel myTableModel) {
@@ -48,6 +49,7 @@ public class InputForm {
         buchenButton.addActionListener(this::fetchAndSetUserInput);
         testButton.addActionListener(this::testAll);
 
+        bookListButton.addActionListener(this::showAllRecords);
     }
 
     public JTextField getColAmountTextField() {
@@ -81,6 +83,10 @@ public class InputForm {
     private void fetchAndSetUserInput(ActionEvent actionEvent) {
 
         fetchAndSet();
+    }
+
+    public void showAllRecords(ActionEvent actionEvent) {
+        System.out.println(accountingAdministration.toString());
     }
 
     private void fetchAndSet() {

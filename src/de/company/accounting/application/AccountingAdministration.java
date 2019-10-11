@@ -16,8 +16,26 @@ public class AccountingAdministration {
     private Map<Integer, Vector<AccountingRecord>> bookingMap = new LinkedHashMap();
     private List<AccountingRecord> bookings = new ArrayList<>();
 
+    public List<Vector> getBookList() {
+        return bookList;
+    }
+
+    @Override
+    public String toString() {
+        String book =  bookList.stream().reduce("", (acc,aR) -> acc + aR.toString()+"\n", String::concat );
+        return MessageFormat.format("Buchungen:\n{0}", book);
+    }
+
+    private List<Vector> bookList = new ArrayList<>();
+
     public AccountingAdministration() {
     }
+
+    public void storeInput(Vector<Object> input) {
+        bookList.add(input);
+    }
+
+
 
     public void createUserInputList(UserInput userInput) {
         Vector<Object> input = getObjects(userInput);
@@ -39,6 +57,9 @@ public class AccountingAdministration {
         input.add(userInput.getDate());
         input.add(userInput.getAccountHaben());
         input.add(userInput.getDescription());
+
+        storeInput(input);
+
         return input;
     }
 
@@ -55,11 +76,13 @@ public class AccountingAdministration {
         bookings.add(ar2);
     }
 
-    @Override
-    public String toString() {
-        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
-        return MessageFormat.format("Buchungen:\n{0}", book);
-    }
+
+
+//    @Override
+//    public String toString() {
+//        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+//        return MessageFormat.format("Buchungen:\n{0}", book);
+//    }
 
     public static String formattedDoubleString(double wert) {
         DecimalFormat newFormat = new DecimalFormat("#.00");
