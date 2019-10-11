@@ -17,7 +17,7 @@ public class UserInput {
     public UserInput(AccountingRecordIDCounter accountingRecordIDCounter, Double amount, Object accountSoll,
                      Integer documentNumber, LocalDate date, Object accountHaben, String description,
                      MyTableModel myTableModel) {
-        
+
         this.accountingRecordIDCounter = accountingRecordIDCounter;
         this.amount = amount;
         this.accountSoll = accountSoll;

@@ -21,6 +21,16 @@ public class AccountingAdministration {
     }
 
     public void createUserInputList(UserInput userInput) {
+        Vector<Object> input = getObjects(userInput);
+        addRowAndUpdate(userInput, input);
+    }
+
+    private void addRowAndUpdate(UserInput userInput, Vector<Object> input) {
+        userInput.getMyTableModel().addRow(input);
+        userInput.getMyTableModel().fireTableRowsUpdated(0, userInput.getMyTableModel().getRowCount());
+    }
+
+    private Vector<Object> getObjects(UserInput userInput) {
         Vector<Object> input = new Vector<>();
 
         input.add(userInput.getAccountingRecordIDCounter().getCounter());
@@ -30,9 +40,7 @@ public class AccountingAdministration {
         input.add(userInput.getDate());
         input.add(userInput.getAccountHaben());
         input.add(userInput.getDescription());
-
-        userInput.getMyTableModel().addRow(input);
-        userInput.getMyTableModel().fireTableRowsUpdated(0, userInput.getMyTableModel().getRowCount());
+        return input;
     }
 
     public List<AccountingRecord> getBookings() {
