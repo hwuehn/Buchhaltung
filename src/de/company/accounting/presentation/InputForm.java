@@ -88,6 +88,7 @@ public class InputForm {
 
     public void showAllRecords(ActionEvent actionEvent) {
         System.out.println(accountingAdministration.toString());
+
     }
 
     private void fetchAndSet() {

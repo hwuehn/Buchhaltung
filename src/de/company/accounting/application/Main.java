@@ -41,7 +41,7 @@ public class Main {
         //Invoice b1 = belege.document.get(0);
 		//Position p1= new Position(b1.getDate(), b1.getDocumentNumber(), b1.getTotalNetPrice(), b1.getArticleDescription());
 
-            //PositionInputList p1 = new PositionInputList();
+            //Position p1 = new Position();
 
 
 
