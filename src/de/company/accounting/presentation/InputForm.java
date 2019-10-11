@@ -37,7 +37,6 @@ public class InputForm {
     public JTextField textField1;
     public JTable table1;
     private JButton testButton;
-    private JButton testIButton;
 
     public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
                      MyTableModel myTableModel) {
@@ -47,8 +46,8 @@ public class InputForm {
         this.myTableModel = myTableModel;
         kontoErstellenIndividuellButton.addActionListener(this::createAccount);
         buchenButton.addActionListener(this::fetchAndSetUserInput);
-        testButton.addActionListener(this::testData);
-        testIButton.addActionListener(this::testData2);
+        testButton.addActionListener(this::testAll);
+
     }
 
     public JTextField getColAmountTextField() {
@@ -70,8 +69,21 @@ public class InputForm {
         return colDescriptionTextField;
     }
 
+    public JComboBox setAccListComboBoxSoll(JComboBox accListComboBoxSoll) {
+        this.accListComboBoxSoll = accListComboBoxSoll;
+        return accListComboBoxSoll;
+    }
+    public JComboBox setAccListComboBoxHaben(JComboBox accListComboBoxHaben) {
+        this.accListComboBoxHaben = accListComboBoxHaben;
+        return accListComboBoxHaben;
+    }
+
     private void fetchAndSetUserInput(ActionEvent actionEvent) {
 
+        fetchAndSet();
+    }
+
+    private void fetchAndSet() {
         Double amount = parseDouble(getColAmountTextField().getText());
         Object accountSoll = getAccListComboBoxSoll();
         Integer documentNumber = parseInt(getColDocumentNumberTextField().getText());
@@ -108,17 +120,30 @@ public class InputForm {
         return panel;
     }
 
-    public void testData(ActionEvent actionEvent) {
+    private void test2() {
         getColAmountTextField().setText("500.00");
+        setAccListComboBoxSoll(accListComboBoxSoll);
         getColDocumentNumberTextField().setText("98765");
         getColDateTextField().setText("31122018");
+        setAccListComboBoxHaben(accListComboBoxHaben);
         getColDescriptionTextField().setText("Foo");
+        fetchAndSet();
     }
 
-    public void testData2(ActionEvent actionEvent) {
+    private void test() {
         getColAmountTextField().setText("33333.00");
+        setAccListComboBoxSoll(accListComboBoxSoll);
         getColDocumentNumberTextField().setText("4321");
         getColDateTextField().setText("10052017");
+        setAccListComboBoxHaben(accListComboBoxHaben);
         getColDescriptionTextField().setText("Buzzzze");
+        fetchAndSet();
+    }
+
+    private void testAll(ActionEvent actionEvent) {
+        for (int i = 0; i < 11; i++) {
+            test();
+            test2();
+        }
     }
 }
