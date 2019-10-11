@@ -5,16 +5,13 @@ import de.company.accounting.data.Site;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class AccountingAdministration {
 
     private UserInput userInput;
-
-    public List<AccountingRecord> getBookings() {
-        return bookings;
-    }
-
     private List<AccountingRecord> bookings = new ArrayList<>();
     private List<Vector> bookList = new ArrayList<>();
 
@@ -73,7 +70,7 @@ public class AccountingAdministration {
 
     @Override
     public String toString() {
-        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+        String book=  bookings.stream().reduce("", (acc,aR) -> acc + aR.toString()+"\n", String::concat );
         return MessageFormat.format("Buchungen:\n{0}", book);
     }
 

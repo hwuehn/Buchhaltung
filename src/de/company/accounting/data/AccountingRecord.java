@@ -9,14 +9,14 @@ import java.time.LocalDate;
 public class AccountingRecord {
 
     UserInput userInput;
-    private final Object account;
-    private final AccountingRecordIDCounter counter;
-    private final Double amount;
-    private final Integer number;
-    private final LocalDate date;
-    private final String text;
-    private final Site site;
-    private final int bookingID;
+    private  Object account;
+    private  AccountingRecordIDCounter counter;
+    private  Double amount;
+    private  Integer number;
+    private  LocalDate date;
+    private  String text;
+    private  Site site;
+    private  int bookingID;
 
     public AccountingRecord(Object account, AccountingRecordIDCounter counter, Double amount, Integer number, LocalDate date, String text , Site site, int bookingID) {
         this.account = account;
