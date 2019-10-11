@@ -35,8 +35,6 @@ public class AccountingAdministration {
         bookList.add(input);
     }
 
-
-
     public void createUserInputList(UserInput userInput) {
         Vector<Object> input = getObjects(userInput);
         addRowAndUpdate(userInput, input);

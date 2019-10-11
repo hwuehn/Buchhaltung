@@ -33,9 +33,7 @@
     <colspec value="fill:66dlu:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
-    <colspec value="fill:100dlu:noGrow"/>
-    <colspec value="left:4dlu:noGrow"/>
-    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="fill:101dlu:noGrow"/>
     <constraints>
       <xy x="59" y="55" width="1200" height="800"/>
     </constraints>
@@ -131,19 +129,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="1c31" class="javax.swing.JButton" binding="buchenButton" default-binding="true">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="25" height="-1"/>
-            <preferred-size width="25" height="-1"/>
-            <maximum-size width="25" height="-1"/>
-          </grid>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="Buchen"/>
-        </properties>
-      </component>
       <component id="7d57" class="javax.swing.JButton" binding="kontoErstellenIndividuellButton" default-binding="true">
         <constraints>
           <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -230,6 +215,19 @@
         </constraints>
         <properties>
           <text value="BookList"/>
+        </properties>
+      </component>
+      <component id="1c31" class="javax.swing.JButton" binding="buchenButton" default-binding="true">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="25" height="-1"/>
+            <preferred-size width="25" height="-1"/>
+            <maximum-size width="25" height="-1"/>
+          </grid>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Buchen"/>
         </properties>
       </component>
     </children>

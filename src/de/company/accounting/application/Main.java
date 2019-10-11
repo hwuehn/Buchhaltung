@@ -1,7 +1,5 @@
 package de.company.accounting.application;
 
-import de.company.accounting.data.Invoice;
-import de.company.accounting.data.Position;
 import de.company.accounting.presentation.EvenOddRenderer;
 import de.company.accounting.presentation.InputForm;
 import de.company.accounting.presentation.MyTableModel;
@@ -40,8 +38,12 @@ public class Main {
         System.out.println(accountAdministration.sortAccList());
         System.out.println();
 
-        Invoice b1 = belege.document.get(0);
-		Position p1= new Position(b1.getDate(), b1.getDocumentNumber(), b1.getTotalNetPrice(), b1.getArticleDescription());
+        //Invoice b1 = belege.document.get(0);
+		//Position p1= new Position(b1.getDate(), b1.getDocumentNumber(), b1.getTotalNetPrice(), b1.getArticleDescription());
+
+
+
+
 //        accountingAdministration.bookings(6330 , 1800, Arrays.asList(p1));
 //		accountingAdministration.bookings(_1400, _1800, Arrays.asList(p1));
 //		Invoice b2= belege.document.get(1);
