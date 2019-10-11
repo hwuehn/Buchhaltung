@@ -38,6 +38,7 @@ public class InputForm {
     public JTable table1;
     private JButton testButton;
     public JButton bookListButton;
+    public JButton testSingleButton;
 
     public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
                      MyTableModel myTableModel) {
@@ -50,6 +51,7 @@ public class InputForm {
         testButton.addActionListener(this::testAll);
 
         bookListButton.addActionListener(this::showAllRecords);
+        testSingleButton.addActionListener(this::testSingle);
     }
 
     public JTextField getColAmountTextField() {
@@ -97,6 +99,7 @@ public class InputForm {
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(new UserInput(new AccountingRecordIDCounter(), amount, accountSoll, documentNumber, date, accountHaben, description, myTableModel));
+        //accountingAdministration.invokeBooking();
         clearInputFields();
     }
 
@@ -151,5 +154,14 @@ public class InputForm {
             test();
             test2();
         }
+    }
+
+    public void testSingle(ActionEvent actionEvent) {
+        getColAmountTextField().setText("100.99");
+        setAccListComboBoxSoll(accListComboBoxSoll);
+        getColDocumentNumberTextField().setText("123");
+        getColDateTextField().setText("01012019");
+        setAccListComboBoxHaben(accListComboBoxHaben);
+        getColDescriptionTextField().setText("Test");
     }
 }

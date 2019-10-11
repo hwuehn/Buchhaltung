@@ -205,7 +205,7 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Test"/>
+          <text value="TestAll"/>
         </properties>
       </component>
       <component id="dbe03" class="javax.swing.JButton" binding="bookListButton" default-binding="true">
@@ -228,6 +228,15 @@
         </constraints>
         <properties>
           <text value="Buchen"/>
+        </properties>
+      </component>
+      <component id="951a7" class="javax.swing.JButton" binding="testSingleButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="17" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="TestSingle"/>
         </properties>
       </component>
     </children>

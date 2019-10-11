@@ -1,18 +1,15 @@
 package de.company.accounting.application;
 
-import de.company.accounting.data.Account;
 import de.company.accounting.data.AccountingRecord;
-import de.company.accounting.data.Position;
+import de.company.accounting.data.Site;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.*;
 
-import static de.company.accounting.data.Site.HABEN;
-import static de.company.accounting.data.Site.SOLL;
-
 public class AccountingAdministration {
 
+    private UserInput userInput;
     private Map<Integer, Vector<AccountingRecord>> bookingMap = new LinkedHashMap();
     private List<AccountingRecord> bookings = new ArrayList<>();
 
@@ -20,11 +17,11 @@ public class AccountingAdministration {
         return bookList;
     }
 
-    @Override
-    public String toString() {
-        String book =  bookList.stream().reduce("", (acc,aR) -> acc + aR.toString()+"\n", String::concat );
-        return MessageFormat.format("Buchungen:\n{0}", book);
-    }
+//    @Override
+//    public String toString() {
+//        String book =  bookList.stream().reduce("", (acc,aR) -> acc + aR.toString()+"\n", String::concat );
+//        return MessageFormat.format("Buchungen:\n{0}", book);
+//    }
 
     private List<Vector> bookList = new ArrayList<>();
 
@@ -35,8 +32,16 @@ public class AccountingAdministration {
         bookList.add(input);
     }
 
+//    public void invokeBooking() {
+//        PositionInputList p1 = new PositionInputList();
+//        bookings(userInput, getObjects((UserInput) userInput.getAccountSoll()) ,getObjects((UserInput) userInput.getAccountHaben()) , Arrays.asList(p1));
+//    }
+
     public void createUserInputList(UserInput userInput) {
         Vector<Object> input = getObjects(userInput);
+
+
+        bookings(userInput);
         addRowAndUpdate(userInput, input);
     }
 
@@ -65,22 +70,55 @@ public class AccountingAdministration {
         return bookings;
     }
 
-    public void bookings(Account accountSoll, Account accountHaben, List<Position> positions) {
-        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
+    public void bookings(UserInput userInput) {
+
+
+        int max = bookings.stream().map(b -> b.getBookingID()).mapToInt(i -> i).max().orElse(0);
         System.out.println(max);
-        AccountingRecord ar1 = new AccountingRecord(accountSoll, positions, SOLL, max + 1);
-        AccountingRecord ar2 = new AccountingRecord(accountHaben, positions, HABEN, max + 1);
+
+        AccountingRecord ar1 = new AccountingRecord( userInput.getAccountSoll(), userInput.getAccountingRecordIDCounter(),
+                userInput.getAmount(),
+                userInput.getDocumentNumber(), userInput.getDate(),
+                userInput.getDescription(), Site.SOLL, max + 1);
+
+        AccountingRecord ar2 = new AccountingRecord( userInput.getAccountHaben(), userInput.getAccountingRecordIDCounter(),
+                userInput.getAmount(),
+                userInput.getDocumentNumber(), userInput.getDate(),
+                userInput.getDescription(), Site.HABEN, max + 1);
+
         bookings.add(ar1);
         bookings.add(ar2);
     }
 
 
-
-//    @Override
-//    public String toString() {
-//        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
-//        return MessageFormat.format("Buchungen:\n{0}", book);
+//    public void bookings(UserInput userInput, Object accountSoll, Object accountHaben, List<PositionInputList> positions) {
+//
+//        accountSoll = getObjects((UserInput) userInput.getAccountSoll());
+//        accountHaben = getObjects((UserInput) userInput.getAccountSoll());
+//        int max = bookings.stream().map(b -> b.getBookingID()).mapToInt(i -> i).max().orElse(0);
+//        System.out.println(max);
+//        AccountingRecord ar1 = new AccountingRecord((Vector<Object>) accountSoll, positions, Site.SOLL, max + 1);
+//        AccountingRecord ar2 = new AccountingRecord((Vector<Object>) accountHaben, positions, Site.HABEN, max + 1);
+//        bookings.add(ar1);
+//        bookings.add(ar2);
 //    }
+
+        //public void bookings(Account accountSoll, Account accountHaben, List<PositionInputList> positions) {
+//        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
+//        System.out.println(max);
+//        AccountingRecord ar1 = new AccountingRecord(accountSoll, positions, SOLL, max + 1);
+//        AccountingRecord ar2 = new AccountingRecord(accountHaben, positions, HABEN, max + 1);
+//        bookings.add(ar1);
+//        bookings.add(ar2);
+    //}
+
+
+
+    @Override
+    public String toString() {
+        String book=  bookings.stream().reduce("", (acc,bs) -> acc + bs.toString()+"\n", String::concat );
+        return MessageFormat.format("Buchungen:\n{0}", book);
+    }
 
     public static String formattedDoubleString(double wert) {
         DecimalFormat newFormat = new DecimalFormat("#.00");

@@ -1,40 +1,55 @@
 package de.company.accounting.data;
 
+import de.company.accounting.application.AccountingRecordIDCounter;
+import de.company.accounting.application.UserInput;
+
 import java.text.DecimalFormat;
-import java.text.MessageFormat;
-import java.util.List;
+import java.time.LocalDate;
 
 public class AccountingRecord {
 
-    private final Account account;
-    private final List<Position> positions;
+    UserInput userInput;
+    private final Object account;
+    private final AccountingRecordIDCounter counter;
+    private final Double amount;
+    private final Integer number;
+    private final LocalDate date;
+    private final String text;
     private final Site site;
     private final int bookingID;
 
-    public AccountingRecord(Account account, List<Position> positions, Site site, int bookingID) {
+    public AccountingRecord(Object account, AccountingRecordIDCounter counter, Double amount, Integer number, LocalDate date, String text , Site site, int bookingID) {
         this.account = account;
-        this.positions = positions;
+        this.counter = counter;
+        this.amount = amount;
+        this.number = number;
+        this.date = date;
+        this.text = text;
         this.site = site;
         this.bookingID = bookingID;
     }
+//    public AccountingRecord(Account account, List<Position> positions, Site site, int bookingID) {
+//        this.account = account;
+//        this.positions = positions;
+//        this.site = site;
+//        this.bookingID = bookingID;
+//    }
 
-    public Account getAccount() {
+    public Object getAccount() {
         return account;
     }
-    public List<Position> getPositions() {
-        return positions;
-    }
+
     public int getBookingID() {
         return bookingID;
     }
 
-    public Double totalValue(){
-        return positions.stream().map(p -> p.getTotalNetPrice()).reduce(0d ,(acc, e) -> acc + e);
-    }
+//    public Double totalValue(){
+//        return positions.stream().map(p -> p.getTotalNetPrice()).reduce(0d ,(acc, e) -> acc + e);
+//    }
 
-    public String toString() {
-        return MessageFormat.format("Buchung: {0} {1} {2} {3} ", account.getAccountID(), account.getAccountName(), formattedDoubleString(totalValue()),site);
-    }
+//    public String toString() {
+//        return MessageFormat.format("Buchung: {0} {1} {2} {3} ", account.getAccountID(), account.getAccountName(), formattedDoubleString(totalValue()),site);
+//    }
 
     public static String formattedDoubleString(double wert) {
         DecimalFormat newFormat = new DecimalFormat("#.00");
