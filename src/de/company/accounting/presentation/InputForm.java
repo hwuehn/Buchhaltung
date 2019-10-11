@@ -1,17 +1,19 @@
 package de.company.accounting.presentation;
 
-import de.company.accounting.application.*;
+import de.company.accounting.application.AccountAdministration;
+import de.company.accounting.application.AccountingAdministration;
+import de.company.accounting.application.AccountingRecordIDCounter;
+import de.company.accounting.application.UserInput;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Map;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
-import static java.time.LocalDate.*;
+import static java.time.LocalDate.parse;
 
 public class InputForm {
 
@@ -77,28 +79,15 @@ public class InputForm {
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
         accountingAdministration.createUserInputList(new UserInput(new AccountingRecordIDCounter(), amount, accountSoll, documentNumber, date, accountHaben, description, myTableModel));
-        //accountingAdministration.addInputListToRow(myTableModel);
         clearInputFields();
     }
-
-
 
     private void createAccount(ActionEvent actionEvent)  {
         String description = accDescriptionTextField.getText();
         int iD = parseInt(accNumberTextField.getText());
         accountAdministration.load();
         accountAdministration.append(iD, description);
-        //fillCombos(accountAdministration.getSortedList());
         fillCombos2(accountAdministration.sortAccList());
-    }
-
-    public void fillCombos(List<String> list)  {
-        accListComboBoxSoll.removeAllItems();
-        accListComboBoxHaben.removeAllItems();
-        for (String accName : list) {
-            accListComboBoxSoll.addItem(accName);
-            accListComboBoxHaben.addItem(accName);
-        }
     }
 
     public void fillCombos2(Map<Integer, String> map) {

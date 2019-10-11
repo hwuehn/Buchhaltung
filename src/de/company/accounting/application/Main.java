@@ -8,12 +8,10 @@ import de.company.accounting.presentation.MyTableModel;
 import de.company.accounting.testData.documentStack;
 
 import javax.swing.*;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException, InvocationTargetException, InterruptedException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
+	public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
         //invoke administration
@@ -34,7 +32,6 @@ public class Main {
         inputFrame.setVisible(true);
 
         accountAdministration.load();
-        //inputForm.fillCombos(accountAdministration.getSortedList());
         inputForm.fillCombos2(accountAdministration.sortAccList());
 
         documentStack belege = new documentStack();
@@ -42,7 +39,7 @@ public class Main {
 
         System.out.println(accountAdministration.sortAccList());
         System.out.println();
-        
+
         Invoice b1 = belege.document.get(0);
 		Position p1= new Position(b1.getDate(), b1.getDocumentNumber(), b1.getTotalNetPrice(), b1.getArticleDescription());
 //        accountingAdministration.bookings(6330 , 1800, Arrays.asList(p1));
