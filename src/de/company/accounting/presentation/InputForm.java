@@ -3,10 +3,10 @@ package de.company.accounting.presentation;
 import de.company.accounting.application.AccountAdministration;
 import de.company.accounting.application.AccountingAdministration;
 import de.company.accounting.application.AccountingRecordIDCounter;
+import de.company.accounting.application.UserInput;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -78,7 +78,7 @@ public class InputForm {
         LocalDate date = parse(getColDateTextField().getText(), DateTimeFormatter.ofPattern("ddMMyyyy"));
         Object accountHaben = getAccListComboBoxHaben();
         String description = getColDescriptionTextField().getText();
-        accountingAdministration.createUserInputList(new AccountingRecordIDCounter(),amount,accountSoll,documentNumber,date, accountHaben,description,myTableModel);
+        accountingAdministration.createUserInputList(new UserInput(new AccountingRecordIDCounter(), amount, accountSoll, documentNumber, date, accountHaben, description, myTableModel));
         //accountingAdministration.addInputListToRow(myTableModel);
         clearInputFields();
     }

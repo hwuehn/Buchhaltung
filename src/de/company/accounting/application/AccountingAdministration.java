@@ -3,11 +3,9 @@ package de.company.accounting.application;
 import de.company.accounting.data.Account;
 import de.company.accounting.data.AccountingRecord;
 import de.company.accounting.data.Position;
-import de.company.accounting.presentation.MyTableModel;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -18,35 +16,24 @@ import static de.company.accounting.data.Site.SOLL;
 public class AccountingAdministration {
 
     private List<AccountingRecord> bookings = new ArrayList<>();
-    //private Vector<Object> input = new Vector<>();
 
     public AccountingAdministration() {
     }
 
-    public void createUserInputList(AccountingRecordIDCounter accountingRecordIDCounter, Double amount, Object accountSoll, Integer documentNumber, LocalDate date,
-                                      Object accountHaben, String description, MyTableModel myTableModel) {
+    public void createUserInputList(UserInput userInput) {
         Vector<Object> input = new Vector<>();
 
-        input.add(accountingRecordIDCounter.getCounter());
-        input.add(amount);
-        input.add(accountSoll);
-        input.add(documentNumber);
-        input.add(date);
-        input.add(accountHaben);
-        input.add(description);
+        input.add(userInput.getAccountingRecordIDCounter().getCounter());
+        input.add(userInput.getAmount());
+        input.add(userInput.getAccountSoll());
+        input.add(userInput.getDocumentNumber());
+        input.add(userInput.getDate());
+        input.add(userInput.getAccountHaben());
+        input.add(userInput.getDescription());
 
-        myTableModel.addRow(input);
-        myTableModel.fireTableRowsUpdated(0, myTableModel.getRowCount());
+        userInput.getMyTableModel().addRow(input);
+        userInput.getMyTableModel().fireTableRowsUpdated(0, userInput.getMyTableModel().getRowCount());
     }
-
-//    public void addInputListToRow(MyTableModel myTableModel) {
-//        myTableModel.addRow(input);
-//        myTableModel.fireTableRowsUpdated(0, myTableModel.getRowCount());
-//    }
-//
-//    public void clearInputList() {
-//        input.removeAllElements();
-//    }
 
     public List<AccountingRecord> getBookings() {
         return bookings;

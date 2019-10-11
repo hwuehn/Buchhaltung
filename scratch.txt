@@ -1,5 +1,3 @@
-counter bei 1 anfangen lassen
-
 vector in klasse row oder sowas... liste einer liste etc
 
 buchungslogik implementieren
