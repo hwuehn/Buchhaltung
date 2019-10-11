@@ -10,19 +10,12 @@ import java.util.*;
 public class AccountingAdministration {
 
     private UserInput userInput;
-    private Map<Integer, Vector<AccountingRecord>> bookingMap = new LinkedHashMap();
-    private List<AccountingRecord> bookings = new ArrayList<>();
 
-    public List<Vector> getBookList() {
-        return bookList;
+    public List<AccountingRecord> getBookings() {
+        return bookings;
     }
 
-//    @Override
-//    public String toString() {
-//        String book =  bookList.stream().reduce("", (acc,aR) -> acc + aR.toString()+"\n", String::concat );
-//        return MessageFormat.format("Buchungen:\n{0}", book);
-//    }
-
+    private List<AccountingRecord> bookings = new ArrayList<>();
     private List<Vector> bookList = new ArrayList<>();
 
     public AccountingAdministration() {
@@ -32,15 +25,8 @@ public class AccountingAdministration {
         bookList.add(input);
     }
 
-//    public void invokeBooking() {
-//        PositionInputList p1 = new PositionInputList();
-//        bookings(userInput, getObjects((UserInput) userInput.getAccountSoll()) ,getObjects((UserInput) userInput.getAccountHaben()) , Arrays.asList(p1));
-//    }
-
-    public void createUserInputList(UserInput userInput) {
+    public void createUserInputListAndBook(UserInput userInput) {
         Vector<Object> input = getObjects(userInput);
-
-
         bookings(userInput);
         addRowAndUpdate(userInput, input);
     }
@@ -66,12 +52,7 @@ public class AccountingAdministration {
         return input;
     }
 
-    public List<AccountingRecord> getBookings() {
-        return bookings;
-    }
-
     public void bookings(UserInput userInput) {
-
 
         int max = bookings.stream().map(b -> b.getBookingID()).mapToInt(i -> i).max().orElse(0);
         System.out.println(max);
@@ -89,30 +70,6 @@ public class AccountingAdministration {
         bookings.add(ar1);
         bookings.add(ar2);
     }
-
-
-//    public void bookings(UserInput userInput, Object accountSoll, Object accountHaben, List<PositionInputList> positions) {
-//
-//        accountSoll = getObjects((UserInput) userInput.getAccountSoll());
-//        accountHaben = getObjects((UserInput) userInput.getAccountSoll());
-//        int max = bookings.stream().map(b -> b.getBookingID()).mapToInt(i -> i).max().orElse(0);
-//        System.out.println(max);
-//        AccountingRecord ar1 = new AccountingRecord((Vector<Object>) accountSoll, positions, Site.SOLL, max + 1);
-//        AccountingRecord ar2 = new AccountingRecord((Vector<Object>) accountHaben, positions, Site.HABEN, max + 1);
-//        bookings.add(ar1);
-//        bookings.add(ar2);
-//    }
-
-        //public void bookings(Account accountSoll, Account accountHaben, List<PositionInputList> positions) {
-//        int max = bookings.stream().map( b -> b.getBookingID()).mapToInt( i -> i).max().orElse(0);
-//        System.out.println(max);
-//        AccountingRecord ar1 = new AccountingRecord(accountSoll, positions, SOLL, max + 1);
-//        AccountingRecord ar2 = new AccountingRecord(accountHaben, positions, HABEN, max + 1);
-//        bookings.add(ar1);
-//        bookings.add(ar2);
-    //}
-
-
 
     @Override
     public String toString() {

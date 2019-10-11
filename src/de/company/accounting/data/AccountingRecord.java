@@ -28,12 +28,6 @@ public class AccountingRecord {
         this.site = site;
         this.bookingID = bookingID;
     }
-//    public AccountingRecord(Account account, List<Position> positions, Site site, int bookingID) {
-//        this.account = account;
-//        this.positions = positions;
-//        this.site = site;
-//        this.bookingID = bookingID;
-//    }
 
     public Object getAccount() {
         return account;
@@ -47,7 +41,7 @@ public class AccountingRecord {
 //        return positions.stream().map(p -> p.getTotalNetPrice()).reduce(0d ,(acc, e) -> acc + e);
 //    }
 
-//    public String toString() {
+//        public String toString() {
 //        return MessageFormat.format("Buchung: {0} {1} {2} {3} ", account.getAccountID(), account.getAccountName(), formattedDoubleString(totalValue()),site);
 //    }
 

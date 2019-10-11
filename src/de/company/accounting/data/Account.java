@@ -3,6 +3,10 @@ package de.company.accounting.data;
 import de.company.accounting.application.AccountAdministration;
 
 import java.text.MessageFormat;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.stream.Stream;
 
 public class Account {
 
@@ -36,34 +40,34 @@ public class Account {
         return MessageFormat.format(" [Kontonummer = {0}, Bezeichnung = {1}, AB = {2}]", accountID, accountName, initialBalance);
     }
 
-//    public static String outputAccountBookings(List<AccountingRecord> bookings, Account account) {
-//        Stream<AccountingRecord> bookingRecord = bookings.stream().filter(b -> isSameAccount(b.getAccount(),account) );
-//        String diesesKonto = "K: " + account.getAccountID() + "    " + account.initialBalance;
-//        String gegenKonten = bookingRecord.reduce("", contraAccountRecord(bookings), String::concat);
-//        return diesesKonto+ "\n" + gegenKonten;
-//    }
-//
-//    private static BiFunction<String, AccountingRecord, String> contraAccountRecord(List<AccountingRecord> buchungen) {
-//        return (acc, b1) -> {
-//            AccountingRecord b2 = getBuchungsZwilling(buchungen, b1).get();
-//            return acc + b2.getAccount().getAccountID() + "   " + b1.totalValue() + "\n";
-//        };
-//    }
-//
-//    private static Optional<AccountingRecord> getBuchungsZwilling(List<AccountingRecord> buchungen, AccountingRecord b) {
-//        return buchungen.stream().filter(bb -> isSameBuchungsId(b, bb) && isNotSameAccount(b, bb)).findFirst();
-//    }
-//
-//    private static boolean isSameBuchungsId(AccountingRecord b, AccountingRecord bb) {
-//        return bb.getBookingID() == b.getBookingID();
-//    }
-//
-//    private static boolean isNotSameAccount(AccountingRecord b, AccountingRecord bb) {
-//        return b.getAccount().getAccountID() != bb.getAccount().getAccountID();
-//    }
-//    private static boolean isSameAccount(Vector<Object> k, Account k2) {
-//        return k.getAccountID() == k2.getAccountID();
-//    }
+    public static String outputAccountBookings(List<AccountingRecord> bookings, Account account) {
+        Stream<AccountingRecord> bookingRecord = bookings.stream().filter(b -> isSameAccount(b.getAccount(),account) );
+        String diesesKonto = "K: " + account.getAccountID() + "    " + account.initialBalance;
+        String gegenKonten = bookingRecord.reduce("", contraAccountRecord(bookings), String::concat);
+        return diesesKonto+ "\n" + gegenKonten;
+    }
+
+    private static BiFunction<String, AccountingRecord, String> contraAccountRecord(List<AccountingRecord> bookings) {
+        return (acc, b1) -> {
+            AccountingRecord b2 = getBuchungsZwilling(bookings, b1).get();
+            return acc + b2.getAccount() + "   " + b1 + "\n";
+        };
+    }
+
+    private static Optional<AccountingRecord> getBuchungsZwilling(List<AccountingRecord> buchungen, AccountingRecord b) {
+        return buchungen.stream().filter(bb -> isSameBuchungsId(b, bb) && isNotSameAccount(b, bb)).findFirst();
+    }
+
+    private static boolean isSameBuchungsId(AccountingRecord b, AccountingRecord bb) {
+        return bb.getBookingID() == b.getBookingID();
+    }
+
+    private static boolean isNotSameAccount(AccountingRecord b, AccountingRecord bb) {
+        return b.getAccount() != bb.getAccount();
+    }
+    private static boolean isSameAccount(Object k, Account k2) {
+        return k == k2.getAccountID();
+    }
 //
 //    @Override
 //    public String toString() {
