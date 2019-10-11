@@ -4,6 +4,7 @@ import de.company.accounting.application.UserInput;
 
 import java.time.LocalDate;
 
+//class fetches input for accountRecord
 public class PositionInputList {
 
     UserInput userInput;
