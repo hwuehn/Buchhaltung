@@ -25,7 +25,7 @@ public class Account {
         initialBalance = 0.00;
     }
 
-    public Account(AccountAdministration accountAdministration, Integer iD, String description) {
+    public Account(Integer iD, String description) {
         if (accountAdministration.getAccList().containsKey(iD))
             accountID = iD;
         if (accountAdministration.getAccList().containsValue(description))
