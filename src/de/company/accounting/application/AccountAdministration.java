@@ -1,7 +1,11 @@
 package de.company.accounting.application;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
+
 import static java.util.stream.Collectors.toMap;
 
 public class AccountAdministration {
@@ -78,4 +82,21 @@ public class AccountAdministration {
         }
         return list;
     }
+
+    public Map createAccounts() {
+        Map<String, Integer> accNames = new LinkedHashMap<String, Integer>();
+        for (Map.Entry<Integer, String> entry : getAccList().entrySet()) {
+            Integer key = entry.getKey();
+            String value = entry.getValue();
+
+
+            accNames.put(String.format("acc{0}", key.toString()), key);
+
+
+            //Account account = new Account(key, value);
+
+        }
+        return accNames;
+    }
+
 }
