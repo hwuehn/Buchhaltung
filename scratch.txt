@@ -1,5 +1,8 @@
 vector in klasse row oder sowas... liste einer liste etc
+--> Map<Integer, Vector<Object>> --> Key Index, Value Buchungsliste
 
 buchungslogik implementieren
 
 filter implementieren
+
+user falscheingaben abfangen

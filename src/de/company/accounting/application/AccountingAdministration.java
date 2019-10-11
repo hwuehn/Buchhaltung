@@ -6,15 +6,14 @@ import de.company.accounting.data.Position;
 
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 import static de.company.accounting.data.Site.HABEN;
 import static de.company.accounting.data.Site.SOLL;
 
 public class AccountingAdministration {
 
+    private Map<Integer, Vector<AccountingRecord>> bookingMap = new LinkedHashMap();
     private List<AccountingRecord> bookings = new ArrayList<>();
 
     public AccountingAdministration() {

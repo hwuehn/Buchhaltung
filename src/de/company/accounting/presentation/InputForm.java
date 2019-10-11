@@ -1,9 +1,6 @@
 package de.company.accounting.presentation;
 
-import de.company.accounting.application.AccountAdministration;
-import de.company.accounting.application.AccountingAdministration;
-import de.company.accounting.application.AccountingRecordIDCounter;
-import de.company.accounting.application.UserInput;
+import de.company.accounting.application.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -42,6 +39,7 @@ public class InputForm {
 
     public InputForm(AccountAdministration accountAdministration, AccountingAdministration accountingAdministration,
                      MyTableModel myTableModel) {
+
         this.accountAdministration = accountAdministration;
         this.accountingAdministration = accountingAdministration;
         this.myTableModel = myTableModel;
