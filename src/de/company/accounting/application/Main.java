@@ -10,7 +10,6 @@ import de.company.accounting.testData.documentStack;
 import javax.swing.*;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.time.LocalDate;
 
 public class Main {
 
@@ -20,8 +19,7 @@ public class Main {
         //invoke administration
         AccountAdministration accountAdministration = new AccountAdministration();
         AccountingAdministration accountingAdministration = new AccountingAdministration();
-        AccountingRecordIDCounter accountingRecordIDCounter = new AccountingRecordIDCounter();
-
+       
 	    //invoke objects with API
         MyTableModel myTableModel = new MyTableModel(accountAdministration, accountingAdministration);
         InputForm inputForm = new InputForm(accountAdministration, accountingAdministration, myTableModel);
